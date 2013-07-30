@@ -72,3 +72,17 @@ index 0000000..47c871d
 [master 9c250a3] Add README
  1 file changed, 69 insertions(+)
  create mode 100644 README
+  ~  config submodule init
+  ~  config submodule add git://github.com/tpope/vim-fugitive.git .vim/bundle/vim-fugitive
+Cloning into '.vim/bundle/vim-fugitive'...
+remote: Counting objects: 1554, done.
+remote: Compressing objects: 100% (762/762), done.
+remote: Total 1554 (delta 518), reused 1418 (delta 399)
+Receiving objects: 100% (1554/1554), 215.08 KiB | 246.00 KiB/s, done.
+Resolving deltas: 100% (518/518), done.
+Checking connectivity... done
+  ~  config commit -s
+[master 100466e] Add vim-fugitive
+ 2 files changed, 4 insertions(+)
+ create mode 100644 .gitmodules
+ create mode 160000 .vim/bundle/vim-fugitive
