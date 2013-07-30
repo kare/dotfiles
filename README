@@ -66,4 +66,9 @@ index 0000000..47c871d
 +export GOPATH=$HOME/go
 +alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 +export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-  ~
+  ~  vi README
+  ~  config add README
+  ~  config commit -s -m "Add README"
+[master 9c250a3] Add README
+ 1 file changed, 69 insertions(+)
+ create mode 100644 README
