@@ -44,7 +44,6 @@ set undoreload=10000
 autocmd FileType java set tags=~/.java-tags
 filetype off
 filetype plugin indent off
-set runtimepath+=$GOROOT/misc/vim
+set runtimepath+=/usr/local/Cellar/go/1.1.1/misc/vim
 filetype plugin indent on
 syntax on
-set runtimepath+=/usr/local/Cellar/go/1.1.1/misc/vim
