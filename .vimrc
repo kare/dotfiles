@@ -4,6 +4,9 @@ call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 syntax on
+set background=light
+let g:solarized_termcolors=256
+colorscheme solarized
 set nocompatible
 set modelines=0
 "Set default tab style
