@@ -10,6 +10,7 @@
 [submodule ".vim/bundle/detectindent"]
 	path = .vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent.git
+	ignore = untracked
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
@@ -19,6 +20,7 @@
 [submodule ".vim/bundle/vitality.vim"]
 	path = .vim/bundle/vitality.vim
 	url = git@github.com:sjl/vitality.vim.git
+	ignore = untracked
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = git@github.com:skammer/vim-css-color.git
