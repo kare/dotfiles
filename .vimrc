@@ -28,6 +28,7 @@ set incsearch
 set showmatch
 set hlsearch
 set hidden
+set autoread
 set wildmenu
 set wildmode=list:longest
 set visualbell
