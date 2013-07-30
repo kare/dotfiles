@@ -7,6 +7,7 @@
 [alias]
 	oneline = log --oneline --decorate
 	commit = commit --verbose
+  diff = diff --word-diff=color
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   st = status
 [core]
@@ -14,5 +15,18 @@
 	editor = /usr/bin/vim
 [credential]
 	helper = osxkeychain
+[format]
+  numbered = auto
+[diff]
+  renames = copy
+  renamelimit = 3000
+[sendemail]
+  smtpserver = mail.reaktor.fi
+  smtpserverport = 465
+  from = Kare Nuorteva <kare.nuorteva@me.com>
+  confirm = auto
+  smtpencryption = tls
+  suppresscc = self
+  smtpuser = kare
 [push]
 	default = simple

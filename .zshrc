@@ -25,5 +25,6 @@ unsetopt correct_all
 setopt extendedglob
 
 export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+alias godoc="godoc -http=:6060 -index=true -links=true 2>>~/.godoc.log &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
