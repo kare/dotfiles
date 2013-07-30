@@ -1,0 +1,18 @@
+[user]
+	name = Kare Nuorteva
+	email = kare.nuorteva@me.com
+[color]
+	ui = auto
+	ui = true
+[alias]
+	oneline = log --oneline --decorate
+	commit = commit --verbose
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+[core]
+	whitespace=trailing-space
+	editor = /usr/bin/vim
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
