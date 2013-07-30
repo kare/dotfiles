@@ -80,9 +80,5 @@ inoremap { {<CR><BS>}<Esc>ko
 " Clear search highlighting with esc
 "nnoremap <esc> :nohl<return><esc>
 
-autocmd FileType java set tags=~/.java-tags
-filetype off
-filetype plugin indent off
-set runtimepath+=/usr/local/Cellar/go/1.1.1/misc/vim
 filetype plugin indent on
 syntax on
