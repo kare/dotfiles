@@ -3,6 +3,7 @@ call pathogen#incubate()
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
+syntax on
 set nocompatible
 set modelines=0
 set tabstop=4
@@ -38,6 +39,15 @@ set cindent
 set smartindent
 set showcmd
 set title
+set backspace=indent,eol,start
+set noerrorbells
+set ruler
+set shell=/bin/zsh
+" Undo
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
 "set colorcolumn=140
 "correct defaults:
 "http://items.sjbach.com/319/configuring-vim-right
@@ -46,7 +56,6 @@ set hidden
 set autowrite
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -60,17 +69,6 @@ inoremap <right> <nop>
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-autocmd FocusLost * :wa
-filetype plugin indent on
-set backspace=indent,eol,start
-set noerrorbells
-set ruler
-set shell=/bin/zsh
-set undofile
-set undodir=~/.vim/undo
-set undolevels=1000
-set undoreload=10000
-
 
 "automatically insert matching brace
 inoremap { {<CR><BS>}<Esc>ko
@@ -79,6 +77,3 @@ inoremap { {<CR><BS>}<Esc>ko
 
 " Clear search highlighting with esc
 "nnoremap <esc> :nohl<return><esc>
-
-filetype plugin indent on
-syntax on
