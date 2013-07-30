@@ -1,32 +1,76 @@
-execute pathogen#infect()
+filetype off
+call pathogen#incubate()
+call pathogen#infect()
+call pathogen#helptags()
+filetype plugin indent on
 set nocompatible
-syntax on
-set shiftwidth=2
-set tabstop=2
-"set autoindent
-"set cindent
-set smartindent
-set expandtab
+set modelines=0
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set showmode
 set showcmd
-set hlsearch
+set ignorecase
+set smartcase
+set gdefault
 set incsearch
+set showmatch
+set hlsearch
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set swapfile
+set dir=~/tmp
+set laststatus=2
+set relativenumber
+set wrap
+set textwidth=120
+set formatoptions=qrn1
+set cindent
+set smartindent
+set showcmd
 set title
-"set scrolloff=3
+"set colorcolumn=140
+"correct defaults:
+"http://items.sjbach.com/319/configuring-vim-right
+set hidden
+"http://www.oualline.com/vim-cook.html
+set autowrite
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
-set encoding=utf-8
 
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+autocmd FocusLost * :wa
 filetype plugin indent on
 set backspace=indent,eol,start
 set noerrorbells
 set ruler
 set shell=/bin/zsh
-"http://www.oualline.com/vim-cook.html
-set autowrite
+set undofile
+set undodir=~/.vim/undo
+set undolevels=1000
+set undoreload=10000
 
-"correct defaults:
-"http://items.sjbach.com/319/configuring-vim-right
-set hidden
 
 "automatically insert matching brace
 inoremap { {<CR><BS>}<Esc>ko
@@ -35,11 +79,6 @@ inoremap { {<CR><BS>}<Esc>ko
 
 " Clear search highlighting with esc
 "nnoremap <esc> :nohl<return><esc>
-
-set undodir=~/.vim/undo
-set undofile
-set undolevels=1000
-set undoreload=10000
 
 autocmd FileType java set tags=~/.java-tags
 filetype off
