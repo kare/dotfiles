@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set nocompatible
 syntax on
 set shiftwidth=2
