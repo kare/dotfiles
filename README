@@ -103,6 +103,7 @@ Resolving deltas: 100% (16/16), done.
   ~  mv .dotfiles.git/.git/* .dotfiles.git
   ~  mv -i dotfiles.git/* .
 overwrite ./.gitconfig? (y/n [n]) y
+  ~  rmdir dotfiles.git
   ~  config submodule init
 Submodule '.oh-my-zsh' (git@github.com:robbyrussell/oh-my-zsh.git) registered for path '.oh-my-zsh'
 Submodule '.vim/bundle/detectindent' (https://github.com/ciaranm/detectindent.git) registered for path '.vim/bundle/detectindent'
