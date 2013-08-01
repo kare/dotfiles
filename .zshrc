@@ -20,9 +20,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
-bindkey -e
 unsetopt correct_all
 setopt extendedglob
+
+export WORDCHARS=${WORDCHARS//\[\&=\/\];}
+bindkey -e
 
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
