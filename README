@@ -100,7 +100,7 @@ remote: Total 55 (delta 16), reused 55 (delta 16)
 Receiving objects: 100% (55/55), 11.44 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (16/16), done.
   ~  setopt -s dotglob
-  ~  mv .dotfiles.git/.git/* .dotfiles.git
+  ~  mv dotfiles.git/.git/* .dotfiles.git
   ~  mv -i dotfiles.git/* .
 overwrite ./.gitconfig? (y/n [n]) y
   ~  rmdir dotfiles.git
