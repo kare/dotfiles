@@ -20,7 +20,7 @@ au FileType c,erlang,haskell,java,markdown,python setl tabstop=4 softtabstop=4 s
 au FileType go,perl,make setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 set encoding=utf-8
-set scrolloff=3
+set scrolloff=5
 set autoindent
 set showmode
 set showcmd
@@ -44,7 +44,6 @@ set swapfile
 set dir=~/tmp
 set laststatus=2
 set relativenumber
-set wrap
 set textwidth=120
 set formatoptions=qrn1
 set cindent
@@ -89,3 +88,4 @@ inoremap { {<CR><BS>}<Esc>ko
 
 " Clear search highlighting with esc
 "nnoremap <esc> :nohl<return><esc>
+autocmd FocusLost * :wa
