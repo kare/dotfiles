@@ -22,7 +22,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 unsetopt correct_all
 setopt extendedglob
-
+setopt hist_ignore_all_dups
+fpath=(/usr/local/share/zsh-completions $fpath)
 export WORDCHARS=${WORDCHARS//\[\&=\/\];}
 bindkey -e
 
