@@ -65,6 +65,11 @@ set undoreload=10000
 set hidden
 "http://www.oualline.com/vim-cook.html
 set autowrite
+
+" better java higlighting
+let java_highlight_java_lang_ids=1
+let java_allow_cpp_keywords=1
+
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 nnoremap <up> <nop>
