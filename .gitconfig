@@ -7,10 +7,10 @@
 [alias]
 	oneline = log --oneline --decorate
 	commit = commit --verbose
-    diff = diff --word-diff=color
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    lp = log -p
-    st = status
+	diff = diff --word-diff=color
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lp = log -p
+	st = status
 	changes = log --reverse --no-merges --patch --stat @{1}..
 [core]
 	whitespace=trailing-space
@@ -19,17 +19,17 @@
 [credential]
 	helper = osxkeychain
 [format]
-    numbered = auto
+	numbered = auto
 [diff]
-    renames = copy
-    renamelimit = 3000
+	renames = copy
+	renamelimit = 3000
 [sendemail]
-    smtpserver = mail.reaktor.fi
-    smtpserverport = 465
-    from = Kare Nuorteva <kare.nuorteva@me.com>
-    confirm = auto
-    smtpencryption = tls
-    suppresscc = self
-    smtpuser = kare
+	smtpserver = mail.reaktor.fi
+	smtpserverport = 465
+	from = Kare Nuorteva <kare.nuorteva@me.com>
+	confirm = auto
+	smtpencryption = tls
+	suppresscc = self
+	smtpuser = kare
 [push]
-    default = simple
+	default = simple
