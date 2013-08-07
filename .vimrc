@@ -65,6 +65,8 @@ set undoreload=10000
 set hidden
 "http://www.oualline.com/vim-cook.html
 set autowrite
+set listchars=tab:→\ ,trail:·
+set list
 
 " better java higlighting
 let java_highlight_java_lang_ids=1
