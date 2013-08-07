@@ -14,6 +14,7 @@
 [core]
 	whitespace=trailing-space
 	editor = /usr/bin/vim
+	pager = less -F -X
 [credential]
 	helper = osxkeychain
 [format]
