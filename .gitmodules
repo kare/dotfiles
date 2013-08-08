@@ -40,3 +40,6 @@
 	path = .vim/bundle/vim-ragtag
 	url = git@github.com:tpope/vim-ragtag.git
 	ignore = untracked
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
