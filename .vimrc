@@ -69,8 +69,8 @@ set listchars=tab:→\ ,trail:·
 set list
 
 " better java higlighting
-let java_highlight_java_lang_ids=1
-let java_allow_cpp_keywords=1
+let java_highlight_java_lang_ids = 1
+let java_allow_cpp_keywords = 1
 " RagTag
 let g:ragtag_global_maps = 1
 
