@@ -28,7 +28,7 @@ export WORDCHARS=${WORDCHARS//\[\&=\/\];}
 bindkey -e
 
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 alias godoc="godoc -http=:6060 -index=true -links=true 2>>~/.godoc.log &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias config-update='config submodule init && config submodule update'
