@@ -32,3 +32,4 @@ export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/
 alias godoc="godoc -http=:6060 -index=true -links=true 2>>~/.godoc.log &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias config-update='(cd; config submodule init && config submodule update)'
+alias brew-up2date='brew update && brew upgrade'
