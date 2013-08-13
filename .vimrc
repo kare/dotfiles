@@ -3,7 +3,6 @@ call pathogen#incubate()
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
-syntax on
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -21,38 +20,28 @@ au FileType go,perl,make setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 set encoding=utf-8
 set scrolloff=5
-set autoindent
 set showmode
 set showcmd
 set ignorecase
 set smartcase
 set gdefault
-set incsearch
-set showmatch
 set hlsearch
 set hidden
-set autoread
 set wildignore=*.o,*.bak,*.class
-set wildmenu
 set wildmode=list:longest
 set visualbell
 set cursorline
 set ttyfast
-set ruler
-set backspace=indent,eol,start
 set swapfile
 set dir=~/tmp
-set laststatus=2
 set relativenumber
 set textwidth=120
 set formatoptions=qrn1
 set cindent
 set smartindent
-set showcmd
 set title
 set backspace=indent,eol,start
 set noerrorbells
-set ruler
 set shell=/bin/zsh
 " Undo
 set undofile
