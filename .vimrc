@@ -32,7 +32,7 @@ set showmatch
 set hlsearch
 set hidden
 set autoread
-set wildignore=*.o,*.bak
+set wildignore=*.o,*.bak,*.class
 set wildmenu
 set wildmode=list:longest
 set visualbell
