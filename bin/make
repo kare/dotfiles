@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [[ $# == 1 && $1 == "love" ]];then
+    echo "not war"
+    exit
+fi
+/usr/bin/make $@
+

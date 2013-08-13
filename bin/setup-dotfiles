@@ -1,0 +1,12 @@
+#!/bin/sh
+
+function makedir() {
+    [ -d $1 ] || mkdir -v $1
+}
+
+makedir ~/tmp
+makedir ~/.vim/undo
+
+if [ ! -x /bin/zsh ]; then
+    echo "WARNING: Please install Z Shell"
+fi
