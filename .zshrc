@@ -23,9 +23,10 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 setopt extendedglob
 setopt hist_ignore_all_dups
+bindkey -e
 fpath=(/usr/local/share/zsh-completions $fpath)
 export WORDCHARS=${WORDCHARS//\[\&=\/\];}
-bindkey -e
+export LESSCHARSET="UTF-8"
 
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
