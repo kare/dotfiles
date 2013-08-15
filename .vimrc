@@ -15,8 +15,8 @@ set softtabstop=4
 set expandtab
 "Set tabbing policy per file
 au FileType zsh,scala,bash,html,javascript,ruby setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-au FileType c,erlang,haskell,java,markdown,python setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-au FileType go,perl,make setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+au FileType erlang,haskell,java,markdown,python setl tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+au FileType c,go,perl,make setl tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 
 set encoding=utf-8
 set scrolloff=5
