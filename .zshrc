@@ -32,8 +32,8 @@ export JAVA_OPTS="-Dfile.encoding=UTF-8"
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
-export PLAN9="/Users/kare/Projects/Plan9/src/plan9port"
-export PATH="$PLAN9/bin:$PATH"
+#export PLAN9="/Users/kare/Projects/Plan9/src/plan9port"
+#export PATH="$PLAN9/bin:$PATH"
 
 alias godoc="godoc -http=:6060 -index=true -links=true 2>>~/.godoc.log &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
