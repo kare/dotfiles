@@ -27,6 +27,7 @@ bindkey -e
 fpath=(/usr/local/share/zsh-completions $fpath)
 export WORDCHARS=${WORDCHARS//\[\&=\/\];}
 export LESSCHARSET="UTF-8"
+export JAVA_OPTS="-Dfile.encoding=UTF-8"
 
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
