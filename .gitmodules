@@ -47,3 +47,6 @@
 	path = .vim/bundle/vim-git
 	url = git@github.com:tpope/vim-git.git
 	ignore = untracked
+[submodule ".vim/bundle/vim-json"]
+	path = .vim/bundle/vim-json
+	url = git@github.com:jakar/vim-json.git
