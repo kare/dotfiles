@@ -2,7 +2,6 @@
 	name = Kare Nuorteva
 	email = kare.nuorteva@me.com
 [color]
-	ui = auto
 	ui = true
 [alias]
 	oneline = log --oneline --decorate
