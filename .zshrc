@@ -3,7 +3,11 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="apple"
+if [ `uname` = "Darwin" ]; then
+  export ZSH_THEME="apple"
+else
+  export ZSH_THEME="flazz"
+fi
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -24,7 +28,6 @@ unsetopt correct_all
 setopt extendedglob
 setopt hist_ignore_all_dups
 bindkey -e
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 export WORDCHARS="${WORDCHARS//\[\&=\/\];}"
 export LESSCHARSET="UTF-8"
@@ -38,4 +41,4 @@ export PATH="$GOPATH/bin:$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:/usr/
 alias godoc="godoc -http=:6060 -index=true -links=true 2>>~/.godoc.log &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias config-update='(cd; config submodule init && config submodule update)'
-alias brew-up2date='brew update && brew upgrade'
+alias on_os_x='test `uname` = "Darwin" && $@'
