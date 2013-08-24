@@ -28,7 +28,6 @@ unsetopt correct_all
 setopt extendedglob
 setopt hist_ignore_all_dups
 bindkey -e
-fpath=(/usr/local/share/zsh-completions $fpath)
 
 export WORDCHARS="${WORDCHARS//\[\&=\/\];}"
 export LESSCHARSET="UTF-8"
