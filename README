@@ -88,6 +88,7 @@ Checking connectivity... done
  create mode 160000 .vim/bundle/vim-fugitive
 
 # Setting up
+  ~  alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
   ~  mkdir .dotfiles.git
   ~  mv .zshrc .zshrc.bak
   ~  mv .vimrc .vimrc.bak
@@ -111,7 +112,7 @@ Submodule '.vim/bundle/vim-fugitive' (git://github.com/tpope/vim-fugitive.git) r
 Submodule '.vim/bundle/vim-sensible' (git://github.com/tpope/vim-sensible.git) registered for path '.vim/bundle/vim-sensible'
 Submodule '.vim/bundle/vim-surround' (https://github.com/tpope/vim-surround.git) registered for path '.vim/bundle/vim-surround'
 Submodule '.vim/bundle/vim-syntastic' (https://github.com/scrooloose/syntastic.git) registered for path '.vim/bundle/vim-syntastic'
-  ~  config submodule update
+  ~  git --git-dir=$HOME/.dotfiles.git/ submodule update
 Cloning into '.oh-my-zsh'...
 remote: Counting objects: 7306, done.
 remote: Compressing objects: 100% (3968/3968), done.
