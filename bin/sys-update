@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ `uname` = "Darwin" ]; then
+    brew update
+    brew upgrade
+elif [ `uname` = "Linux" ]; then
+    sudo apt-get update
+    sudo apt-get upgrade --show-upgraded
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+    sudo apt-get clean
+else
+    echo "Only Darwin and Linux are supported"
+    exit 1
+fi
