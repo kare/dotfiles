@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 if [ `uname` = "Darwin" ]; then
   export ZSH_THEME="apple"
 else
-  export ZSH_THEME="flazz"
+  export ZSH_THEME="example"
 fi
 
 # Set to this to use case-sensitive completion
