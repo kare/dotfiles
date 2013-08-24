@@ -8,7 +8,7 @@
 
 .gitconfig.local
 
-# Local files on all $HOME computers
+# OS X specific stuff
 .godoc.log
 .CFUserTextEncoding
 .Trash/
@@ -67,3 +67,28 @@ Public/
 VirtualBox VMs/
 go/
 tmp/
+
+# Debian specific stuff
+.ICEauthority
+.aptitude/
+.bash_history
+.dbus/
+.fontconfig/
+.gconf/
+.gnash/
+.gnome2/
+.gnupg/
+.gstreamer-0.10/
+.gtk-bookmarks
+.local/
+.mission-control/
+.mozilla/
+.profile
+.pulse-cookie
+.pulse/
+.vboxclient-clipboard.pid
+.vboxclient-display.pid
+.vboxclient-draganddrop.pid
+.vboxclient-seamless.pid
+.xsession-errors
+.xsession-errors.old
