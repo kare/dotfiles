@@ -92,3 +92,7 @@ tmp/
 .vboxclient-seamless.pid
 .xsession-errors
 .xsession-errors.old
+.muttrc
+Maildir/
+public_html/
+sent/
