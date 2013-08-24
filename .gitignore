@@ -6,6 +6,8 @@
 *.perspective
 *.perspectivev3
 
+.gitconfig.local
+
 # Local files on all $HOME computers
 .godoc.log
 .CFUserTextEncoding
