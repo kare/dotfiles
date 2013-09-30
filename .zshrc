@@ -24,6 +24,7 @@ plugins=(git github golang)
 
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
+zmodload zsh/net/tcp
 unsetopt correct_all
 setopt extendedglob
 setopt hist_ignore_all_dups
