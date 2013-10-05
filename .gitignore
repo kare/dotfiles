@@ -67,6 +67,7 @@ Public/
 VirtualBox VMs/
 go/
 tmp/
+.rediscli_history
 
 # Debian specific stuff
 .ICEauthority
