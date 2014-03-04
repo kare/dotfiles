@@ -58,3 +58,9 @@ alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias config-update='(cd; config submodule init && config submodule update)'
 alias on_os_x='test `uname` = "Darwin" && $@'
 alias irssi='ssh pk.reaktor.fi -t screen -dr'
+
+# Python
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
