@@ -53,6 +53,7 @@ set hidden
 set autowrite
 set listchars=tab:→\ ,trail:·
 set list
+set mouse=
 
 " better java higlighting
 let java_highlight_java_lang_ids = 1
