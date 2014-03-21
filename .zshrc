@@ -45,6 +45,9 @@ if [ -d "$HOME/go" ]; then
   export GOPATH="$HOME/go"
   export PATH="$GOPATH/bin:$PATH"
 fi
+if [ -d "/usr/local/go/bin" ]; then
+  export PATH="/usr/local/go/bin:$PATH"
+fi
 if [ -d "/usr/local/plan9" ]; then
   export PLAN9="/usr/local/plan9"
   export PATH="$PATH:$PLAN9/bin"
