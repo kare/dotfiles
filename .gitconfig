@@ -21,8 +21,6 @@
 	renames = copy
 	renamelimit = 3000
 [sendemail]
-	smtpserver = mail.reaktor.fi
-	smtpserverport = 465
 	from = Kare Nuorteva <kare.nuorteva@me.com>
 	confirm = auto
 	smtpencryption = tls
