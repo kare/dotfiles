@@ -48,8 +48,8 @@ fi
 if [ -d "/usr/local/go/bin" ]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi
-if [ -d "/usr/local/plan9" ]; then
-  export PLAN9="/usr/local/plan9"
+if [ -d "/usr/local/plan9port" ]; then
+  export PLAN9="/usr/local/plan9port"
   export PATH="$PATH:$PLAN9/bin"
 fi
 if [ -d "$HOME/.rvm/bin" ]; then
