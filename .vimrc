@@ -69,8 +69,6 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-"automatically insert matching brace
-inoremap { {<CR><BS>}<Esc>ko
 " Grep word under cursor when key 'arrow right' is pressed
 "nmap <Right> :vimgrep <cword> `find . -type f -exec grep -Iq '' '{}' ';' -print`<CR>:copen<CR>
 
