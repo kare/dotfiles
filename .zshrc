@@ -60,8 +60,7 @@ alias godoc-http="godoc -http=:6060 -index=true -links=true 2> /dev/null &"
 alias config='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias config-update='(cd; config submodule init && config submodule update)'
 alias on_os_x='test `uname` = "Darwin" && $@'
-alias irssi='ssh pk.reaktor.fi -t screen -dr'
-
+alias git-init-repo='(git init && touch .gitignore && git add .gitignore && git commit -s -m "Add empty .gitignore" && git log --pretty=oneline --abbrev-commit)'
 # Python
 # pip should only run if there is a virtualenv currently activated
 export PIP_REQUIRE_VIRTUALENV=true
