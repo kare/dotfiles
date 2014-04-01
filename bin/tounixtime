@@ -1,0 +1,11 @@
+#!/usr/bin/python
+
+import sys
+import time
+
+if len(sys.argv) < 2:
+    print "Unixtime[s] as argument[s]"
+    sys.exit(-1)
+
+for i in sys.argv[1:]:
+    print i, time.ctime(float(i))
