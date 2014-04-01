@@ -1,6 +1,7 @@
 #!/bin/sh
 
 if [ `uname` = "Darwin" ]; then
+    softwareupdate --install
     brew update
     brew upgrade
 elif [ `uname` = "Linux" ]; then

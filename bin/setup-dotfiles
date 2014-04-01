@@ -1,7 +1,13 @@
 #!/bin/sh
 
+if [ -d $HOME/.dotfiles.git ]; then
+    echo "Dotfiles is already installed."
+    echo "Install cancelled."
+    exit 1
+fi
+
 function makedir() {
-    [ -d $1 ] || mkdir -v $1
+    [ -d $1 ] || mkdir -vp $1
 }
 
 makedir ~/tmp
@@ -10,3 +16,13 @@ makedir ~/.vim/undo
 if [ ! -x /bin/zsh ]; then
     echo "WARNING: Please install Z Shell"
 fi
+
+mkdir .dotfiles.git
+git clone git@github.com:kare/dotfiles.git dotfiles.git
+shopt -s extglob
+mv dotfiles.git/.git/* .dotfiles.git
+mv -i dotfiles.git/* .
+mv -i dotfiles.git/.* .
+rmdir dotfiles.git
+git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME submodule init
+git --git-dir=$HOME/.dotfiles.git/ submodule update

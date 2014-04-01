@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# Copy Solarized theme for ITerm2.
+# Requires manual configuration
+curl -0 "https://raw.github.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors" > ~/Desktop/Solarized_Light.itermcolors
+echo "Open iTerm 2"
+echo " Open Preferences, click on the \"Profiles\" icon in the preferences toolbar"
+echo " Then select the \"colors\" tab."
+echo " Click on the \"load presets\" and select \"import...\"."
+echo " Select the Solarized Light or Dark theme file."
+echo
+echo "Select an existing profile from the profile list window on the left."
+echo " Then select the Solarized Light preset from the \"Load Presets\" drop down."
+
+# Install Kare's dotfiles
+curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles | sh
+# Install Homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew doctor
+# Install software with Homebrew
+brew install zsh zsh-lovers tree the_silver_searcher ssh-copy-id htop-osx git ctags npm mercurial mongodb bzr
+npm install -g grunt-cli
+npm install -g bower
+# Change to Z Shell
+sudo echo "/usr/local/bin/zsh" >> /etc/shells
+chsh -s "/usr/local/bin/zsh"
