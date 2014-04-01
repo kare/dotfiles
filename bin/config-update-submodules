@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+cd
+cd .vim/bundle
+for a in `ls`; do
+    cd $a
+    git checkout master && git pull --rebase
+    cd ..
+done
+cd ~/.oh-my-zsh
+git checkout master && git pull --rebase
+cd
