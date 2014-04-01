@@ -23,7 +23,6 @@
 .gdb_history
 .gem/
 .h2.server.properties
-.hours/
 .htoprc
 .irb-history
 .ivy2/
@@ -49,7 +48,7 @@
 .viminfo
 .yeoman/
 .yjp/
-.zcompdump
+.zcompdump*
 .zsh-update
 .zsh_history
 Applications/
@@ -68,6 +67,11 @@ VirtualBox VMs/
 go/
 tmp/
 .rediscli_history
+.appcfg_nag
+.bzr.log
+.dvdcss/
+.idlerc/
+.mongorc.js
 
 # Debian specific stuff
 .ICEauthority
