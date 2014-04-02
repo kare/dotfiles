@@ -28,5 +28,3 @@
 	smtpuser = kare
 [include]
 	path = ~/.gitconfig.local
-[push]
-	default = simple
