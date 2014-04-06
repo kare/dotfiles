@@ -14,6 +14,8 @@ echo " Then select the Solarized Light preset from the \"Load Presets\" drop dow
 
 # Install Kare's dotfiles
 curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles | sh
+# Install Ruby Version Manager
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 # Install Homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
