@@ -8,6 +8,8 @@
 
 .gitconfig.local
 
+bin/tmpl
+
 # OS X specific stuff
 .godoc.log
 .CFUserTextEncoding
