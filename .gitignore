@@ -9,6 +9,7 @@
 .gitconfig.local
 
 bin/tmpl
+.tmpl
 
 # OS X specific stuff
 .godoc.log
