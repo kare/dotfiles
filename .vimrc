@@ -1,7 +1,5 @@
 filetype off
-call pathogen#incubate()
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect()
 filetype plugin indent on
 set background=light
 let g:solarized_termcolors=256
