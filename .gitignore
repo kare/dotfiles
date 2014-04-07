@@ -105,3 +105,12 @@ Maildir/
 public_html/
 sent/
 Copy/
+# Ubuntu
+.VirtualBox/
+.Xauthority
+.compiz/
+.dmrc
+.nv/
+.pam_environment
+.pki/
+.thunderbird/
