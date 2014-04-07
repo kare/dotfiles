@@ -1,9 +1,15 @@
 #!/bin/bash
 
+function usage() {
+    echo "Usage: `basename $0` [-h] v1.1.1" 1>&2
+    exit 1
+}
 
 if [ -z "$1" -o "$1" == "-h" ]; then
-    echo "Usage: `basename $0` v1.1.1" 1>&2
-    exit
+    usage
+fi
+if [ ${1:0:1} != "v" ]; then
+    usage
 fi
 
 git tag $1
