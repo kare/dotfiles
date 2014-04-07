@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+if [ -z "$1" -o "$1" == "-h" ]; then
+    echo "Usage: `basename $0` v1.1.1" 1>&2
+    exit
+fi
+
+git tag $1
+git push --tags
