@@ -27,3 +27,6 @@ npm install -g bower
 # Change to Z Shell
 sudo echo "/usr/local/bin/zsh" >> /etc/shells
 chsh -s "/usr/local/bin/zsh"
+
+# Setup OS X settings
+# defaults write com.googlecode.iterm2 AlternateMouseScroll -bool true
