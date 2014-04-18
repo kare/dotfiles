@@ -21,6 +21,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 brew doctor
 # Install software with Homebrew
 brew install zsh zsh-lovers tree the_silver_searcher ssh-copy-id htop-osx git ctags npm mercurial mongodb bzr
+brew install colordiff
 npm install -g grunt-cli
 npm install -g bower
 # Change to Z Shell

@@ -2,3 +2,4 @@
 
 ssh-keygen -t dsa
 sudo apt-get install build-essential vim zsh git-core nasm qemu mercurial
+sudo apt-get install colordiff
