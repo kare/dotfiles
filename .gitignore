@@ -7,7 +7,7 @@
 *.perspectivev3
 
 .gitconfig.local
-
+.pip
 bin/tmpl
 .tmpl
 
