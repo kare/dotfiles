@@ -57,7 +57,6 @@ if [ -d "$HOME/.rvm/bin" ]; then
 fi
 
 alias godoc-http="godoc -http=:6060 -index=true -links=true 2> /dev/null &"
-alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias on_os_x='test `uname` = "Darwin" && $@'
 alias git-init-repo='(git init && touch .gitignore && git add .gitignore && git commit -s -m "Add empty .gitignore" && git log --pretty=oneline --abbrev-commit)'
 alias diff=colordiff
