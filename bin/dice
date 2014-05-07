@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+R=$[${RANDOM}%6]
+echo `expr 1 + $R`
