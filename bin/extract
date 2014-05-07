@@ -30,9 +30,9 @@ if [[ -f $1 ]]; then
       7z x $1
       ;;
     *)
-      echo "'$1' cannot be extracted via extract."
+      echo "'$1' cannot be extracted via extract." 1>&2
       ;;
   esac
 else
-  echo "'$1' is not a valid file"
+  echo "'$1' is not a valid file" 1>&2
 fi
