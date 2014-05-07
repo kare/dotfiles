@@ -1,6 +1,6 @@
 #
-# `.zshrc' is sourced in interactive shells. It should contain commands to set up aliases, functions, options, key
-# bindings, etc.
+# `.zshrc' is sourced in interactive shells. It should contain commands
+# to set up aliases, functions, options, key bindings, etc.
 #
 
 # Path to your oh-my-zsh configuration.
