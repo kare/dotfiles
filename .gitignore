@@ -13,6 +13,7 @@ bin/tmpl
 .vim-go
 
 # OS X specific stuff
+.dropbox-master/
 .godoc.log
 .CFUserTextEncoding
 .Trash/
