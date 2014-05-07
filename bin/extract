@@ -31,8 +31,10 @@ if [[ -f $1 ]]; then
       ;;
     *)
       echo "'$1' cannot be extracted via extract." 1>&2
+      exit 127
       ;;
   esac
 else
   echo "'$1' is not a valid file" 1>&2
+  exit 128
 fi
