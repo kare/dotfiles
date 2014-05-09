@@ -69,6 +69,7 @@ vnoremap <F1> <ESC>
 
 " Grep word under cursor when key 'arrow right' is pressed
 "nmap <Right> :vimgrep <cword> `find . -type f -exec grep -Iq '' '{}' ';' -print`<CR>:copen<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " Clear search highlighting with esc
 "nnoremap <esc> :nohl<return><esc>
