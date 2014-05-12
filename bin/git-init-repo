@@ -1,0 +1,7 @@
+#!/bin/bash
+
+git init
+touch .gitignore
+git add .gitignore
+git commit -s -m "Add empty .gitignore"
+git log --pretty=oneline --abbrev-commit
