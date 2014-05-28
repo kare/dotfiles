@@ -22,6 +22,11 @@ brew doctor
 # Install software with Homebrew
 brew install zsh zsh-lovers tree the_silver_searcher ssh-copy-id htop-osx git ctags npm mercurial mongodb bzr
 brew install colordiff
+# Install Go Dev
+brew install go --cross-compile-all
+go get code.google.com/p/go.tools/cmd/godoc
+go get code.google.com/p/go.tools/cmd/vet
+# Install Web Dev
 npm install -g grunt-cli
 npm install -g bower
 # Change to Z Shell
