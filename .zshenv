@@ -24,6 +24,10 @@ fi
 if [ -d "/usr/local/go/bin" ]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi
+GOROOT=`go env GOROOT`
+if [ -d "$GOROOTBIN/bin" ]; then
+  export PATH=$PATH:$GOROOT/bin
+fi
 if [ -d "/usr/local/plan9port" ]; then
   export PLAN9="/usr/local/plan9port"
   export PATH="$PATH:$PLAN9/bin"
@@ -31,6 +35,9 @@ fi
 if [ -d "$HOME/.rvm/bin" ]; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Python
 # pip should only run if there is a virtualenv currently activated
