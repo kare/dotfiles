@@ -4,6 +4,7 @@ if [ `uname` = "Darwin" ]; then
     softwareupdate --install
     brew update
     brew upgrade
+    brew linkapps
 elif [ `uname` = "Linux" ]; then
     sudo apt-get update
     sudo apt-get upgrade --show-upgraded
