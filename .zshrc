@@ -38,3 +38,7 @@ bindkey -e
 alias godoc-http="godoc -http=:6060 -index=true -links=true 2> /dev/null &"
 alias on_os_x='test `uname` = "Darwin" && $@'
 alias diff=colordiff
+
+unalias run-help
+autoload run-help
+export HELPDIR=/usr/local/share/zsh/help
