@@ -11,6 +11,10 @@
 bin/tmpl
 .tmpl
 .vim-go
+.berkshelf/
+.guard_history
+.vagrant.d/
+.vagrant/
 
 # OS X specific stuff
 .dropbox-master/
