@@ -24,10 +24,6 @@ fi
 if [ -d "/usr/local/go/bin" ]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi
-GOROOT=`go env GOROOT`
-if [ -d "$GOROOTBIN/bin" ]; then
-  export PATH=$PATH:$GOROOT/bin
-fi
 if [ -d "/usr/local/plan9port" ]; then
   export PLAN9="/usr/local/plan9port"
   export PATH="$PATH:$PLAN9/bin"
