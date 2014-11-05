@@ -10,6 +10,19 @@ END
 }
 
 ###########################################################
+# Files and folders
+###########################################################
+
+# Show the ~/Library directory
+chflags nohidden "$HOME/Library"
+
+# Don't show the ~/bin directory
+chflags hidden "$HOME/bin"
+
+# Don't show the ~/pkg directory
+chflags hidden "$HOME/pkg"
+
+###########################################################
 # Safari
 ###########################################################
 
