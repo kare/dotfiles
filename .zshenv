@@ -17,10 +17,7 @@ fi
 if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
-if [ -d "$HOME/go" ]; then
-  export GOPATH="$HOME/go"
-  export PATH="$GOPATH/bin:$PATH"
-fi
+export GOPATH="$HOME"
 if [ -d "/usr/local/go/bin" ]; then
   export PATH="/usr/local/go/bin:$PATH"
 fi

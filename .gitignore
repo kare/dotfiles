@@ -9,12 +9,25 @@
 .gitconfig.local
 .pip
 bin/tmpl
+pkg
+src
 .tmpl
 .vim-go
 .berkshelf/
 .guard_history
 .vagrant.d/
 .vagrant/
+# Ignore Go tools
+errcheck
+gocode
+goddd
+godef
+goimports
+golint
+gorename
+gotags
+oracle
+script
 
 # OS X specific stuff
 .dropbox-master/
