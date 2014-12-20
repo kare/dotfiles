@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+for file in $*; do
+  if [ ! -e $file ]; then
+    touch $file
+  fi
+done
+
+open -a VimR $*
