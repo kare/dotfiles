@@ -39,3 +39,8 @@ alias godoc-http="godoc -http=:6060 -index=true -links=true 2> /dev/null &"
 alias on_os_x='test `uname` = "Darwin" && $@'
 alias diff=colordiff
 alias vi='~/bin/vi'
+
+# boot2docker
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/kare/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
