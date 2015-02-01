@@ -17,7 +17,6 @@ set encoding=utf-8
 set scrolloff=5
 set showmode
 set showcmd
-set ignorecase
 set smartcase
 set gdefault
 set hlsearch
