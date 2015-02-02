@@ -18,10 +18,7 @@ if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 export GOPATH="$HOME"
-if [ -d "/usr/local/go/bin" ]; then
-  export PATH="/usr/local/go/bin:$PATH"
-  export PATH="/usr/local/opt/go/libexec/bin:$PATH" # GOROOT-based install location
-fi
+on_os_x export PATH="/usr/local/opt/go/libexec/bin:$PATH" # GOROOT-based install location
 if [ -d "/usr/local/plan9port" ]; then
   export PLAN9="/usr/local/plan9port"
   export PATH="$PATH:$PLAN9/bin"
