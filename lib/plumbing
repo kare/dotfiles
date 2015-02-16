@@ -2,3 +2,14 @@
 
 editor = acme
 include basic
+
+# isbn10 search through Amazon
+type is text
+data matches '([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])'
+plumb start open 'http://www.amazon.com/s/?field-keywords='$1
+
+# RFC
+type is text
+data matches 'RFC:([0-9]+)'
+plumb to web
+plumb start web http://www.rfc-editor.org/rfc/rfc$1.txt
