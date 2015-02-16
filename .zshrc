@@ -25,7 +25,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github golang rails ruby)
+plugins=(git github golang)
 
 source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
@@ -41,6 +41,14 @@ alias on_os_x='test `uname` = "Darwin" && $@'
 alias diff=colordiff
 alias vi='~/bin/vi'
 
+export WORDCHARS="${WORDCHARS//\[\&=\/\];}"
+export LESSCHARSET="UTF-8"
+export JAVA_OPTS="-Dfile.encoding=UTF-8"
+# Python
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # boot2docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/kare/.boot2docker/certs/boot2docker-vm

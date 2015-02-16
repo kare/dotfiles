@@ -7,3 +7,5 @@
 # external commands (fortune, msgs, etc).
 #
 
+9 fontsrv &
+9 plumber
