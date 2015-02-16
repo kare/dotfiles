@@ -254,6 +254,9 @@ brew install tree
 brew install unrar
 brew install p7zip
 brew install go --with-cc-common
+brew install fleetctl
+brew install docker
+brew install boot2docker
 
 # Install Go tools
 export GOPATH=$HOME

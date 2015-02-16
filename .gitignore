@@ -6,6 +6,7 @@
 *.perspective
 *.perspectivev3
 
+.fleetctl
 .gitconfig.local
 .pip
 bin/tmpl
