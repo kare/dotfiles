@@ -1,8 +1,9 @@
 #!/usr/local/plan9/bin/rc
-#!/usr/bin/env rc
 
 SHELL=rc
 TERM=dump
 tabstop=4
+varfont=/mnt/font/Monaco/14a/font
+fixfont=/mnt/font/Menlo-Regular/14a/font
 
-exec 9 $PLAN9/bin/acme -a -f /mnt/font/Menlo-Regular/14a/font $* >[2=]
+exec 9 $PLAN9/bin/acme -a -f $varfont -F $fixfont $* >[2=]
