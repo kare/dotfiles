@@ -1,0 +1,8 @@
+#!/usr/local/plan9/bin/rc
+#!/usr/bin/env rc
+
+SHELL=rc
+TERM=dump
+tabstop=4
+
+exec 9 $PLAN9/bin/acme -a -f /mnt/font/Menlo-Regular/14a/font $* >[2=]
