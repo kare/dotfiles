@@ -21,6 +21,9 @@ if [ -d "/usr/local/plan9" ]; then
   export PATH="$PATH:$PLAN9/bin"
 fi
 
+# Apple iCloud Drive
+export ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
+
 if [ -d "$HOME/.rvm/bin" ]; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
