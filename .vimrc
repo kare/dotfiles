@@ -10,7 +10,7 @@ set modelines=0
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set noexpandtab
 
 set pastetoggle=<F2>
 set encoding=utf-8
