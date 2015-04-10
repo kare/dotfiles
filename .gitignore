@@ -9,26 +9,34 @@
 .fleetctl
 .gitconfig.local
 .pip
-bin/tmpl
 pkg
 src
+bin/tmpl
+bin/pt
+bin/hugo
 .tmpl
 .vim-go
 .berkshelf/
 .guard_history
 .vagrant.d/
 .vagrant/
+acme.dump
 # Ignore Go tools
-errcheck
-gocode
-goddd
-godef
-goimports
-golint
-gorename
-gotags
-oracle
-script
+/bin/Fmt
+/bin/agodoc
+/bin/agorn
+/bin/ao
+/bin/errcheck
+/bin/gocode
+/bin/goddd
+/bin/godef
+/bin/godep
+/bin/goimports
+/bin/golint
+/bin/gorename
+/bin/gotags
+/bin/oracle
+/bin/script
 
 # OS X specific stuff
 .dropbox-master/
