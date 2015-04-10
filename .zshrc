@@ -3,52 +3,54 @@
 # to set up aliases, functions, options, key bindings, etc.
 #
 
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
-
-# Set to the name theme to load.
-# Look in ~/.oh-my-zsh/themes/
-if [ `uname` = "Darwin" ]; then
-  export ZSH_THEME="apple"
-else
-  export ZSH_THEME="example"
-fi
-
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-export DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github golang)
-
-source $ZSH/oh-my-zsh.sh
-# Customize to your needs...
+autoload -U compinit
+compinit
+compdef _git dotfiles=git
 zmodload zsh/net/tcp
+# Zsh I/O
 unsetopt correct_all
-setopt extendedglob
+setopt correct
+setopt flow_control
+setopt interactive_comments
+# Zsh Expansion and globbing
+setopt extended_glob
+# Zsh history
+setopt share_history
+setopt append_history
+setopt extended_history
 setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+
 bindkey -e
 
-unalias 9
-alias godoc-http="godoc -http=:6060 -index=true -links=true 2> /dev/null &"
-alias on_os_x='test `uname` = "Darwin" && $@'
-alias diff=colordiff
+PS1="%~ %% "
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# Zsh History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=SAVEHIST=99999
 
-export WORDCHARS="${WORDCHARS//\[\&=\/\];}"
-export LESSCHARSET="UTF-8"
-export JAVA_OPTS="-Dfile.encoding=UTF-8"
+# Grep options
+GREP_OPTIONS=""
+VCS_FOLDERS="{.bzr,.cvs,.git,.hg,.svn}"
+GREP_OPTIONS+=" --exclude-dir=$VCS_FOLDERS"
+unset VCS_FOLDERS
+WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
+LESSCHARSET="UTF-8"
+JAVA_OPTS="-Dfile.encoding=UTF-8"
 # Python
 # pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
+PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
-export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 # boot2docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/kare/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+DOCKER_HOST=tcp://192.168.59.103:2376
+DOCKER_CERT_PATH=/Users/kare/.boot2docker/certs/boot2docker-vm
+DOCKER_TLS_VERIFY=1
+# Apple iCloud Drive
+ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
+# Go
+export GOPATH="$HOME"
+PATH="/usr/local/opt/go/libexec/bin:$PATH" # GOROOT-based install location
+

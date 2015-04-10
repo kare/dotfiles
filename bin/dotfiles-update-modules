@@ -14,7 +14,7 @@ fi
 if [[ "$1" != "-u" ]]; then
   dotfiles stash
 fi
-foreach module (`ls -d ~/.vim/bundle/* ~/.oh-my-zsh`)
+foreach module (`ls -d ~/.vim/bundle/*`)
   echo "Updating $module"
   cd $module
   git checkout master
