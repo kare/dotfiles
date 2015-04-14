@@ -12,6 +12,7 @@
 pkg
 src
 bin/tmpl
+bin/vimr
 bin/pt
 bin/hugo
 .tmpl
