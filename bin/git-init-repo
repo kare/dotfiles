@@ -1,7 +1,96 @@
 #!/bin/bash
 
+PROJECT=$(basename `pwd`)
+
+README=`cat << __README_HERE__
+#$PROJECT
+
+##A Beginner’s Guide to Creating a README
+
+If you are just starting out with open source one of the most important things to include is good documentation. This starts with a solid README file. At its core a README should include:
+
+1. **What does your project do?** Share the vision of the need that your project is trying to meet.
+2. **How is it set up?** If someone were to pick up your codebase today how would they get everything running in their local environment.
+3. **How is it used?** Once it’s up and running provide some very descriptive examples of usage.
+4. **Is it in good shape?** Do you have code climate, codeship, or other tools running to indicate the health of the project? Include information on dependencies as well.
+5. **How can others help?** Collaboration yields amazing software. Make it easy for others to get involved by letting them know how to submit new features, report issues, or offer other assistance.
+6. **License information** Don’t forget to let others know what license your project is released under. Not sure? [Oreilly has an open book on understanding licensing](http://www.oreilly.com/openbook/osfreesoft/book/index.html).
+
+You can extend this to include credits and acknowledgement, changelog details, and more but this will provide a solid foundation.
+
+If you’re struggling with Markdown or basic formatting, here are some additional resources that might help:
+
+- [Help with markdown basics](https://help.github.com/articles/markdown-basics/)
+- [Github flavored markdown](https://help.github.com/articles/github-flavored-markdown/)
+- [Basics of formatting the readme](https://www.youtube.com/watch?v=4UTSEKzsSvM)
+
+Some template examples:
+
+- [Template for Github markdown and sublime](https://gist.github.com/zenorocha/4526327)
+- [Template for Github README](https://github.com/Goochie/gch-github-README)
+- [Module template by Puppet Labs](https://docs.puppetlabs.com/puppet/latest/reference/READMEtemplate.txt)
+- [Readme template from the Drupal community](https://www.drupal.org/node/2181737)
+- [Variety of specific readme templates](https://github.com/repat/README-template)
+
+Guide by [changelog.com](https://thechangelog.com/a-beginners-guide-to-creating-a-readme/).
+__README_HERE__
+`
+
+LICENSE=`cat << __LICENSE_HERE__
+The MIT License (MIT)
+
+Copyright (c) $(date +"%Y") $(git config user.name)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+__LICENSE_HERE__
+`
+
+function put() {
+	filename=$1
+	message=$2
+	git add $filename
+	git commit -s -m "$message"
+}
+
+function check() {
+	filename=$1
+	if [ -f $filename ]; then
+		echo "error: file '$filename' exists." 1>&2
+		exit 1
+	fi
+}
+
+function mkFile() {
+	filename=$1
+	content=$2
+	message=$3
+	check $filename
+	echo -n "$content" > $filename
+	put "$filename" "$message"
+}
+
+
+check ".git"
 git init
-touch .gitignore
-git add .gitignore
-git commit -s -m "Add empty .gitignore"
+
+mkFile ".gitignore" "" "Add empty .gitignore"
+mkFile "LICENSE" "$LICENSE" "Add LICENSE"
+mkFile "README.md" "$README" "Add README"
+
 git log --pretty=oneline --abbrev-commit
