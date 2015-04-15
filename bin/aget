@@ -1,0 +1,7 @@
+#!/usr/local/plan9/bin/rc
+
+if (test -z $1) {
+	echo usage: aget [URL]
+	exit
+}
+curl -silent $1 | 9p write acme/new/body
