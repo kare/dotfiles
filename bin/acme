@@ -2,6 +2,7 @@
 
 tabstop=4
 SHELL=rc
+TERM=dumb
 font=/mnt/font/LucidaGrande/15a/font
 fixedfont=/mnt/font/SourceCodePro-Regular/16a/font
 
