@@ -72,4 +72,5 @@ nmap <F8> :TagbarToggle<CR>
 
 " Clear search highlighting with esc
 nnoremap <esc> :nohl<return><esc>
-autocmd FocusLost * :wa
+" Autosave
+"autocmd FocusLost * :wa
