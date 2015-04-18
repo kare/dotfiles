@@ -122,7 +122,6 @@ tmp/
 .local/
 .mission-control/
 .mozilla/
-.profile
 .pulse-cookie
 .pulse/
 .vboxclient-clipboard.pid
