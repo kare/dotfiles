@@ -1,0 +1,4 @@
+#!/bin/sh
+
+git --no-pager log --graph --pretty=format:'%h -%d %s (%cr)' --abbrev-commit --date=relative
+echo
