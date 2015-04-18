@@ -3,8 +3,8 @@
 tabstop=4
 SHELL=rc
 TERM=dumb
-font=/mnt/font/LucidaGrande/15a/font
-fixedfont=/mnt/font/SourceCodePro-Regular/16a/font
+font=/mnt/font/LucidaGrande/14a/font
+fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
 
 fn cd { builtin cd $1 && awd $sysname }
 
