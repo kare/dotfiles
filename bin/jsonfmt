@@ -1,3 +1,8 @@
 #!/bin/sh
 
+if [ "$1" = "-h" ];then
+	echo "Usage: jsonfmt < file.json" 1>&2
+	echo "Example: In Acme tag: \"Edit , | jsonfmt\"" 1>&2
+	exit 1
+fi
 python -m json.tool
