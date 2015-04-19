@@ -14,7 +14,7 @@ src
 bin/tmpl
 bin/vimr
 bin/pt
-bin/hugo
+bin/editinacme
 .tmpl
 .vim-go
 .berkshelf/
