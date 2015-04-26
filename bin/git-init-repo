@@ -61,6 +61,18 @@ SOFTWARE.
 __LICENSE_HERE__
 `
 
+CONTRIBUTORS=`cat << __CONTRIBUTORS_HERE__
+# This is a list of contributors to this repository.
+
+# Names should be added to this file like so:
+#     Name <email address>
+
+# Please keep the list sorted.
+
+$(git config user.name) <$(git config user.email)>
+__CONTRIBUTORS_HERE__
+`
+
 function put() {
 	filename=$1
 	message=$2
@@ -92,5 +104,6 @@ git init
 mkFile ".gitignore" "" "Add empty .gitignore"
 mkFile "LICENSE" "$LICENSE" "Add LICENSE"
 mkFile "README.md" "$README" "Add README"
+mkFile "CONTRIBUTORS" "$CONTRIBUTORS" "Add CONTRIBUTORS"
 
 git log --pretty=oneline --abbrev-commit
