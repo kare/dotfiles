@@ -1,6 +1,6 @@
 # to update: cat $HOME/lib/plumbing | 9p write plumb/rules
 
-editor = acme
+editor = /Users/kare/bin/acme
 include basic
 
 # isbn10 search through Amazon
