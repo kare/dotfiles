@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -d $HOME/.dotfiles.git ]; then
     echo "Dotfiles is already installed."
@@ -26,3 +26,6 @@ mv -i dotfiles.git/.* .
 rmdir dotfiles.git
 git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME submodule init
 git --git-dir=$HOME/.dotfiles.git/ submodule update
+
+echo "dotfiles git repository is now installed to $HOME/.dotfiles.git"
+echo "actual dot files are under $HOME with correct names."
