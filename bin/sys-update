@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ `uname` = "Darwin" ]; then
-    softwareupdate --install
+    softwareupdate --install --all
     brew update
-    brew upgrade
+    brew upgrade --all
     brew linkapps
     brew cleanup
 elif [ `uname` = "Linux" ]; then
