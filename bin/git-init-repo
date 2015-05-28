@@ -1,11 +1,48 @@
 #!/bin/bash
 
+license_type="MIT"
+while [[ $# > 0 ]]
+do
+	arg="$1"
+	case $arg in
+		-help)
+			echo "usage: git-init-repo -license [MIT|BSD]"
+			echo "license defaults to MIT"
+			echo "click http://choosealicense.com for more info on licensing options"
+			exit 2
+			;;
+		-license)
+			input=$(echo $2 | awk '{print toupper($0)}')
+			if [ "$input" == "BSD" ]; then
+				license_type="BSD"
+			fi
+			shift
+			;;
+	esac
+	shift
+done
+
 project=$(basename `pwd`)
 
 readme=`cat << __README_HERE__
-#$project
+# $project overview
 
-##A Beginner’s Guide to Creating a README
+# Features
+
+# Installation
+
+# Example
+
+# Contributors
+See CONTRIBUTORS file for more information.
+
+# Contributing to $project
+
+# License
+This code is published under a $license_type license. See LICENSE file for more information.
+
+----------------------------------------
+#A Beginner’s Guide to Creating a README
 
 If you are just starting out with open source one of the most important things to include is good documentation. This starts with a solid README file. At its core a README should include:
 
@@ -89,12 +126,14 @@ $(git config user.name) <$(git config user.email)>
 __CONTRIBUTORS_HERE__
 `
 
-function put() {
-	filename=$1
-	message=$2
-	git add $filename
-	git commit -s -m "$message"
-}
+case $license_type in
+	BSD)
+		license="$license_bsd"
+		;;
+	*)
+		license="$license_mit"
+		;;
+esac
 
 function check() {
 	filename=$1
@@ -102,6 +141,13 @@ function check() {
 		echo "error: file '$filename' exists." 1>&2
 		exit 1
 	fi
+}
+
+function put() {
+	filename=$1
+	message=$2
+	git add $filename
+	git commit -s -m "$message"
 }
 
 function mkFile() {
@@ -112,34 +158,6 @@ function mkFile() {
 	echo -n "$content" > $filename
 	put "$filename" "$message"
 }
-
-while [[ $# > 0 ]]
-do
-	arg="$1"
-	case $arg in
-		-help)
-			echo "usage: git-init-repo -license [MIT|BSD]"
-			echo "license defaults to MIT"
-			echo "click http://choosealicense.com for more info on licensing options"
-			exit 2
-			;;
-		-license)
-			selected_license="$2"
-			shift
-			;;
-	esac
-	shift
-done
-case $selected_license in
-	BSD|bsd)
-		license="$license_bsd"
-		license_type="BSD"
-		;;
-	*)
-		license="$license_mit"
-		license_type="MIT"
-		;;
-esac
 
 check ".git"
 git init
