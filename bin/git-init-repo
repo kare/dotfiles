@@ -1,9 +1,9 @@
 #!/bin/bash
 
-PROJECT=$(basename `pwd`)
+project=$(basename `pwd`)
 
-README=`cat << __README_HERE__
-#$PROJECT
+readme=`cat << __README_HERE__
+#$project
 
 ##A Beginner’s Guide to Creating a README
 
@@ -36,7 +36,7 @@ Guide by [changelog.com](https://thechangelog.com/a-beginners-guide-to-creating-
 __README_HERE__
 `
 
-LICENSE_MIT=`cat << __LICENSE_MIT_HERE__
+license_mit=`cat << __LICENSE_MIT_HERE__
 The MIT License (MIT)
 
 Copyright (c) $(date +"%Y") $(git config user.name)
@@ -61,7 +61,7 @@ SOFTWARE.
 __LICENSE_MIT_HERE__
 `
 
-LICENSE_BSD=`cat << __LICENSE_BSD_HERE__
+license_bsd=`cat << __LICENSE_BSD_HERE__
 Copyright (c) $(date +"%Y"), $(git config user.name)
 All rights reserved.
 
@@ -77,7 +77,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 __LICENSE_BSD_HERE__
 `
 
-CONTRIBUTORS=`cat << __CONTRIBUTORS_HERE__
+contributors=`cat << __CONTRIBUTORS_HERE__
 # This is a list of contributors to this repository.
 
 # Names should be added to this file like so:
@@ -126,11 +126,11 @@ do
 done
 case $selected_license in
 	BSD|bsd)
-		LICENSE="$LICENSE_BSD"
+		license="$license_bsd"
 		license_type="BSD"
 		;;
 	*)
-		LICENSE="$LICENSE_MIT"
+		license="$license_mit"
 		license_type="MIT"
 		;;
 esac
@@ -139,8 +139,8 @@ check ".git"
 git init
 
 mkFile ".gitignore" "" "Add empty .gitignore"
-mkFile "LICENSE" "$LICENSE" "Add $license_type LICENSE"
-mkFile "README.md" "$README" "Add README"
-mkFile "CONTRIBUTORS" "$CONTRIBUTORS" "Add CONTRIBUTORS"
+mkFile "LICENSE" "$license" "Add $license_type LICENSE"
+mkFile "README.md" "$readme" "Add README"
+mkFile "CONTRIBUTORS" "$contributors" "Add CONTRIBUTORS"
 
 git log --pretty=oneline --abbrev-commit
