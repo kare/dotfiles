@@ -36,7 +36,7 @@ Guide by [changelog.com](https://thechangelog.com/a-beginners-guide-to-creating-
 __README_HERE__
 `
 
-LICENSE=`cat << __LICENSE_HERE__
+LICENSE_MIT=`cat << __LICENSE_MIT_HERE__
 The MIT License (MIT)
 
 Copyright (c) $(date +"%Y") $(git config user.name)
@@ -58,7 +58,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-__LICENSE_HERE__
+__LICENSE_MIT_HERE__
 `
 
 CONTRIBUTORS=`cat << __CONTRIBUTORS_HERE__
@@ -102,7 +102,7 @@ check ".git"
 git init
 
 mkFile ".gitignore" "" "Add empty .gitignore"
-mkFile "LICENSE" "$LICENSE" "Add LICENSE"
+mkFile "LICENSE" "$LICENSE_MIT" "Add MIT LICENSE"
 mkFile "README.md" "$README" "Add README"
 mkFile "CONTRIBUTORS" "$CONTRIBUTORS" "Add CONTRIBUTORS"
 
