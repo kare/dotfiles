@@ -117,6 +117,12 @@ while [[ $# > 0 ]]
 do
 	arg="$1"
 	case $arg in
+		-help)
+			echo "usage: git-init-repo -license [MIT|BSD]"
+			echo "license defaults to MIT"
+			echo "click http://choosealicense.com for more info on licensing options"
+			exit 2
+			;;
 		-license)
 			selected_license="$2"
 			shift
