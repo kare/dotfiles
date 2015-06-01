@@ -46,6 +46,7 @@ acme.dump
 /bin/gen
 
 # OS X specific stuff
+google-cloud-sdk
 .dropbox-master/
 .godoc.log
 .CFUserTextEncoding

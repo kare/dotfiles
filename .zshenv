@@ -17,6 +17,8 @@ if [ -d "/usr/local/plan9" ]; then
   export PATH="$PATH:$PLAN9/bin"
 fi
 
+export PATH=$PATH:$HOME/google-cloud-sdk/bin
+
 if [ -d "$HOME/.rvm/bin" ]; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
