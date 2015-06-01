@@ -38,6 +38,12 @@ acme.dump
 /bin/gotags
 /bin/oracle
 /bin/script
+.github-issue-token
+/bin/issue
+/bin/gb
+/bin/gb-env
+/bin/gb-vendor
+/bin/gen
 
 # OS X specific stuff
 .dropbox-master/
