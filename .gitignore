@@ -6,6 +6,7 @@
 *.perspective
 *.perspectivev3
 
+/lib/acme-bookmarks.txt
 /.fleetctl
 /.gitconfig.local
 /pkg
@@ -49,37 +50,29 @@
 
 # OS X specific stuff
 /google-cloud-sdk
-/.dropbox-master/
-/.godoc.log
 /.CFUserTextEncoding
 /.Trash/
-/.bower/
 /.cache/
 /.config/
 /.cups/
 /.dbshell
 /.dotfiles.git/
 /.dropbox/
-/.gdb_history
 /.gem/
 /.htoprc
 /.irb-history
-/.ivy2/
 /.lesshst
 /.mysql_history
 /.node-gyp/
 /.npm/
 /.rnd
 /.rvm/
-/.signature
 /.sqlite_history
 /.ssh/
 /.subversion/
 /.vim/.netrwhist
 /.vim/undo/
 /.viminfo
-/.yeoman/
-/.yjp/
 /.zcompdump*
 /.zsh_history
 /Applications/
