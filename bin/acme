@@ -6,6 +6,6 @@ TERM=dumb
 font=/mnt/font/LucidaGrande/14a/font
 fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
 
-fn cd { builtin cd $1 && awd $sysname }
+fn cd { builtin cd $1 && awd }
 
 $PLAN9/bin/acme -m /mnt/acme -a -f $font -F $fixedfont $* >[2]/dev/null
