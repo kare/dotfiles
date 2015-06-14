@@ -8,4 +8,4 @@ fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
 
 fn cd { builtin cd $1 && awd $sysname }
 
-$PLAN9/bin/acme -a -f $font -F $fixedfont $* >[2]/dev/null
+$PLAN9/bin/acme -m /mnt/acme -a -f $font -F $fixedfont $* >[2]/dev/null
