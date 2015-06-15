@@ -12,7 +12,7 @@ if [[ -f $1 ]]; then
       bunzip2 $1
       ;;
     *.rar)
-      rar x $1
+      unrar x $1
       ;;
     *.gz)
       gunzip $1
