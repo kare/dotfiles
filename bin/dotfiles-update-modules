@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 function usage() {
-    echo "Usage: `basename $0` [-h] [-u]" 1>&2
+    echo "usage: `basename $0` [-h] [-u]" 1>&2
     echo "stash, update and add modules, commit and pop stash" 1>&2
     echo "-u only update modules" 1>&2
     exit 1
