@@ -7,5 +7,10 @@
 # external commands (fortune, msgs, etc).
 #
 
-9 fontsrv &
-9 plumber
+if [ -z "`pgrep fontsrv`" ]; then
+	9 fontsrv &
+	disown
+fi
+if [ -z "`pgrep plumber`" ]; then
+	9 plumber
+fi
