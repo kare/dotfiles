@@ -1,4 +1,3 @@
-#!/bin/zsh
+#!/bin/bash
 
-R=$[${RANDOM}%6]
-echo `expr 1 + $R`
+echo $(((RANDOM%6)+1))

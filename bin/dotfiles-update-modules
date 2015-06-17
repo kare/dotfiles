@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 function usage() {
     echo "usage: `basename $0` [-h] [-u]" 1>&2
@@ -7,14 +7,14 @@ function usage() {
     exit 1
 }
 
-if [[ "$1" == "-h" ]]; then
+if [ "$1" = "-h" ]; then
   usage
 fi
 
-if [[ "$1" != "-u" ]]; then
+if [ "$1" != "-u" ]; then
   dotfiles stash
 fi
-foreach module (`ls -d ~/.vim/bundle/*`)
+for module in `ls -d ~/.vim/bundle/*`; do
   echo "Updating $module"
   cd $module
   git checkout master
@@ -22,8 +22,8 @@ foreach module (`ls -d ~/.vim/bundle/*`)
   if [[ "$1" != "-u" ]]; then
     dotfiles add $module
   fi
-end
-if [[ "$1" != "-u" ]]; then
+done
+if [ "$1" != "-u" ]; then
   cd
   dotfiles commit -s -m "Update modules"
   dotfiles stash pop
