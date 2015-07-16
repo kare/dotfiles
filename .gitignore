@@ -46,6 +46,9 @@
 /bin/gen
 /bin/EasyCert
 /bin/caddy
+/bin/boom
+/bin/vegeta
+/bin/udict
 /.gsutil/
 
 # OS X specific stuff
