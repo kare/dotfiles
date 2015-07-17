@@ -52,6 +52,7 @@
 /.gsutil/
 
 # OS X specific stuff
+/.tsd-cache
 /google-cloud-sdk
 /.CFUserTextEncoding
 /.Trash/
