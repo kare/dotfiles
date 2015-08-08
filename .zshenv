@@ -7,6 +7,9 @@
 #
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
+export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+export MANPATH="$MANPATH:/opt/local/share/man"
+export INFOPATH="$INFOPATH:/opt/local/share/info"
 if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
