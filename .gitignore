@@ -7,6 +7,7 @@
 *.perspectivev3
 
 /lib/acme-bookmarks.txt
+/.macports/history
 /.fleetctl
 /.gitconfig.local
 /pkg
