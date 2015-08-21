@@ -52,5 +52,3 @@ DOCKER_TLS_VERIFY=1
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
 export GOPATH="$HOME"
-PATH="/usr/local/opt/go/libexec/bin:$PATH" # GOROOT-based install location
-

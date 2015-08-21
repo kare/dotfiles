@@ -14,6 +14,8 @@ if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
+export PATH="$HOME/go/bin:$PATH"
+
 # Plan 9
 if [ -d "/usr/local/plan9" ]; then
   export PLAN9="/usr/local/plan9"
