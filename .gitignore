@@ -10,6 +10,8 @@
 /.macports/history
 /.fleetctl
 /.gitconfig.local
+/go
+/go1.4
 /pkg
 /src
 /bin/tmpl
@@ -24,6 +26,24 @@
 /.vagrant/
 /acme.dump
 # Ignore Go tools
+bin/benchcmp
+bin/callgraph
+bin/cover
+bin/digraph
+bin/eg
+bin/fiximports
+bin/godex
+bin/gomvpkg
+bin/gotype
+bin/html2article
+bin/prepend
+bin/present
+bin/ssadump
+bin/stress
+bin/stringer
+bin/tipgodoc
+bin/ufs
+bin/vet
 /bin/Fmt
 /bin/agodoc
 /bin/agorn
