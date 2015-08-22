@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/vim-syntastic"]
 	path = .vim/bundle/vim-syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/detectindent"]
 	path = .vim/bundle/detectindent
 	url = https://github.com/ciaranm/detectindent.git
@@ -18,38 +15,12 @@
 	path = .vim/bundle/vitality.vim
 	url = git@github.com:sjl/vitality.vim.git
 	ignore = untracked
-[submodule ".vim/bundle/vim-css-color"]
-	path = .vim/bundle/vim-css-color
-	url = git@github.com:skammer/vim-css-color.git
-[submodule ".vim/bundle/vim-css3-syntax"]
-	path = .vim/bundle/vim-css3-syntax
-	url = git@github.com:hail2u/vim-css3-syntax.git
-[submodule ".vim/bundle/vim-less"]
-	path = .vim/bundle/vim-less
-	url = git@github.com:groenewege/vim-less.git
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-ragtag"]
-	path = .vim/bundle/vim-ragtag
-	url = git@github.com:tpope/vim-ragtag.git
-	ignore = untracked
 [submodule ".vim/bundle/vim-unimpaired"]
 	path = .vim/bundle/vim-unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/bundle/vim-git"]
-	path = .vim/bundle/vim-git
-	url = git@github.com:tpope/vim-git.git
-	ignore = untracked
-[submodule ".vim/bundle/vim-json"]
-	path = .vim/bundle/vim-json
-	url = git@github.com:jakar/vim-json.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = git@github.com:fatih/vim-go.git
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
-	url = git@github.com:pangloss/vim-javascript.git
-[submodule ".vim/bundle/javascript-libraries-syntax.vim"]
-	path = .vim/bundle/javascript-libraries-syntax.vim
-	url = git@github.com:othree/javascript-libraries-syntax.vim.git
