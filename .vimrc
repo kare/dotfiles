@@ -55,8 +55,6 @@ set mouse=
 " better java higlighting
 let java_highlight_java_lang_ids = 1
 let java_allow_cpp_keywords = 1
-" RagTag
-let g:ragtag_global_maps = 1
 
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -68,10 +66,10 @@ vnoremap <F1> <ESC>
 
 " Grep word under cursor when key 'arrow right' is pressed
 "nmap <Right> :vimgrep <cword> `find . -type f -exec grep -Iq '' '{}' ';' -print`<CR>:copen<CR>
-nmap <F8> :TagbarToggle<CR>
 
 " Clear search highlighting with esc
-nnoremap <esc> :nohl<return><esc>
+" this remap mysteriously breaks vim in terminal
+"nnoremap <esc> :nohl<return><esc>
 " Autosave
 "autocmd FocusLost * :wa
 
@@ -83,5 +81,3 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" Javascript
-let g:used_javascript_libs = 'underscore,angularjs,jquery'
