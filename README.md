@@ -1,10 +1,19 @@
 # Kare's Dotfiles
 My personal collection of dotfiles including Plan9port, Acme (where's that config?), plumber, Zsh, Bash and Vim.
+
 ## Install
+
+Dotfiles comes with a simple installation script ```setup-dotfiles```. Make sure your run it in an empty $HOME directory. It uses ```mv -i``` for safely moving the dotfiles to your $HOME directory. Mv cannot overwrite existing folders (like bin or lib).
 ```sh
-curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles | sh
+cd
+curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles > setup-dotfiles
+chmod 755 setup-dotfiles
+./setup-dotfiles
+rm setup-dotfiles
 ```
+
 ## Feedback
+
 [Welcome](https://github.com/kare/dotfiles/issues)!
 
 ## License
