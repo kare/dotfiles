@@ -8,5 +8,21 @@
       "one-light-ui"
       "solarized-light-syntax"
     ]
+    disabledPackages: [
+      "language-csharp"
+      "language-java"
+      "language-go"
+      "language-objective-c"
+      "language-perl"
+      "language-c"
+      "language-clojure"
+      "language-coffee-script"
+      "language-php"
+      "language-python"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-shellscript"
+      "language-sql"
+    ]
   editor:
     invisibles: {}
