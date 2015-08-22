@@ -8,24 +8,20 @@
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+
 export MANPATH="$MANPATH:/opt/local/share/man"
 export INFOPATH="$INFOPATH:/opt/local/share/info"
-if [ -d "$HOME/bin" ]; then
-  export PATH="$HOME/bin:$PATH"
-fi
-
-export PATH="$HOME/go/bin:$PATH"
 
 # Plan 9
 if [ -d "/usr/local/plan9" ]; then
-  export PLAN9="/usr/local/plan9"
-  export PATH="$PATH:$PLAN9/bin"
+	export PLAN9="/usr/local/plan9"
+	export PATH="$PATH:$PLAN9/bin"
 fi
 
-export PATH=$PATH:$HOME/google-cloud-sdk/bin
-
 if [ -d "$HOME/.rvm/bin" ]; then
-  export PATH="$PATH:$HOME/.rvm/bin"
+	export PATH="$PATH:$HOME/.rvm/bin"
 fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
