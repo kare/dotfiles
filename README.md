@@ -16,6 +16,23 @@ rm setup-dotfiles
 
 [Welcome](https://github.com/kare/dotfiles/issues)!
 
+## Changelog
+
+#### Release v0.0.3 22-08-2015
+
+* Acme, plumber, Bash, Git, Zsh, Vim
+* Brew, ports
+
+#### Release v0.0.2 02-06-2015
+
+* Acme, plumber, Git, Zsh, Vim
+* Brew
+
+#### Release v0.0.1 07-04-2014 
+
+* Vim, Zsh, Git
+* Brew
+
 ## License
 
 Copyright © 2015 Kare Nuorteva
