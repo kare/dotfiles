@@ -18,7 +18,7 @@ rm setup-dotfiles
 
 ## License
 
-Copyright (c) 2015 Kare Nuorteva
+Copyright © 2015 Kare Nuorteva
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
