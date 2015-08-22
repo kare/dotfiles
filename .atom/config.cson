@@ -3,6 +3,10 @@
     userId: "ef990c35-feb1-d969-672f-6c02113fc0c9"
   welcome:
     showOnStartup: false
-  core: {}
+  core:
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
   editor:
     invisibles: {}
