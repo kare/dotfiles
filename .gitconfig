@@ -10,7 +10,6 @@
 	whitespace=trailing-space
 	editor = /usr/bin/vim
 	pager = less -F -X
-	excludesfile = /Users/kare/.gitignore_global
 [format]
 	numbered = auto
 [diff]
