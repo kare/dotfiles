@@ -26,3 +26,6 @@
     ]
   editor:
     invisibles: {}
+  "linter-jshint":
+    lintInlineJavaScript: true
+    disableWhenNoJshintrcFileInPath: true
