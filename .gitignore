@@ -74,6 +74,7 @@ bin/vet
 
 # OS X specific stuff
 /.tsd-cache
+/.wercker/token
 /google-cloud-sdk
 /.CFUserTextEncoding
 /.Trash/
