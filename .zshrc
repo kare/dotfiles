@@ -44,10 +44,6 @@ JAVA_OPTS="-Dfile.encoding=UTF-8"
 PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-# boot2docker
-DOCKER_HOST=tcp://192.168.59.103:2376
-DOCKER_CERT_PATH=/Users/kare/.boot2docker/certs/boot2docker-vm
-DOCKER_TLS_VERIFY=1
 # Apple iCloud Drive
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
