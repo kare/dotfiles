@@ -113,5 +113,4 @@
 /.dvdcss/
 /.idlerc/
 /.mongorc.js
-/.boot2docker
-/.dockercfg
+/.docker/
