@@ -29,3 +29,5 @@
   "linter-jshint":
     lintInlineJavaScript: true
     disableWhenNoJshintrcFileInPath: true
+  pigments:
+    markerType: "dot"
