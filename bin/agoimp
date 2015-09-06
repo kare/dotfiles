@@ -1,2 +1,3 @@
-#!/bin/sh
-Fmt goimports
+#!/bin/bash
+
+$HOME/bin/Fmt goimports
