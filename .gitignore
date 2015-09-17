@@ -19,6 +19,13 @@
 /.vagrant/
 /acme.dump
 # Ignore Go tools
+/.dlv/
+/bin/dlv
+/bin/4s
+/bin/Dict
+/bin/Watch
+/bin/acmego
+/bin/spacewar
 /bin/benchcmp
 /bin/callgraph
 /bin/cover
