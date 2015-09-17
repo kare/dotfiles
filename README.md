@@ -12,6 +12,10 @@ chmod 755 setup-dotfiles
 rm setup-dotfiles
 ```
 
+## Blog post about profile management with Git and GitHub
+
+* http://silas.sewell.org/blog/2009/03/08/profile-management-with-git-and-github/
+
 ## Feedback
 
 [Welcome](https://github.com/kare/dotfiles/issues)!
