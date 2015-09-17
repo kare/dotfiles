@@ -25,3 +25,5 @@
 	path = ~/.gitconfig.local
 [push]
 	default = simple
+[http]
+	cookiefile = /Users/kare/.gitcookies

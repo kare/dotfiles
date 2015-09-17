@@ -68,6 +68,8 @@
 /.tsd-cache
 /.wercker/token
 /google-cloud-sdk
+/.netrc
+/.gitcookies
 /.CFUserTextEncoding
 /.Trash/
 /.cache/
