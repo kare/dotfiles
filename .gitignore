@@ -11,6 +11,7 @@
 /bin/vimr
 /bin/pt
 /bin/editinacme
+/bin/drawterm
 /.tmpl
 /.vim-go
 /.berkshelf/
