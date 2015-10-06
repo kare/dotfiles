@@ -124,3 +124,6 @@
 /.idlerc/
 /.mongorc.js
 /.docker/
+/.babel.json
+/.node_repl_history
+/.v8flags.*.kare.json
