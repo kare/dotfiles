@@ -114,6 +114,7 @@ describe 'ColorParser', ->
   }).asColor(0, 128, 0, 0.5)
 
   itParses('hsl(200,50%,50%)').asColor(64, 149, 191)
+  itParses('hsl(200,50,50)').asColor(64, 149, 191)
   itParses('hsl($h,$s,$l,)').asUndefined()
   itParses('hsl($h,$s,$l)').asInvalid()
   itParses('hsl($h,0%,0%)').asInvalid()
@@ -127,6 +128,7 @@ describe 'ColorParser', ->
 
   itParses('hsla(200,50%,50%,0.5)').asColor(64, 149, 191, 0.5)
   itParses('hsla(200,50%,50%,.5)').asColor(64, 149, 191, 0.5)
+  itParses('hsla(200,50,50,.5)').asColor(64, 149, 191, 0.5)
   itParses('hsla(200,50%,50%,)').asUndefined()
   itParses('hsla($h,$s,$l,$a)').asInvalid()
   itParses('hsla($h,0%,0%,0)').asInvalid()
@@ -141,6 +143,8 @@ describe 'ColorParser', ->
   }).asColor(64, 149, 191, 0.5)
 
   itParses('hsv(200,50%,50%)').asColor(64, 106, 128)
+  itParses('hsb(200,50%,50%)').asColor(64, 106, 128)
+  itParses('hsb(200,50,50)').asColor(64, 106, 128)
   itParses('hsv($h,$s,$v,)').asUndefined()
   itParses('hsv($h,$s,$v)').asInvalid()
   itParses('hsv($h,0%,0%)').asInvalid()
@@ -153,6 +157,8 @@ describe 'ColorParser', ->
   }).asColor(64, 106, 128)
 
   itParses('hsva(200,50%,50%,0.5)').asColor(64, 106, 128, 0.5)
+  itParses('hsva(200,50,50,0.5)').asColor(64, 106, 128, 0.5)
+  itParses('hsba(200,50%,50%,0.5)').asColor(64, 106, 128, 0.5)
   itParses('hsva(200,50%,50%,.5)').asColor(64, 106, 128, 0.5)
   itParses('hsva(200,50%,50%,)').asUndefined()
   itParses('hsva($h,$s,$v,$a)').asInvalid()
@@ -167,6 +173,7 @@ describe 'ColorParser', ->
   }).asColor(64, 106, 128, 0.5)
 
   itParses('hwb(210,40%,40%)').asColor(102, 128, 153)
+  itParses('hwb(210,40,40)').asColor(102, 128, 153)
   itParses('hwb(210,40%,40%, 0.5)').asColor(102, 128, 153, 0.5)
   itParses('hwb($h,$w,$b,)').asUndefined()
   itParses('hwb($h,$w,$b)').asInvalid()
@@ -190,6 +197,7 @@ describe 'ColorParser', ->
   }).asColor(102, 128, 153, 0.5)
 
   itParses('gray(100%)').asColor(255, 255, 255)
+  itParses('gray(100)').asColor(255, 255, 255)
   itParses('gray(100%, 0.5)').asColor(255, 255, 255, 0.5)
   itParses('gray($c, $a,)').asUndefined()
   itParses('gray($c, $a)').asInvalid()
@@ -248,6 +256,8 @@ describe 'ColorParser', ->
   itParses('transparentize(cyan, 0.5)').asColor(0, 255, 255, 0.5)
   itParses('transparentize(cyan, .5)').asColor(0, 255, 255, 0.5)
   itParses('fadeout(cyan, 0.5)').asColor(0, 255, 255, 0.5)
+  itParses('fade-out(cyan, 0.5)').asColor(0, 255, 255, 0.5)
+  itParses('fade_out(cyan, 0.5)').asColor(0, 255, 255, 0.5)
   itParses('fadeout(cyan, .5)').asColor(0, 255, 255, 0.5)
   itParses('fadeout(cyan, @r)').asInvalid()
   itParses('fadeout($c, $r)').withContext({
@@ -269,6 +279,8 @@ describe 'ColorParser', ->
   itParses('opacify(0x7800FFFF, 0.5)').asColor(0, 255, 255, 1)
   itParses('opacify(0x7800FFFF, .5)').asColor(0, 255, 255, 1)
   itParses('fadein(0x7800FFFF, 0.5)').asColor(0, 255, 255, 1)
+  itParses('fade-in(0x7800FFFF, 0.5)').asColor(0, 255, 255, 1)
+  itParses('fade_in(0x7800FFFF, 0.5)').asColor(0, 255, 255, 1)
   itParses('fadein(0x7800FFFF, .5)').asColor(0, 255, 255, 1)
   itParses('fadein(0x7800FFFF, @r)').asInvalid()
   itParses('fadein($c, $r)').withContext({

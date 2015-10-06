@@ -1,3 +1,19 @@
+<a name="v0.15.0"></a>
+# v0.15.0 (2015-09-14)
+
+## Features
+
+- Add optional percent support for hsl, hsla, hsb, hsba, hsv, hsva, hwb and gray expressions ([dd97b2ec](https://github.com/abe33/atom-pigments/commit/dd97b2ec4b982b26206a975b6d89f8e515c2607b))
+
+<a name="v0.14.0"></a>
+# v0.14.0 (2015-09-08)
+
+## Features
+
+- Add support for HSB color space ([00875c23](https://github.com/abe33/atom-pigments/commit/00875c2310562fe82455337d6a3735949e2fee1d), [#85](https://github.com/abe33/atom-pigments/issues/85))
+  <br>Based on what wikipedia says, HSB is an alias for HSV.
+- Add support for fade-out/fade_out and fade-in/fade_in sass functions ([6ae33a3e](https://github.com/abe33/atom-pigments/commit/6ae33a3e3d180967e9e81d9bb3d574b2d73683a6), [#84](https://github.com/abe33/atom-pigments/issues/84))
+
 <a name="v0.13.2"></a>
 # v0.13.2 (2015-09-01)
 

@@ -205,9 +205,9 @@ module.exports = getRegistry: (context) ->
     hsl#{ps}\\s*
       (#{int}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
     #{pe}
   "), (match, expression, context) ->
     [_,h,_,s,_,l] = match
@@ -228,9 +228,9 @@ module.exports = getRegistry: (context) ->
     hsla#{ps}\\s*
       (#{int}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
       (#{float}|#{variables})
     #{pe}
@@ -250,15 +250,15 @@ module.exports = getRegistry: (context) ->
 
   # hsv(210,70%,90%)
   registry.createExpression 'hsv', strip("
-    hsv#{ps}\\s*
+    (hsv|hsb)#{ps}\\s*
       (#{int}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
     #{pe}
   "), (match, expression, context) ->
-    [_,h,_,s,_,v] = match
+    [_,_,h,_,s,_,v] = match
 
     hsv = [
       context.readInt(h)
@@ -273,17 +273,17 @@ module.exports = getRegistry: (context) ->
 
   # hsva(210,70%,90%,0.7)
   registry.createExpression 'hsva', strip("
-    hsva#{ps}\\s*
+    (hsva|hsba)#{ps}\\s*
       (#{int}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
       (#{float}|#{variables})
     #{pe}
   "), (match, expression, context) ->
-    [_,h,_,s,_,v,_,a] = match
+    [_,_,h,_,s,_,v,_,a] = match
 
     hsv = [
       context.readInt(h)
@@ -322,9 +322,9 @@ module.exports = getRegistry: (context) ->
     hwb#{ps}\\s*
       (#{int}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       #{comma}
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       (#{comma}(#{float}|#{variables}))?
     #{pe}
   "), (match, expression, context) ->
@@ -341,7 +341,7 @@ module.exports = getRegistry: (context) ->
   # The priority is set to 1 to make sure that it appears before named colors
   registry.createExpression 'gray', strip("
     gray#{ps}\\s*
-      (#{percent}|#{variables})
+      (#{optionalPercent}|#{variables})
       (#{comma}(#{float}|#{variables}))?
     #{pe}"), 1, (match, expression, context) ->
 
@@ -432,7 +432,7 @@ module.exports = getRegistry: (context) ->
   # transparentize(#ffffff, 50%)
   # fadeout(#ffffff, 0.5)
   registry.createExpression 'transparentize', strip("
-    (transparentize|fadeout)#{ps}
+    (transparentize|fadeout|fade-out|fade_out)#{ps}
       (#{notQuote})
       #{comma}
       (#{floatOrPercent}|#{variables})
@@ -453,7 +453,7 @@ module.exports = getRegistry: (context) ->
   # fadein(0x78ffffff, 0.5)
   # alpha(0x78ffffff, 0.5)
   registry.createExpression 'opacify', strip("
-    (opacify|fadein)#{ps}
+    (opacify|fadein|fade-in|fade_in)#{ps}
       (#{notQuote})
       #{comma}
       (#{floatOrPercent}|#{variables})

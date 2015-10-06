@@ -1,5 +1,5 @@
 {CompositeDisposable} = require 'atom'
-{findFile, exec} = helpers = require "atom-linter"
+{findFile, exec, tempFile} = helpers = require 'atom-linter'
 path = require 'path'
 
 module.exports =
@@ -14,7 +14,7 @@ module.exports =
       default: ''
 
   activate: ->
-    console.log 'activate linter-scss-lint'
+    require('atom-package-deps').install require('../package.json').name
     @subs = new CompositeDisposable
     @subs.add atom.config.observe 'linter-scss-lint.executablePath',
       (executablePath) =>
@@ -22,35 +22,39 @@ module.exports =
     @subs.add atom.config.observe 'linter-scss-lint.additionalArguments',
       (additionalArguments) =>
         @additionalArguments = additionalArguments
+
   deactivate: ->
     @subs.dispose()
+
   provideLinter: ->
     provider =
-      grammarScopes: ['source.css.scss']
+      grammarScopes: ['source.css.scss', 'source.scss']
       scope: 'file'
-      lintOnFly: false
+      lintOnFly: yes
       lint: (editor) =>
         filePath = editor.getPath()
-        config = findFile path.dirname(filePath), '.scss-lint.yml'
-        params = [
-          filePath,
-          "--format=JSON",
-          if config? then "--config=#{config}",
-          @additionalArguments.split(' ')...
-        ].filter((e) -> e)
-        throw new TypeError(
-          "Error linting #{filePath}: No 'scss-lint' executable specified"
-        ) if @executablePath is ''
-        return helpers.exec(@executablePath, params).then (stdout) ->
-          lint = try JSON.parse stdout
-          throw new TypeError(stdout) unless lint?
-          return [] unless lint[filePath]
-          return lint[filePath].map (msg) ->
-            line = (msg.line || 1) - 1
-            col = (msg.column || 1) - 1
+        cwd = path.dirname(filePath)
+        tempFile path.basename(filePath), editor.getText(), (tmpFilePath) =>
+          config = findFile cwd, '.scss-lint.yml'
+          params = [
+            tmpFilePath,
+            '--format=JSON',
+            if config? then "--config=#{config}",
+            @additionalArguments.split(' ')...
+          ].filter((e) -> e)
+          throw new TypeError(
+            "Error linting #{filePath}: No 'scss-lint' executable specified"
+          ) if @executablePath is ''
+          return helpers.exec(@executablePath, params, {cwd}).then (stdout) ->
+            lint = try JSON.parse stdout
+            throw new TypeError(stdout) unless lint?
+            return [] unless lint[tmpFilePath]
+            return lint[tmpFilePath].map (msg) ->
+              line = (msg.line or 1) - 1
+              col = (msg.column or 1) - 1
 
-            type: msg.severity || 'error',
-            text: (msg.reason || 'Unknown Error') +
-              (if msg.linter then " (#{msg.linter})" else ''),
-            filePath: filePath,
-            range: [[line, col], [line, col + (msg.length || 0)]]
+              type: msg.severity or 'error',
+              text: (msg.reason or 'Unknown Error') +
+                (if msg.linter then " (#{msg.linter})" else ''),
+              filePath: filePath,
+              range: [[line, col], [line, col + (msg.length or 0)]]

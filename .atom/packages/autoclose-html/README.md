@@ -9,7 +9,7 @@ Install using
 Under normal circumstances ending tags will be inserted on the same line for inline elements and with `\n\t\n` in between for block elements. This is determined by attaching an element of the given type to the window and checking it's calculated `display` value.
 You can use Force Inline and Force Block preferences to override this.
 
-By Default works for HTML, HTML (Go), HTML (Rails), HTML (Mustache), HTML (Ruby - ERB), PHP
+By Default works for HTML, HTML (Go), HTML (Rails), HTML (Angular), HTML (Mustache), HTML (Handlebars), HTML (Ruby - ERB), PHP
 
 0.7.0 Note: Removed the option to enable/disable auto closing. Just disable/remove the plugin to stop.
 
@@ -17,15 +17,15 @@ By Default works for HTML, HTML (Go), HTML (Rails), HTML (Mustache), HTML (Ruby 
 
 ## Additional Grammar
 
-Comma delimited list of grammar names, other then HTML and PHP, to apply this plugin to. Use "*" to run for all grammers.
+Comma delimited list of grammar names, other than defauts (see above), to apply this plugin to. Use "*" to run for all grammars.
 
 ## Force Inline
 
-Elements in this comma delimited list will render their closing tags on the same line, even if the display check yields block.
+Elements in this comma delimited list will render their closing tags on the same line, even if they are block by default.
 
 ## Force Block
 
-Elements in this comma delimited list will render their closing tags with an empty, tabbed line between. If for some reason you think you're being tricky and put an element in both Force Inline and Force Block, block will override inline.
+Elements in this comma delimited list will render their closing tags after a tabbed line, even if they are inline by default. If for some reason you think you're being tricky and put an element in both Force Inline and Force Block, block will override inline.
 
 ## Never Close
 
