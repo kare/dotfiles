@@ -1,7 +1,7 @@
 {
   "name": "linter-scss-lint",
   "main": "./lib/init",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Lint SCSS on the fly, using scss-lint",
   "repository": {
     "type": "git",
@@ -37,10 +37,10 @@
     "url": "https://github.com/AtomLinter/linter-scss-lint/issues"
   },
   "homepage": "https://github.com/AtomLinter/linter-scss-lint#readme",
-  "_id": "linter-scss-lint@2.2.2",
-  "_shasum": "0358f87366a5cc5d1bb121b35fa040d6b7ff5e7e",
-  "_resolved": "file:../d-11596-70469-1toxgvc/package.tgz",
-  "_from": "../d-11596-70469-1toxgvc/package.tgz",
+  "_id": "linter-scss-lint@2.3.0",
+  "_shasum": "4408f92b7c327a72d328f4db2a6c6a59c9bd276c",
+  "_resolved": "file:../d-115913-3763-1x9cgux/package.tgz",
+  "_from": "../d-115913-3763-1x9cgux/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
