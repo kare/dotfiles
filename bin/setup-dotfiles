@@ -1,31 +1,39 @@
 #!/bin/bash
 
-if [ -d $HOME/.dotfiles.git ]; then
-    echo "Dotfiles is already installed."
-    echo "Install cancelled."
-    exit 1
-fi
+DOTFILES=$HOME/.dotfiles.git
 
-function makedir() {
-    [ -d $1 ] || mkdir -vp $1
-}
-
-makedir ~/tmp
-makedir ~/.vim/undo
-
-if [ ! -x /bin/zsh ]; then
-    echo "WARNING: Please install Z Shell"
+if [ -e $DOTFILES ]; then
+	echo "dotfiles: file $DOTFILES exists" 1>&2
+	exit 1
 fi
 
 mkdir .dotfiles.git
-git clone git@github.com:kare/dotfiles.git dotfiles.git
+git clone --depth 10 git@github.com:kare/dotfiles.git dotfiles.git
+
+for file in `ls -A dotfiles.git`
+do
+	file=$HOME/$file
+	if [ -e $file ];then
+		echo "dotfiles: file $file exists" 1>&2
+		exit 2
+	fi
+done
+
+makedir() {
+	[ -d $1 ] || mkdir -v $1
+}
+
+makedir $HOME/tmp
+makedir $HOME/.vim/undo
+
 shopt -s extglob
 mv dotfiles.git/.git/* .dotfiles.git
 mv -i dotfiles.git/* .
 mv -i dotfiles.git/.* .
 rmdir dotfiles.git
-git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME submodule init
-git --git-dir=$HOME/.dotfiles.git/ submodule update
+git --git-dir=$DOTFILES/ --work-tree=$HOME submodule init
+git --git-dir=$DOTFILES/ submodule update
 
-echo "dotfiles git repository is now installed to $HOME/.dotfiles.git"
-echo "actual dot files are under $HOME with correct names."
+echo "dotfiles: git repository is now installed to $DOTFILES"
+echo "dotfiles: actual dot files are under $HOME with correct names."
+echo "dotfiles: successfully installed"
