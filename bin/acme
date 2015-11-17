@@ -1,11 +1,23 @@
-#!/usr/local/plan9/bin/rc
+#!/bin/bash
 
 tabstop=4
 SHELL=bash
 TERM=dumb
-font=/mnt/font/LucidaGrande/14a/font
-fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
+case `uname` in
+	Linux)
+		font="/mnt/font/Lucida Grande Regular W/12a/font"
+		fixedfont="/mnt/font/Source Code Pro/10a/font"
+	;;
+	Darwin)
+		font=/mnt/font/LucidaGrande/14a/font
+		fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
+		args="-m /mnt/acme"
+	;;
+esac
 
-fn cd { builtin cd $1 && awd }
+_cd() {
+	builtin cd $1 && awd
+}
+alias cd=_cd
 
-$PLAN9/bin/acme -m /mnt/acme -a -f $font -F $fixedfont $* >[2]/dev/null
+$PLAN9/bin/acme $args -a -f "$font" -F "$fixedfont" $* 2>/dev/null
