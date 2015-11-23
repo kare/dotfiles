@@ -1,0 +1,4 @@
+#!/bin/bash
+
+head -c32 /dev/urandom | shasum | cut -c1-10
+
