@@ -18,11 +18,16 @@ case `uname` in
 		fi
 		;;
 	Linux)
-		sudo apt-get update
-		sudo apt-get upgrade --show-upgraded
-		sudo apt-get autoremove
-		sudo apt-get autoclean
-		sudo apt-get clean
+		if [ -f /etc/debian_version ]; then
+			sudo apt-get update
+			sudo apt-get upgrade --show-upgraded --assume-yes
+			sudo apt-get autoremove
+			sudo apt-get autoclean
+			sudo apt-get clean
+		fi
+		if [ -f /etc/arch-release ]; then
+			sudo pacman --sync --refresh --sysupgrade --noconfirm
+		fi
 		;;
 	*)
 		echo "only darwin and linux are supported"
