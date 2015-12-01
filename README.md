@@ -3,7 +3,7 @@ My personal collection of dotfiles including Plan9port, Acme (where's that confi
 
 ## Install
 
-Dotfiles comes with a simple installation script ```setup-dotfiles```. Make sure your run it in an empty $HOME directory. It uses ```mv -i``` for safely moving the dotfiles to your $HOME directory. Mv cannot overwrite existing folders (like bin or lib).
+Dotfiles comes with a simple installation script ```setup-dotfiles```. Make sure your run it in an empty $HOME directory. Mv cannot overwrite existing folders (like bin or lib).
 ```sh
 cd
 curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles > setup-dotfiles
