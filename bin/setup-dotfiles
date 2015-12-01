@@ -20,7 +20,7 @@ do
 done
 
 makedir() {
-	[ -d $1 ] || mkdir -v $1
+	[ -d $1 ] || mkdir -pv $1
 }
 
 makedir $HOME/tmp
@@ -28,8 +28,8 @@ makedir $HOME/.vim/undo
 
 shopt -s extglob
 mv dotfiles.git/.git/* .dotfiles.git
-mv -i dotfiles.git/* .
-mv -i dotfiles.git/.* .
+mv dotfiles.git/* .
+mv dotfiles.git/.* .
 rmdir dotfiles.git
 git --git-dir=$DOTFILES/ --work-tree=$HOME submodule init
 git --git-dir=$DOTFILES/ submodule update
