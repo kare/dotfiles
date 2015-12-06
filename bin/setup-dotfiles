@@ -1,39 +1,57 @@
 #!/bin/bash
 
-DOTFILES=$HOME/.dotfiles.git
+set -u
 
-if [ -e $DOTFILES ]; then
-	echo "dotfiles: file $DOTFILES exists" 1>&2
+home=$HOME
+dotfiles=$home/.dotfiles.git
+gitrepo=https://github.com/kare/dotfiles.git
+
+if [ -e $dotfiles ]; then
+	echo "dotfiles: bare git repo exists at \"$dotfiles\"" 1>&2
 	exit 1
 fi
 
-mkdir .dotfiles.git
-git clone --depth 10 git@github.com:kare/dotfiles.git dotfiles.git
+git clone --depth 3 $gitrepo $home/dotfiles.git
+if [ $? -gt 0 ]; then
+	echo "dotfiles: \"git clone --depth 1 $gitrepo $home/dotfiles.git\" failed" 1>&2
+	exit 2
+fi
 
-for file in `ls -A dotfiles.git`
+for file in `ls -A $home/dotfiles.git`
 do
-	file=$HOME/$file
-	if [ -e $file ];then
-		echo "dotfiles: file $file exists" 1>&2
-		exit 2
+	file=$home/$file
+	if [ -e $file ]; then
+		echo "dotfiles: file \"$file\" exists" 1>&2
+		exit 3
 	fi
 done
+
+mv $home/dotfiles.git/.git $home/.dotfiles.git
+cp -r $home/dotfiles.git/. $home
+rm -rf $home/dotfiles.git
 
 makedir() {
 	[ -d $1 ] || mkdir -pv $1
 }
 
-makedir $HOME/tmp
-makedir $HOME/.vim/undo
+makedir $home/.vim/undo
 
-shopt -s extglob
-mv dotfiles.git/.git/* .dotfiles.git
-mv dotfiles.git/* .
-mv dotfiles.git/.* .
-rmdir dotfiles.git
-git --git-dir=$DOTFILES/ --work-tree=$HOME submodule init
-git --git-dir=$DOTFILES/ submodule update
+echo git --git-dir=$dotfiles/ --work-tree=$home submodule init
+git --git-dir=$dotfiles/ --work-tree=$home submodule init
+if [ $? -gt 0 ]; then
+	echo "dotfiles: \"git --git-dir=$dotfiles/ --work-tree=$home submodule init\" failed" 1>&2
+	exit 4
+fi
 
-echo "dotfiles: git repository is now installed to $DOTFILES"
-echo "dotfiles: actual dot files are under $HOME with correct names."
+git --git-dir=$dotfiles/ submodule update
+if [ $? -gt 0 ]; then
+	echo "dotfiles: \"git --git-dir=$dotfiles/ submodule update\" failed" 1>&2
+	exit 5
+fi
+
+echo "dotfiles: bare git repository is now installed to \"$dotfiles\""
+echo "dotfiles: actual dot files are installed under \"$home\" with correct names."
+echo "dotfiles: edit dot file with your editor and commit with \"dotfiles commit filename\""
+echo "dotfiles: see \"$home/bin/dotfiles\""
 echo "dotfiles: successfully installed"
+

@@ -27,7 +27,7 @@ set visualbell
 set cursorline
 set ttyfast
 set swapfile
-set dir=~/tmp
+set dir=/tmp
 set relativenumber
 set textwidth=120
 set formatoptions=qrn1
