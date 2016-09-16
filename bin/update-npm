@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo npm cache clean -f
+sudo npm update -g
