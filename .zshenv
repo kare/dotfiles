@@ -8,8 +8,8 @@
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin"
 export PATH="$PATH:/opt/local/bin:/opt/local/sbin"
-export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 export MANPATH="$MANPATH:/opt/local/share/man"
 export INFOPATH="$INFOPATH:/opt/local/share/info"
