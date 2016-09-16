@@ -23,19 +23,34 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats "%s %b (%a)"
+zstyle ':vcs_info:*' formats "%b %u"
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' enable git hg
+export PS1="%~ %1v %% "
+
 bindkey -e
 
-PS1="%~ %% "
+function precmd {
+	window_label=${PWD/${HOME}/\~}
+	tab_label=$window_label
+	echo -ne "\e]2;${window_label}\a"
+	echo -ne "\e]1;${tab_label: -24}\a"
+	vcs_info
+	psvar=()
+	[[ -n $vcs_info_msg_0_ ]] && psvar[1]="$vcs_info_msg_0_"
+}
+
+function preexec {
+	echo -ne "\e]1;$1\a"
+}
+
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=SAVEHIST=99999
 
-# Grep options
-GREP_OPTIONS=""
-VCS_FOLDERS="{.bzr,.cvs,.git,.hg,.svn}"
-GREP_OPTIONS+=" --exclude-dir=$VCS_FOLDERS"
-unset VCS_FOLDERS
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
 JAVA_OPTS="-Dfile.encoding=UTF-8"
