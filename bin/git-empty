@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: `basename $0` [-h] directory" 1>&2
+	exit 1
+}
+
+if [ -z "$1" -o "$1" == "-h" ]; then
+	usage
+fi
+dir=$1
+if [ ! -d "$dir" ]; then
+	mkdir -p $dir
+fi
+
+cd $dir
+git init .
+touch .gitignore
+git add .gitignore
+git commit -m "Add empty .gitignore"
+
