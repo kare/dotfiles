@@ -10,7 +10,8 @@ case `uname` in
 	;;
 	Darwin)
 		font=/mnt/font/LucidaGrande/14a/font
-		fixedfont=/mnt/font/SourceCodePro-Regular/12a/font
+		fixedfont=/mnt/font/NotoMono/14a/font
+		#fixedfont=/mnt/font/SourceCodePro-Regular/14a/font
 		args="-m /mnt/acme"
 	;;
 esac
