@@ -8,10 +8,11 @@ function usage() {
 if [ -z "$1" -o "$1" == "-h" ]; then
     usage
 fi
-VERSION=$1
-if [ ${VERSION:0:1} != "v" ]; then
+version=$1
+if [ ${version:0:1} != "v" ]; then
     usage
 fi
 
-git tag $1
+git tag $version
 git push --tags
+
