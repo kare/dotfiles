@@ -10,4 +10,6 @@ case $# in
 	;;
 esac
 
+export DISPLAY=":0"
 drawterm -c $1 -a $1 -u $2 &
+
