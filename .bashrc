@@ -14,4 +14,4 @@ shopt -s histverify
 export HISTSIZE=5000
 export HISTFILESIZE=99999
 export HISTIGNORE='&:[ ]*'
-export PS1="\\w ; "
+export PS1="\\h ; "
