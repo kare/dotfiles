@@ -76,5 +76,6 @@ done
 if [ "$ready" == "n" ]; then
 	exit 2
 fi
+git push
 git push --tags
 
