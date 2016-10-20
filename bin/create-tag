@@ -9,8 +9,8 @@ if [ -z "$1" -o "$1" == "-h" ]; then
     usage
 fi
 version=$1
-if [ ${version:0:1} != "v" ]; then
-    usage
+if [[ ! $version =~ v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+	usage
 fi
 
 git tag $version
