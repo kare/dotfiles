@@ -1,0 +1,80 @@
+#!/bin/bash
+
+name=`basename $0`
+
+function usage() {
+	echo "usage: $name [-h] v1 v2" 1>&2
+	echo "version format is v0.0.1 (semver)" 1>&2
+	echo "v1 is existing previous version in history" 1>&2
+	echo "v2 is the new version" 1>&2
+	echo "shortlog is generated between v1 and HEAD" 1>&2
+	exit 1
+}
+
+git rev-parse --verify HEAD >/dev/null || exit 1
+git update-index -q --ignore-submodules --refresh
+if ! git diff-files --quiet --ignore-submodules
+then
+	echo "$name: you have unstaged changes" 1>&2
+	exit 1
+fi
+if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+	echo "$name: unknown files in the working tree" 1>&2
+	exit 1
+fi
+if [ "$#" -ne 2 -o "$1" == "-h" ]; then
+	usage
+fi
+vercheck="v[0-9]+\.[0-9]+\.[0-9]+"
+if [[ ! $1 =~ $vercheck ]]; then
+	echo "$name: argument v1 is malformed" 1>&2
+	exit 1
+fi
+if [[ ! $2 =~ $vercheck ]]; then
+	echo "$name: argument v2 is malformed" 1>&2
+	exit 1
+fi
+
+changelog=`cat << __CHANGELOG_HERE__
+
+## Release $2 - $(date +"%Y-%m-%d")
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+$(git --no-pager log --pretty=oneline --format='- %s' $1..HEAD)
+__CHANGELOG_HERE__
+`
+clfile="CHANGELOG.md"
+echo -n "$changelog" >>$clfile
+vi $clfile
+git add $clfile
+git commit -m "Release $2"
+git tag $2
+r=$?
+if [ $r -ne 0 ]; then
+	echo "$name: 'git tag $2' error" 1>&2
+	exit $r
+fi
+git log --patch
+while true
+do
+	read -p "are you happy with your changes? (Y/n) " ready
+	case $ready in
+		y|Y|"")
+			ready="y"
+			break
+		;;
+		n|N)
+			ready="n"
+			break
+		;;
+	esac
+done
+if [ "$ready" == "n" ]; then
+	exit 2
+fi
+git push --tags
+
