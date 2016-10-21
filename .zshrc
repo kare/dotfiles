@@ -27,6 +27,11 @@ export PS1="%~ %1v %% "
 
 bindkey -e
 bindkey -r "^[p"
+bindkey -r "^Xr"
+bindkey -r "^Xs"
+bindkey -r "^[[A"
+bindkey -r "^[[B"
+bindkey -r "^[n"
 
 function precmd {
 	window_label=${PWD/${HOME}/\~}
