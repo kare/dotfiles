@@ -66,6 +66,15 @@ git@github.com:kare/dotfiles.git/
 
 ## Changelog
 
+#### Release v0.0.4 21-10-2016
+
+* Acme, plumber, Bash, Git, Zsh, Vim
+	- No shell history
+	- Bash customized for Acme
+	- Zsh for other command line work
+	- Improved docs
+* Brew
+
 #### Release v0.0.3 22-08-2015
 
 * Acme, plumber, Bash, Git, Zsh, Vim
