@@ -49,7 +49,9 @@ if [ $? -gt 0 ]; then
 	exit 5
 fi
 
+echo
 echo "dotfiles: bare git repository is now installed to \"$dotfiles\""
+echo "dotfiles: this directory (\"$dotfiles\") replaces the usual \"\$HOME/.git\" repo"
 echo "dotfiles: actual dot files are installed under \"$home\" with correct names."
 echo "dotfiles: edit dot file with your editor and commit with \"dotfiles commit filename\""
 echo "dotfiles: see \"$home/bin/dotfiles\""
