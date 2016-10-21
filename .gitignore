@@ -117,6 +117,7 @@
 /.lesshst
 /.mysql_history
 /.bash_history
+/.bash_sessions/
 /Applications/
 /Desktop/
 /Documents/
