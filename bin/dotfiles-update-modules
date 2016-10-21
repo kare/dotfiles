@@ -1,30 +1,30 @@
 #!/bin/bash
 
 function usage() {
-    echo "usage: `basename $0` [-h] [-u]" 1>&2
-    echo "stash, update and add modules, commit and pop stash" 1>&2
-    echo "-u only update modules" 1>&2
-    exit 1
+	echo "usage: `basename $0` [-h] [-u]" 1>&2
+	echo "stash, update and add modules, commit and pop stash" 1>&2
+	echo "-u only update modules" 1>&2
+	exit 1
 }
 
 if [ "$1" = "-h" ]; then
-  usage
+	usage
 fi
 
 if [ "$1" != "-u" ]; then
-  dotfiles stash
+	dotfiles stash
 fi
 for module in `ls -d ~/.vim/bundle/*`; do
-  echo "Updating $module"
-  cd $module
-  git checkout master
-  git pull
-  if [[ "$1" != "-u" ]]; then
-    dotfiles add $module
-  fi
+	echo "Updating $module"
+	cd $module
+	git checkout master
+	git pull
+	if [[ "$1" != "-u" ]]; then
+		dotfiles add $module
+	fi
 done
 if [ "$1" != "-u" ]; then
-  cd
-  dotfiles commit -s -m "Update modules"
-  dotfiles stash pop
+	cd
+	dotfiles commit -s -m "Update modules"
+	dotfiles stash pop
 fi
