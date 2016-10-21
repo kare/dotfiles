@@ -1,12 +1,18 @@
 # Kare's Dotfiles
-My personal collection of dotfiles including Plan9port, Acme (where's that config?), plumber, Zsh, Bash and Vim.
+My personal collection of dotfiles including Plan9port, Acme (where's that
+config?), plumber, Zsh, Bash and Vim.
 
 ## Install
 
-Dotfiles comes with a simple installation script ```setup-dotfiles```. Make sure your run it in an empty $HOME directory. Mv cannot overwrite existing folders (like bin or lib).
+Start intallation by testing ssh connection to GitHub. Make sure your ssh key is
+correctly installed.
+Dotfiles comes with a simple installation script ```setup-dotfiles```. Make sure
+your run it in an empty $HOME directory. Script uses mv command for moving
+files. Mv cannot overwrite existing folders (like bin or lib).
 ```sh
 cd
 curl -L https://raw.githubusercontent.com/kare/dotfiles/master/bin/setup-dotfiles > setup-dotfiles
+vi setup-dotfiles # Inspect script before running
 chmod 755 setup-dotfiles
 ./setup-dotfiles
 rm setup-dotfiles
@@ -20,6 +26,39 @@ rm setup-dotfiles
 
 [Welcome](https://github.com/kare/dotfiles/issues)!
 
+## FAQ
+
+### Test your ssh connection to GitHub
+
+Make sure your ssh keys for GitHub are in place.
+```
+ssh -T git@github.com
+```
+
+* [Testing your SSH connection](https://help.github.com/articles/testing-your-ssh-connection/)
+* [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey/)
+
+
+### Cleanup failed installation
+**WARNING!!!** Use responsibly
+```
+rm -rf lib bin README.md .zshrc .zshenv .zprofile .zlogin .zlogout .vimrc .vim .tmux.conf .screenrc .profile .gitmodules .gitignore .gitconfig .gemrc .dotfiles.git/ .ctags .bashrc .bash_history
+```
+
+### ```dotfiles push``` prompts for username and password
+```
+macbook:~ kkn$ dotfiles push
+Username for 'https://github.com': kare
+Password for 'https://kare@github.com':
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/kare/dotfiles.git/'
+macbook:~ kkn$ vi .dotfiles.git/config
+```
+Modify $HOME/.dotfiles/config and replace
+```https://github.com/kare/dotfiles.git/```
+with
+```git@github.com:kare/dotfiles.git/```
+
 ## Changelog
 
 #### Release v0.0.3 22-08-2015
@@ -32,7 +71,7 @@ rm setup-dotfiles
 * Acme, plumber, Git, Zsh, Vim
 * Brew
 
-#### Release v0.0.1 07-04-2014 
+#### Release v0.0.1 07-04-2014
 
 * Vim, Zsh, Git
 * Brew
