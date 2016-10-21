@@ -54,10 +54,15 @@ remote: Invalid username or password.
 fatal: Authentication failed for 'https://github.com/kare/dotfiles.git/'
 macbook:~ kkn$ vi .dotfiles.git/config
 ```
+
 Modify $HOME/.dotfiles/config and replace
-```https://github.com/kare/dotfiles.git/```
+```
+https://github.com/kare/dotfiles.git/
+```
 with
-```git@github.com:kare/dotfiles.git/```
+```
+git@github.com:kare/dotfiles.git/
+```
 
 ## Changelog
 
