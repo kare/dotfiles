@@ -74,6 +74,8 @@ do
 	esac
 done
 if [ "$ready" == "n" ]; then
+	echo "$name: release notes are updated and tagged ($2)"
+	echo "$name: modify changes and run 'git push'"
 	exit 2
 fi
 git push
