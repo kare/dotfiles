@@ -14,6 +14,8 @@
 /bin/pt
 /bin/editinacme
 /bin/drawterm
+/.Xauthority
+/.gb/
 /.tmpl
 /.vim-go
 /.berkshelf/
@@ -72,7 +74,11 @@
 /bin/guru
 /bin/impl
 /bin/motion
+/bin/gist
+/bin/hugo
+/bin/vanity
 /.github-issue-token
+/.github-gist-token
 /bin/issue
 /bin/gb
 /bin/gb-env
@@ -128,6 +134,8 @@
 /Music/
 /Pictures/
 /projects/
+/tools/
+/training/
 /Public/
 /VirtualBox VMs/
 /tmp/
