@@ -33,7 +33,6 @@
 /bin/spacewar
 /bin/benchcmp
 /bin/callgraph
-/bin/cover
 /bin/digraph
 /bin/eg
 /bin/fiximports
