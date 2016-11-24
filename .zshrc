@@ -15,8 +15,8 @@ setopt interactive_comments
 # Zsh Expansion and globbing
 setopt extended_glob
 # Zsh history
-unsetopt hist_append
-unsetopt hist_expand
+setopt hist_append
+setopt hist_expand
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats "%s %b (%a)"
@@ -26,12 +26,6 @@ zstyle ':vcs_info:*' enable git hg
 export PS1="%~ %1v %% "
 
 bindkey -e
-bindkey -r "^[p"
-bindkey -r "^Xr"
-bindkey -r "^Xs"
-bindkey -r "^[[A"
-bindkey -r "^[[B"
-bindkey -r "^[n"
 
 function precmd {
 	window_label=${PWD/${HOME}/\~}
@@ -49,8 +43,9 @@ function preexec {
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
-HISTFILE=
-HISTSIZE=SAVEHIST=0
+HISTFILE=/dev/null
+HISTSIZE=10000
+SAVEHIST=0
 
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
