@@ -9,8 +9,10 @@ case `uname` in
 		fixedfont="/mnt/font/Source Code Pro/10a/font"
 	;;
 	Darwin)
-		font=/mnt/font/LucidaGrande/14a/font
-		fixedfont=/mnt/font/NotoMono/14a/font
+		#font=/mnt/font/LucidaGrande/14a/font
+		#fixedfont=/mnt/font/NotoMono/14a/font
+		font=/mnt/font/GoRegular/15a/font
+		fixedfont=/mnt/font/GoMono/14a/font
 		#fixedfont=/mnt/font/SourceCodePro-Regular/14a/font
 		args="-m /mnt/acme"
 	;;
