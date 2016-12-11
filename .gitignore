@@ -26,6 +26,7 @@
 # Ignore Go tools
 /.dlv/
 /bin/dlv
+/bin/interfacer
 /bin/4s
 /bin/Dict
 /bin/Watch
@@ -85,7 +86,7 @@
 /bin/gen
 /bin/EasyCert
 /bin/caddy
-/bin/boom
+/bin/hey
 /bin/vegeta
 /bin/udict
 # OS X specific stuff
