@@ -1,0 +1,8 @@
+#!/bin/bash
+
+file=$(mktemp)
+go test -coverprofile=$file
+go tool cover -func=$file
+go tool cover -html=$file
+rm -f $file
+
