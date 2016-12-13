@@ -58,7 +58,7 @@ if [ $r -ne 0 ]; then
 	echo "$name: 'git tag $2' error" 1>&2
 	exit $r
 fi
-git log --patch
+git log --patch | less
 while true
 do
 	read -p "are you happy with your changes? (Y/n) " ready
