@@ -1,0 +1,37 @@
+#!/usr/local/plan9/bin/rc
+
+fn usage {
+	name=`{basename $0}
+	echo $name: scriptname >[1=2]
+	echo scriptname will be created in $home/bin/scriptname >[1=2]
+}
+
+if (test -z $1) {
+	usage
+	exit usage
+}
+
+script=$home/bin/$1
+if (test -f $script) {
+	usage
+	exit usage
+}
+
+cat << __HERE__ >$script
+#!/bin/bash
+
+
+
+__HERE__
+
+chmod 755 $script
+
+. /usr/local/plan9/lib/acme.rc
+newwindow
+winname $script
+winctl get
+echo -n 3 | winwrite addr
+winctl dot'='addr
+winctl show
+winctl clean
+
