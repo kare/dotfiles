@@ -1,7 +1,7 @@
 #!/usr/local/plan9/bin/rc
 
 if (test -z $1) {
-	echo usage: aget [URL]
+	echo usage: aget [url]
 	exit
 }
 . /usr/local/plan9/lib/acme.rc
@@ -11,3 +11,4 @@ curl -silent $1 | winwrite body # Write Curl output to newly created window. 'bo
 winctl dot'='addr # Set the user's selected text in the window to the text addressed by the addr address.
 winctl show # Guarantee at least some of the selected text is visible on the display.
 winctl clean # Mark the window clean as though it has just been written.
+
