@@ -40,13 +40,11 @@
 /bin/godex
 /bin/gomvpkg
 /bin/gotype
-/bin/html2article
 /bin/prepend
 /bin/present
 /bin/ssadump
 /bin/stress
 /bin/stringer
-/bin/tipgodoc
 /bin/ufs
 /bin/vet
 /bin/Fmt
@@ -73,9 +71,12 @@
 /bin/guru
 /bin/impl
 /bin/motion
-/bin/gist
 /bin/hugo
+/bin/gist
 /bin/vanity
+/bin/ip2n
+/bin/rot13
+/bin/itob
 /.github-issue-token
 /.github-gist-token
 /bin/issue
@@ -147,3 +148,4 @@
 /.babel.json
 /.node_repl_history
 /.v8flags.*.kare.json
+/.oracle_jre_usage
