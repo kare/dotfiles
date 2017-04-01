@@ -6,6 +6,7 @@
 autoload -U compinit
 compinit
 compdef _git dotfiles=git
+fignore=(o class ~)
 zmodload zsh/net/tcp
 # Zsh I/O
 unsetopt correct_all
