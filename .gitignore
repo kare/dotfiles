@@ -62,6 +62,10 @@
 /bin/gorename
 /bin/gotags
 /bin/oracle
+/bin/gosimple
+/bin/npm-package-versions
+/bin/staticcheck
+/bin/unused
 /bin/script
 /bin/A
 /bin/asmfmt
