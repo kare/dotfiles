@@ -82,6 +82,8 @@
 /bin/ip2n
 /bin/rot13
 /bin/itob
+/bin/tcpproxy
+/bin/genset
 /.github-issue-token
 /.github-gist-token
 /bin/issue
