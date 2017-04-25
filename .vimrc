@@ -29,7 +29,7 @@ set ttyfast
 set swapfile
 set dir=/tmp
 set relativenumber
-set textwidth=120
+set textwidth=80
 set formatoptions=qrn1
 set cindent
 set smartindent
