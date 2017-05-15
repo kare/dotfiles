@@ -69,6 +69,7 @@
 /bin/script
 /bin/A
 /bin/gends
+/bin/dep
 /bin/asmfmt
 /bin/drawterm.rsc
 /bin/godoctor
@@ -78,6 +79,7 @@
 /bin/impl
 /bin/motion
 /bin/hugo
+/bin/sqlfmt
 /bin/gist
 /bin/vanity
 /bin/ip2n
