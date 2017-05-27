@@ -13,6 +13,8 @@ esac
 IFS="@" read -r -a creds <<< "$1"
 user="${creds[0]}"
 hostname="${creds[1]}"
-export DISPLAY=":0"
+if [ `uname` == "Darwin" ]; then
+	export DISPLAY=":0"
+fi
 drawterm -c $hostname -a $hostname -u $user &
 
