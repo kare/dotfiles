@@ -1,6 +1,10 @@
 #!/bin/bash
 
 case `uname` in
+	FreeBSD)
+		sudo freebsd-update fetch
+		sudo freebsd-update install
+		;;
 	Darwin)
 		softwareupdate --install --all
 		which brew > /dev/null
@@ -29,7 +33,7 @@ case `uname` in
 		fi
 		;;
 	*)
-		echo "only darwin and linux are supported"
+		echo "sysupdate: only freebsd, darwin and linux are supported" 1>&2
 		exit 1
 		;;
 esac
