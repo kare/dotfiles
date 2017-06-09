@@ -127,7 +127,7 @@
 /.vim/undo/
 /.viminfo
 /.zcompdump*
-/.zsh_history
+/.zhistory
 /.irb-history
 /.lesshst
 /.mysql_history

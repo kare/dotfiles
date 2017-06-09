@@ -18,6 +18,8 @@ setopt extended_glob
 # Zsh history
 setopt hist_append
 setopt hist_expand
+setopt inc_append_history
+setopt share_history
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats "%s %b (%a)"
@@ -44,9 +46,9 @@ function preexec {
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
-HISTFILE=/dev/null
+HISTFILE=$HOME/.zhistory
 HISTSIZE=10000
-SAVEHIST=0
+SAVEHIST=10000
 
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
