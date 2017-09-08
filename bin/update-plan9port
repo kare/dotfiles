@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $PLAN9
+git fetch upstream
+git rebase upstream/master
+
+
