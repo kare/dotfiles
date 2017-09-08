@@ -34,6 +34,7 @@
 /bin/acmego
 /bin/spacewar
 /bin/benchcmp
+/bin/benchstat
 /bin/callgraph
 /bin/digraph
 /bin/eg
@@ -53,6 +54,7 @@
 /bin/agorn
 /bin/ao
 /bin/errcheck
+/bin/errcheck-ng
 /bin/gocode
 /bin/goddd
 /bin/godef
@@ -86,6 +88,11 @@
 /bin/rot13
 /bin/itob
 /bin/tcpproxy
+/bin/aah
+/bin/fillstruct
+/bin/goconst
+/bin/gomodifytags
+/bin/goversion
 /.github-issue-token
 /.github-gist-token
 /bin/issue
