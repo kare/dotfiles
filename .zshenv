@@ -11,6 +11,10 @@ export PATH=".:$HOME/bin:$HOME/go/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/b
 export MANPATH="$MANPATH:/opt/local/share/man"
 export INFOPATH="$INFOPATH:/opt/local/share/info"
 
+export NPM_PACKAGES="/usr/local/npm_packages"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+
 # Plan 9
 if [ -d "/usr/local/plan9" ]; then
 	export PLAN9="/usr/local/plan9"
