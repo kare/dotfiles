@@ -1,5 +1,6 @@
 .DS_Store
 /lib/acme-bookmarks.txt
+/pprof
 /.macports/history
 /.fleetctl
 /.gitconfig.local
