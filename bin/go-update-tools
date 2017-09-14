@@ -1,0 +1,62 @@
+#!/bin/bash
+
+if [ "$GOPATH" != "$HOME" ]; then
+	echo "go-update-tools: expecting \$GOPATH ($GOPATH) to match \$HOME ($HOME)" 1>&2
+	exit 1
+fi
+
+#github.com/9fans/go/acme/Watch
+#github.com/9fans/go/acme/acmego
+#github.com/rsc/github/issue
+#kkn.fi/cmd/gist
+#kkn.fi/cmd/itob
+#kkn.fi/cmd/vanity
+#kkn.fi/cmd/tcpproxy
+#kkn.fi/cmd/gends
+read -r -d '' packages << __HERE__
+github.com/alecthomas/gometalinter
+github.com/davidrjenni/A
+github.com/davidrjenni/reftools/cmd/fillstruct
+github.com/fatih/gomodifytags
+github.com/godoctor/godoctor
+github.com/golang/dep/cmd/dep
+github.com/golang/lint/golint
+github.com/jackc/sqlfmt/cmd/sqlfmt
+github.com/jgautheron/goconst/cmd/goconst
+github.com/josharian/impl
+github.com/kare/Fmt
+github.com/kisielk/errcheck
+github.com/klauspost/asmfmt/cmd/asmfmt
+github.com/rakyll/hey
+github.com/rogpeppe/godef
+github.com/zmb3/gogetdoc
+golang.org/x/perf/cmd/benchstat
+golang.org/x/tools/cmd/callgraph
+golang.org/x/tools/cmd/cover
+golang.org/x/tools/cmd/digraph
+golang.org/x/tools/cmd/eg
+golang.org/x/tools/cmd/fiximports
+golang.org/x/tools/cmd/godex
+golang.org/x/tools/cmd/godoc
+golang.org/x/tools/cmd/goimports
+golang.org/x/tools/cmd/gomvpkg
+golang.org/x/tools/cmd/gorename
+golang.org/x/tools/cmd/gotype
+golang.org/x/tools/cmd/guru
+golang.org/x/tools/cmd/present
+golang.org/x/tools/cmd/stringer
+honnef.co/go/tools/cmd/errcheck-ng
+honnef.co/go/tools/cmd/gosimple
+honnef.co/go/tools/cmd/staticcheck
+honnef.co/go/tools/cmd/unused
+mvdan.cc/interfacer
+rsc.io/goversion
+__HERE__
+
+for pkg in $packages; do
+	echo "go get -u $pkg"
+	go get -u $pkg
+	if [ $? -ne 0 ]; then
+		echo "go-update-tools: failed to load Go package '$pkg'" 1>&2
+	fi
+done
