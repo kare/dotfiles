@@ -51,6 +51,7 @@ honnef.co/go/tools/cmd/staticcheck
 honnef.co/go/tools/cmd/unused
 mvdan.cc/interfacer
 rsc.io/goversion
+github.com/tsenart/vegeta
 __HERE__
 
 for pkg in $packages; do
