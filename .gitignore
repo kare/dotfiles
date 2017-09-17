@@ -6,6 +6,7 @@
 /.gitconfig.local
 /.atom/
 /.vscode/
+/.serverauth.*
 /go
 /c
 /go1.4
