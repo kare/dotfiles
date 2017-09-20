@@ -62,3 +62,6 @@ PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
 export GOPATH="$HOME"
+
+source $HOME/tools/google-cloud-sdk/completion.zsh.inc
+source $HOME/tools/google-cloud-sdk/path.zsh.inc
