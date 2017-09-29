@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Print files prefixed with '/bin/' from .gitignore
+# that do not exist as executable in ~/bin/
+for bin in `grep '^/bin/' .gitignore`; do
+	if [ ! -x $HOME$bin ]; then
+		echo $bin
+	fi
+done
