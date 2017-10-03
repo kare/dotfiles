@@ -5,10 +5,10 @@ if [ "$GOPATH" != "$HOME" ]; then
 	exit 1
 fi
 
-#github.com/9fans/go/acme/Watch
-#github.com/9fans/go/acme/acmego
 #github.com/rsc/github/issue
 read -r -d '' packages << __HERE__
+9fans.net/go/acme/Watch
+9fans.net/go/acme/acmego
 github.com/GoASTScanner/gas
 github.com/alecthomas/gometalinter
 github.com/davidrjenni/A
