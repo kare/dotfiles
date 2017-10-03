@@ -20,6 +20,15 @@
 /.vagrant.d/
 /.vagrant/
 /acme.dump
+/bin/aligncheck
+/bin/deadcode
+/bin/gas
+/bin/gocyclo
+/bin/ineffassign
+/bin/megacheck
+/bin/structcheck
+/bin/unconvert
+/bin/varcheck
 /bin/A
 /bin/Fmt
 /bin/Watch
