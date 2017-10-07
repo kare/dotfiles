@@ -1,0 +1,25 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: `basename $0` [-h] directory" 1>&2
+	exit 1
+}
+
+if [ ! -e .gitignore ]; then
+	usage
+fi
+
+if [ -z "$1" -o "$1" == "-h" ]; then
+	usage
+fi
+
+while read file; do
+	# trim leading and trailing white space
+	file=$(echo -e "$file" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+
+	if [[ ! "$file" =~ ^# ]]; then # ignore comments
+		if [ ! -z "$file" ]; then # ignore empty lines
+			rm -rf $file
+		fi
+	fi
+done < .gitignore
