@@ -52,10 +52,6 @@ set listchars=tab:→\ ,trail:·
 set list
 set mouse=
 
-" better java higlighting
-let java_highlight_java_lang_ids = 1
-let java_allow_cpp_keywords = 1
-
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 "nnoremap j gj
@@ -64,21 +60,10 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-" Grep word under cursor when key 'arrow right' is pressed
-"nmap <Right> :vimgrep <cword> `find . -type f -exec grep -Iq '' '{}' ';' -print`<CR>:copen<CR>
+let g:go_version_warning = 0
 
-" Clear search highlighting with esc
-" this remap mysteriously breaks vim in terminal
-"nnoremap <esc> :nohl<return><esc>
-" Autosave
-"autocmd FocusLost * :wa
+let g:ale_sign_warning = '⚠️'
+let g:ale_sign_error = '❌'
+highlight link ALEWarningSign String
+highlight link ALEErrorSign Title
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_c_include_dirs = ['/usr/local/plan9/include']
