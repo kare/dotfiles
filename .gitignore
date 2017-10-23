@@ -20,6 +20,17 @@
 /.vagrant.d/
 /.vagrant/
 /acme.dump
+/bin/dlv
+/bin/go-outline
+/bin/go-symbols
+/bin/gocode
+/bin/gopkgs
+/bin/goreturns
+/bin/gotags
+/bin/gotests
+/bin/keyify
+/bin/motion
+/bin/vi
 /bin/aligncheck
 /bin/deadcode
 /bin/gas
