@@ -2,7 +2,7 @@
 
 function usage() {
 	echo "usage: `basename $0` [-h] [-u]" 1>&2
-	echo "stash, update and add modules, commit and pop stash" 1>&2
+	echo "stash workspace, update modules, commit and pop stash" 1>&2
 	echo "-u only update modules" 1>&2
 	exit 1
 }
@@ -19,12 +19,12 @@ for module in `ls -d ~/.vim/bundle/*`; do
 	cd $module
 	git checkout master
 	git pull
-	if [[ "$1" != "-u" ]]; then
+	if [ "$1" != "-u" ]; then
 		dotfiles add $module
 	fi
 done
 if [ "$1" != "-u" ]; then
 	cd
-	dotfiles commit -s -m "Update modules"
+	dotfiles commit -s -m "Update Vim modules"
 	dotfiles stash pop
 fi
