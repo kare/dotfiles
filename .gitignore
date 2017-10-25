@@ -20,6 +20,7 @@
 /.vagrant/
 /.dlv/
 /acme.dump
+/bin/pt
 /bin/dlv
 /bin/go-outline
 /bin/go-symbols

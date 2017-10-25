@@ -26,6 +26,7 @@ github.com/kare/Fmt
 github.com/kisielk/errcheck
 github.com/klauspost/asmfmt/cmd/asmfmt
 github.com/mdempsky/unconvert
+github.com/monochromegane/the_platinum_searcher/...
 github.com/opennota/check/cmd/aligncheck
 github.com/opennota/check/cmd/structcheck
 github.com/opennota/check/cmd/varcheck
