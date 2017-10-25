@@ -27,3 +27,6 @@
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vim/bundle/lightline"]
+	path = .vim/bundle/lightline
+	url = https://github.com/itchyny/lightline.vim
