@@ -90,7 +90,6 @@
 /bin/stringer
 /bin/tcpproxy
 /bin/unused
-/bin/vanity
 /bin/vegeta
 /bin/vimr
 /.github-gist-token
