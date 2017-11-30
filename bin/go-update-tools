@@ -10,7 +10,10 @@ read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
 github.com/GoASTScanner/gas
+github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
+github.com/alexkohler/prealloc
+github.com/cweill/gotests
 github.com/davidrjenni/A
 github.com/davidrjenni/reftools/cmd/fillstruct
 github.com/fatih/gomodifytags
@@ -27,13 +30,16 @@ github.com/kisielk/errcheck
 github.com/klauspost/asmfmt/cmd/asmfmt
 github.com/mdempsky/unconvert
 github.com/monochromegane/the_platinum_searcher/...
+github.com/nsf/gocode
 github.com/opennota/check/cmd/aligncheck
 github.com/opennota/check/cmd/structcheck
 github.com/opennota/check/cmd/varcheck
 github.com/rakyll/hey
+github.com/ramya-rao-a/go-outline
 github.com/rogpeppe/godef
 github.com/tsenart/deadcode
 github.com/tsenart/vegeta
+github.com/uudashr/gopkgs/cmd/gopkgs
 github.com/zmb3/gogetdoc
 golang.org/x/perf/cmd/benchstat
 golang.org/x/tools/cmd/callgraph
@@ -56,7 +62,10 @@ honnef.co/go/tools/cmd/megacheck
 honnef.co/go/tools/cmd/staticcheck
 honnef.co/go/tools/cmd/unused
 mvdan.cc/interfacer
+mvdan.cc/unparam
+rsc.io/2fa
 rsc.io/goversion
+sourcegraph.com/sqs/goreturns
 __HERE__
 
 for pkg in $packages; do
