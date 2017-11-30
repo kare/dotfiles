@@ -14,8 +14,17 @@ if [ ! -d "$dir" ]; then
 fi
 
 cd $dir
+if [ -d .git ]; then
+	echo "`basename $0`: existing .git directory found. aborting." 1>&2
+	exit 2
+fi
 git init .
+if [ -e .gitignore ]; then
+	mv .gitignore .gitignore.org
+fi
 touch .gitignore
 git add .gitignore
 git commit -m "Add empty .gitignore"
-
+if [ -e .gitignore.org ]; then
+	mv .gitignore.org .gitignore
+fi
