@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: `basename $0` [-h] name package" 1>&2
+	echo "	print README file for Go projects in markdown format with given parameters" 1>&2
+	echo "	example: `basename $0` project github.com/user/project" 1>&2
+}
+if [ ! -z "$1" -a "$1" == "-h" ]; then
+	usage
+    exit 1
+fi
+if [ $# -lt 2 ]; then
+	usage
+	exit 1
+fi
+name=$1
+pkg=$2
+
+cat << __README__
+# $name
+
+[![Build Status](https://travis-ci.org/kare/$name.svg?branch=master)](https://travis-ci.org/kare/$name)
+[![GoDoc](https://godoc.org/$pkg?status.svg)](https://godoc.org/$pkg)
+
+## Installation
+    go get -u $pkg
+
+## Examples
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+See [LICENSE](LICENSE) for details.
+__README__
