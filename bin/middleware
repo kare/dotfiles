@@ -1,10 +1,57 @@
-#!/bin/sh
+#!/bin/bash
 
-cat << __MIDDLEWARE_HERE__
-func middleware(next http.Handler) http.Handler {
+function usage() {
+	echo "usage: `basename $0` [-h] [-chi] [name]" 1>&2
+	echo "	generate Go middleware for net.http or chi" 1>&2
+	echo "	-h	print help message and exit" 1>&2
+	echo "	-chi	generate middleware for chi" 1>&2
+	echo "	name	of the function to generate" 1>&2
+}
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+	key="$1"
+	case $key in
+	-chi)
+		typ="chi"
+		shift # past argument
+	;;
+	-h)
+		usage
+		exit 1
+	;;
+	*)
+		POSITIONAL+=("$1") # save it in an array for later
+		shift # past argument
+	esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+name="TODO"
+if [[ -n $1 ]]; then
+	name=$1
+fi
+case $typ in
+	chi)
+		cat << __MIDDLEWARE_CHI__
+func $name() func(http.Handler) http.Handler {
+	f := func(h http.Handler) http.Handler {
+		fn := func(w http.ResponseWriter, r *http.Request) {
+			h.ServeHTTP(w, r)
+		}
+		return http.HandlerFunc(fn)
+	}
+	return f
+}
+__MIDDLEWARE_CHI__
+	;;
+	*)
+		cat << __MIDDLEWARE_STD__
+func $name(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		next.ServeHTTP(w, r)
 	}
 	return http.HandlerFunc(fn)
 }
-__MIDDLEWARE_HERE__
+__MIDDLEWARE_STD__
+	;;
+esac
