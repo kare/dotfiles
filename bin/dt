@@ -10,7 +10,7 @@ case $# in
 	;;
 esac
 
-if [ "`ps -ef|grep XQuartz.app|grep -v grep`" == "" ]; then
+if [ "`pgrep X11.bin`" == "" ]; then
         open -a XQuartz.app
         sleep 5
 fi
