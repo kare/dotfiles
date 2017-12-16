@@ -1,0 +1,24 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: `basename $0` [-h] vanity-import-path" 1>&2
+	echo "	print .travis.yml file for Go projects" 1>&2
+	echo "	example: `basename $0` kkn.fi/project" 1>&2
+}
+if [ ! -z "$1" -a "$1" == "-h" ]; then
+	usage
+    exit 1
+fi
+if [ $# -lt 1 ]; then
+	usage
+	exit 1
+fi
+vanity=$1
+
+cat << __TRAVIS__
+language: go
+go_import_path: $vanity
+script: go test
+go:
+    - 1.9
+__TRAVIS__
