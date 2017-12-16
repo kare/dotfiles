@@ -1,0 +1,15 @@
+#!/bin/bash
+
+sed -i .bak '
+s/"POST"/http.MethodPost/g
+s/"HEAD"/http.MethodHead/g
+s/"GET"/http.MethodGet/g
+s/"PUT"/http.MethodPut/g
+s/"PATCH"/http.MethodPatch/g
+s/"DELETE"/http.MethodDelete/g
+s/"CONNECT"/http.MethodConnect/g
+s/"OPTIONS"/http.MethodOptions/g
+s/"TRACE"/http.MethodTrace/g
+' $@
+goimports -w $@
+gofmt -s -w $@
