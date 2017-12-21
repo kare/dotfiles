@@ -8,7 +8,7 @@ function usage() {
 }
 
 # https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
-POSITIONAL=()
+positional=()
 license=go
 
 while [[ $# -gt 0 ]]; do
@@ -24,11 +24,11 @@ while [[ $# -gt 0 ]]; do
 		exit 1
 	;;
 	*)
-		POSITIONAL+=("$1") # save it in an array for later
+		positional+=("$1") # save it in an array for later
 		shift # past argument
 	esac
 done
-set -- "${POSITIONAL[@]}" # restore positional parameters
+set -- "${positional[@]}" # restore positional parameters
 
 year=`date +'%Y'`
 name=`git config user.name`
