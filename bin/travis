@@ -18,7 +18,7 @@ vanity=$1
 cat << __TRAVIS__
 language: go
 go_import_path: $vanity
-script: go test
+script: make test
 go:
     - 1.9
 __TRAVIS__
