@@ -1,31 +1,57 @@
 #!/bin/bash
 
 function usage() {
-	echo "usage: `basename $0` [-h] name package" 1>&2
+	echo "usage: readme [-h] -u gihub-username -n project-name -p import-path" 1>&2
 	echo "	print README file for Go projects in markdown format with given parameters" 1>&2
-	echo "	example: `basename $0` project github.com/user/project" 1>&2
+	echo "	example: readme -u user -n project -p vanity.domain/project" 1>&2
 }
-if [ ! -z "$1" -a "$1" == "-h" ]; then
-	usage
-    exit 1
+
+if [ $# -lt 6 ]; then
+       usage
+       exit 1
 fi
-if [ $# -lt 2 ]; then
-	usage
-	exit 1
-fi
-name=$1
-pkg=$2
+
+positional=()
+while [[ $# -gt 0 ]]; do
+	key="$1"
+	case $key in
+	-u)
+		user="$2"
+		shift
+		shift
+	;;
+	-n)
+		name="$2"
+		shift
+		shift
+	;;
+	-p)
+		importPath="$2"
+		shift
+		shift
+	;;
+	-h)
+		usage
+		exit 1
+	;;
+	*)
+		positional+=("$1")
+		shift
+	esac
+done
+set -- "${positional[@]}"
 
 cat << __README__
 # $name
 
-[![Build Status](https://travis-ci.org/kare/$name.svg?branch=master)](https://travis-ci.org/kare/$name)
-[![GoDoc](https://godoc.org/$pkg?status.svg)](https://godoc.org/$pkg)
+[![Build Status](https://travis-ci.org/$user/$name.svg?branch=master)](https://travis-ci.org/$user/$name)
+[![GoDoc](https://godoc.org/$importPath?status.svg)](https://godoc.org/$importPath)
 
 ## Installation
-    go get -u $pkg
+    go get -u $importPath
 
 ## Examples
+See [godoc](https://godoc.org/$importPath) for examples.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first
