@@ -65,6 +65,7 @@
 /bin/gomodifytags
 /bin/gomvpkg
 /bin/gopkgs
+/bin/goreleaser
 /bin/gorename
 /bin/goreturns
 /bin/gosimple
@@ -91,6 +92,7 @@
 /bin/pt
 /bin/rot13
 /bin/safesql
+/bin/sd
 /bin/sqlfmt
 /bin/staticcheck
 /bin/stringer
