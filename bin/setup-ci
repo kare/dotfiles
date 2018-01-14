@@ -1,0 +1,32 @@
+#!/bin/bash
+
+travis_file=.travis.yml
+ci_dir=ci
+gofmt_file=$ci_dir/validate-gofmt.sh
+lint_file=$ci_dir/validate-lint.sh
+
+function usage() {
+	echo "usage: setup-ci [-h] vanity-import-path" 1>&2
+	echo "	creates Travis CI build for Go projects with lint and test stages" 1>&2
+	echo "	example: setup-ci kkn.fi/project" 1>&2
+}
+if [ ! -z "$1" -a "$1" == "-h" ]; then
+	usage
+    exit 1
+fi
+if [ $# -lt 1 ]; then
+	usage
+	exit 1
+fi
+vanity=$1
+
+travis $vanity > $travis_file
+chmod 644 $travis_file
+
+mkdir -p $ci_dir
+
+validate-gofmt $vanity > $gofmt_file
+chmod 755 $gofmt_file
+
+validate-lint > $lint_file
+chmod 755 $lint_file
