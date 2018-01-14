@@ -1,0 +1,29 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: validate-lint [-h]" 1>&2
+	echo "	generate validate-lint.sh script to stdout" 1>&2
+	echo "	example: validate-lint > validate-lint.sh" 1>&2
+}
+
+if [ "$1" == "-h" ]; then
+	usage
+    exit 1
+fi
+
+cat << "__LINT__"
+#!/bin/bash
+
+pkgs=`go list ./... | grep -v /vendor/`
+
+go vet $pkgs
+if [ $? -eq 1 ]; then
+	exit 1
+fi
+
+output=`golint $pkgs`
+if [ "$output" != "" ]; then
+	echo "$output" 1>&2
+	exit 1
+fi
+__LINT__
