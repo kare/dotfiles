@@ -75,6 +75,7 @@
 /bin/gotags
 /bin/gotests
 /bin/gotype
+/bin/govendor
 /bin/goversion
 /bin/govet
 /bin/guru
@@ -92,6 +93,9 @@
 /bin/motion
 /bin/prealloc
 /bin/present
+/bin/protoc-gen-go
+/bin/protoc-gen-grpc-gateway
+/bin/protoc-gen-swagger
 /bin/pt
 /bin/rot13
 /bin/safesql
