@@ -5,7 +5,14 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	lp = log -p
 	st = status
-	changes = log --reverse --no-merges --patch --stat @{1}..
+#	changes = log --reverse --no-merges --patch --stat @{1}..
+	# Go codereview aliases
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
 [core]
 	whitespace=trailing-space
 	editor = /usr/bin/vim
@@ -24,7 +31,7 @@
 [include]
 	path = ~/.gitconfig.local
 [push]
-	default = simple
+	default = current
 [color]
 	diff = auto
 	status = auto
