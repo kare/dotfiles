@@ -20,7 +20,7 @@ if [ $# -lt 1 ]; then
 fi
 vanity=$1
 
-travis $vanity > $travis_file
+travis-go $vanity > $travis_file
 chmod 644 $travis_file
 
 mkdir -p $ci_dir

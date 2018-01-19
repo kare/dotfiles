@@ -28,6 +28,6 @@ jobs:
               - go get -u github.com/golang/lint/golint
               - ./ci/validate-lint.sh
         - stage: test
-          script: go test $vanity
+          script: go test $vanity/...
           install: skip
 __TRAVIS__

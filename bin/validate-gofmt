@@ -21,7 +21,7 @@ cat << __GOFMT__
 import_path="$vanity"
 __GOFMT__
 cat << "__GOFMT__"
-pkgs=`go list ./... | grep -v /vendor/`
+pkgs=`go list ./... | grep -vF /vendor/`
 ignored_pkgs=""
 
 for pkg in $pkgs; do

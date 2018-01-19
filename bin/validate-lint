@@ -14,7 +14,7 @@ fi
 cat << "__LINT__"
 #!/bin/bash
 
-pkgs=`go list ./... | grep -v /vendor/`
+pkgs=`go list ./... | grep -vF /vendor/`
 
 go vet $pkgs
 if [ $? -eq 1 ]; then
