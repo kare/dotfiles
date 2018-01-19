@@ -20,6 +20,7 @@
 /.vagrant.d/
 /.vagrant/
 /.dlv/
+/.travis/
 /acme.dump
 /bin/2fa
 /bin/A
@@ -49,6 +50,8 @@
 /bin/gas
 /bin/gends
 /bin/gist
+/bin/git-codereview
+/bin/go-contrib-init
 /bin/go-outline
 /bin/go-symbols
 /bin/gocode

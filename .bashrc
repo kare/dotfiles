@@ -13,3 +13,6 @@ shopt -s dotglob
 export HISTSIZE=0
 export HISTFILESIZE=0
 export PS1="\\h ; "
+
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh

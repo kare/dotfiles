@@ -65,3 +65,6 @@ export GOPATH="$HOME"
 
 source $HOME/tools/google-cloud-sdk/completion.zsh.inc
 source $HOME/tools/google-cloud-sdk/path.zsh.inc
+
+# added by travis gem
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
