@@ -1,0 +1,64 @@
+#!/bin/bash
+
+function usage {
+	echo "usage: init-go-project -u github-username -n project-name -p package -l mit|bsd2|bsd3|go" 1>&2
+	echo "	create a Go project with Git, Travis CI, LICENSE and README.md" 1>&2
+}
+
+if [ ! -z "$(ls -A .)" ]; then
+	echo "init-go-project: current directory not empty error" 1>&2
+	exit 1
+fi
+
+while [[ $# > 0 ]]
+do
+	arg="$1"
+	case $arg in
+		-h)
+			usage
+			exit 2
+		;;
+		-u)
+			user=$2
+			shift
+			shift
+		;;
+		-l)
+			license=$2
+			shift
+			shift
+		;;
+		-p)
+			pkg=$2
+			shift
+			shift
+		;;
+		-n)
+			name=$2
+			shift
+			shift
+		;;
+	esac
+done
+
+if [ -z "$user" -o -z "$license" -o -z "$pkg" -o -z "$name" ]; then
+	usage
+	exit 1
+fi
+
+git-empty .
+
+license -l $license >LICENSE
+git add LICENSE
+git commit -m "Add LICENSE"
+
+readme -u $user -n $name -p $pkg >README.md
+git add README.md
+git commit -m "Add README.md"
+
+setup-ci $pkg
+git add ci
+git add .travis.yml
+git commit -m "Setup Travis CI"
+
+git log --pretty=oneline --abbrev-commit
