@@ -2,6 +2,9 @@
 /lib/acme-bookmarks.txt
 /pprof
 /.fleetctl
+/.grails/
+/.grails_history
+/.sdkman/
 /.gitconfig.local
 /.atom/
 /.vscode/
@@ -33,6 +36,7 @@
 /bin/asmfmt
 /bin/benchstat
 /bin/callgraph
+/bin/chromedriver
 /bin/code
 /bin/cover
 /bin/deadcode

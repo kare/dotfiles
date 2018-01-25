@@ -63,8 +63,14 @@ ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
 export GOPATH="$HOME"
 
-source $HOME/tools/google-cloud-sdk/completion.zsh.inc
-source $HOME/tools/google-cloud-sdk/path.zsh.inc
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '$HOME/tools/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '$HOME/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/completion.zsh.inc'; fi
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

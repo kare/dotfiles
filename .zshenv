@@ -16,6 +16,8 @@ export INFOPATH="$INFOPATH:/opt/local/share/info"
 export NPM_PACKAGES="/usr/local/npm_packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$PATH:$NPM_PACKAGES/bin"
+export CHROMEDRIVER=$HOME/bin/chromedriver
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Plan 9
 if [ -d "/usr/local/plan9" ]; then
