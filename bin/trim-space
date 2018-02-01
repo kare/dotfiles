@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -e 's/^[[:space:]]*//' \
+	-e 's/[[:space:]]*$//'
+
