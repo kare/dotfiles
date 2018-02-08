@@ -5,7 +5,6 @@
 /.grails/
 /.grails_history
 /.sdkman/
-/.nvm
 /.gradle
 /.gitconfig.local
 /.atom/
