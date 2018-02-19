@@ -19,6 +19,7 @@ if (test -f $script) {
 
 cat << __HERE__ >$script
 #!/bin/bash
+set -e -u -o pipefail
 
 
 
@@ -30,7 +31,7 @@ chmod 755 $script
 newwindow
 winname $script
 winctl get
-echo -n 3 | winwrite addr
+echo -n 4 | winwrite addr
 winctl dot'='addr
 winctl show
 winctl clean
