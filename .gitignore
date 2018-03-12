@@ -2,6 +2,8 @@
 /lib/acme-bookmarks.txt
 /pprof
 /.fleetctl
+/.flow-typed/
+/.psql_history
 /.grails/
 /.grails_history
 /.sdkman/
@@ -63,6 +65,7 @@
 /bin/goconst
 /bin/gocyclo
 /bin/godef
+/bin/godep
 /bin/godex
 /bin/godoc
 /bin/godoctor
@@ -96,6 +99,7 @@
 /bin/megacheck
 /bin/misspell
 /bin/motion
+/bin/nakedret
 /bin/prealloc
 /bin/present
 /bin/protoc-gen-go
