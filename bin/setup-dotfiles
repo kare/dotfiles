@@ -4,14 +4,14 @@ set -u
 
 home=$HOME
 dotfiles=$home/.dotfiles.git
-gitrepo=https://github.com/kare/dotfiles.git
+gitrepo=git@github.com:kare/dotfiles.git
 
 if [ -e $dotfiles ]; then
 	echo "dotfiles: bare git repo exists at \"$dotfiles\"" 1>&2
 	exit 1
 fi
 
-git clone --depth 3 $gitrepo $home/dotfiles.git
+git clone $gitrepo $home/dotfiles.git
 if [ $? -gt 0 ]; then
 	echo "dotfiles: \"git clone --depth 1 $gitrepo $home/dotfiles.git\" failed" 1>&2
 	exit 2
