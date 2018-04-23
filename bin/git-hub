@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Description: Open github webpage for the current repo+branch[+file]
+# (for macOS, not tested on other platforms)
+#
+# Usage: git hub
+#        git hub <file>
+#
+# Run 'brew install coreutils' to install realpath.
+#
+# https://gist.github.com/broofa/15e1bf47b1d37d2bbc67e24f4f84e734
+
+ROOT=$(git rev-parse --show-toplevel)
+BRANCH=$(git branch -vv | grep "^*" | sed -Ee "s/^\* *| .*//g")
+GDIR=$(realpath --relative-to="${ROOT}" .)
+URL=$(git config --get remote.origin.url | sed -e "s/[^@]*@\([^:]*\):\(.*\)\.git/https:\/\/\1\/\2/")
+
+open -a Safari "$URL/tree/$BRANCH/$GDIR/$1"
+
