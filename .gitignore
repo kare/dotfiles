@@ -1,6 +1,8 @@
 .DS_Store
 /lib/acme-bookmarks.txt
 /pprof
+/.aws/
+/.standard-cache/
 /.fleetctl
 /.flow-typed/
 /.psql_history
