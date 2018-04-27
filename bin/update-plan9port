@@ -1,7 +1,13 @@
 #!/bin/bash
 
-cd $PLAN9
-git fetch upstream
+if [ ! -d "$PLAN9" ]; then
+	exit 1
+fi
+cd "$PLAN9" || exit 1
+FETCH=$(git fetch upstream) || exit 3
+if [ "$FETCH" == "" ]; then
+	exit 0
+fi
 git rebase upstream/master
-
+./INSTALL && git push
 
