@@ -9,10 +9,11 @@ fi
 read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
-github.com/GoASTScanner/gas
+github.com/GoASTScanner/gas/cmd/gas/...
 github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
 github.com/alexkohler/prealloc
+github.com/campoy/jsonenums
 github.com/cweill/gotests
 github.com/davidrjenni/A
 github.com/davidrjenni/reftools/cmd/fillstruct
@@ -30,6 +31,7 @@ github.com/josharian/impl
 github.com/kare/Fmt
 github.com/kisielk/errcheck
 github.com/klauspost/asmfmt/cmd/asmfmt
+github.com/mdempsky/maligned
 github.com/mdempsky/unconvert
 github.com/monochromegane/the_platinum_searcher/...
 github.com/nsf/gocode
