@@ -51,6 +51,7 @@
 /bin/drawterm
 /bin/dupl
 /bin/editinacme
+/bin/edwood
 /bin/eg
 /bin/errcheck
 /bin/errcheck-ng
@@ -95,6 +96,7 @@
 /bin/interfacer
 /bin/ip2n
 /bin/itob
+/bin/jsonenums
 /bin/keyify
 /bin/lll
 /bin/maligned
