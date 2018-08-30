@@ -1,6 +1,7 @@
 .DS_Store
 /lib/acme-bookmarks.txt
 /pprof
+/.nvm/
 /.aws/
 /.standard-cache/
 /.fleetctl
