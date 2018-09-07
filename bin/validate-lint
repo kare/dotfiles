@@ -14,16 +14,9 @@ fi
 cat << "__LINT__"
 #!/bin/bash
 
-pkgs=`go list ./... | grep -vF /vendor/`
+pkgs=$(go list ./... | grep -vF /vendor/)
 
-# Go 1.10 will run go vet as part of go test
-# https://tip.golang.org/doc/go1.10#test
-go vet $pkgs
-if [ $? -eq 1 ]; then
-	exit 1
-fi
-
-output=`golint $pkgs`
+output=$(golint $pkgs)
 if [ "$output" != "" ]; then
 	echo "$output" 1>&2
 	exit 1
