@@ -79,10 +79,12 @@
 /bin/gometalinter
 /bin/gomodifytags
 /bin/gomvpkg
+/bin/goose
 /bin/gopkgs
 /bin/goreleaser
 /bin/gorename
 /bin/goreturns
+/bin/gosec
 /bin/gosimple
 /bin/gotags
 /bin/gotests
@@ -101,6 +103,7 @@
 /bin/keyify
 /bin/lll
 /bin/maligned
+/bin/markdownfmt
 /bin/megacheck
 /bin/misspell
 /bin/motion
