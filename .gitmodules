@@ -30,3 +30,6 @@
 [submodule ".vim/bundle/lightline"]
 	path = .vim/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/bundle/vim-markdownfmt"]
+	path = .vim/bundle/vim-markdownfmt
+	url = https://github.com/moorereason/vim-markdownfmt.git
