@@ -21,7 +21,7 @@ cat << __GOFMT__
 import_path="$vanity"
 __GOFMT__
 cat << "__GOFMT__"
-pkgs=`go list ./... | grep -vF /vendor/`
+pkgs=$(go list ./... | grep -vF /vendor/)
 ignored_pkgs=""
 
 for pkg in $pkgs; do
@@ -35,7 +35,7 @@ for pkg in $pkgs; do
 			continue
 		fi
 	done
-	output=`gofmt -s -l $relative_path`
+	output=$(gofmt -s -l $relative_path)
 	if [ "$output" != "" ]; then
 		echo "validate-gofmt.sh: error $output" 1>&2
 		exit 1
