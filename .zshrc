@@ -62,6 +62,7 @@ PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
 export GOPATH="$HOME"
+export GO111MODULE=on
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/tools/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/path.zsh.inc'; fi
