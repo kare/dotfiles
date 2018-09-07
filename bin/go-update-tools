@@ -9,7 +9,6 @@ fi
 read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
-github.com/GoASTScanner/gas/cmd/gas/...
 github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
 github.com/alexkohler/prealloc
@@ -41,6 +40,7 @@ github.com/opennota/check/cmd/varcheck
 github.com/rakyll/hey
 github.com/ramya-rao-a/go-outline
 github.com/rogpeppe/godef
+github.com/securego/gosec/cmd/gosec/...
 github.com/tsenart/deadcode
 github.com/tsenart/vegeta
 github.com/uudashr/gopkgs/cmd/gopkgs
@@ -74,8 +74,7 @@ __HERE__
 
 for pkg in $packages; do
 	echo "go get -u $pkg"
-	go get -u $pkg
-	if [ $? -ne 0 ]; then
+	if go get -u "$pkg"; then
 		echo "go-update-tools: 'go get' error for package '$pkg'" 1>&2
 	fi
 done
@@ -89,8 +88,7 @@ __HERE__
 
 for pkg in $packages; do
 	echo "go install $pkg"
-	go install $pkg
-	if [ $? -ne 0 ]; then
+	if go install "$pkg"; then
 		echo "go-update-tools: 'go install' error for package '$pkg'" 1>&2
 	fi
 done
