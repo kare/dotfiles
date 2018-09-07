@@ -5,6 +5,8 @@ if [ "$GOPATH" != "$HOME" ]; then
 	exit 1
 fi
 
+export GO111MODULE=off
+
 #github.com/rsc/github/issue
 read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
@@ -41,6 +43,7 @@ github.com/rakyll/hey
 github.com/ramya-rao-a/go-outline
 github.com/rogpeppe/godef
 github.com/securego/gosec/cmd/gosec/...
+github.com/shurcooL/markdownfmt
 github.com/tsenart/deadcode
 github.com/tsenart/vegeta
 github.com/uudashr/gopkgs/cmd/gopkgs
