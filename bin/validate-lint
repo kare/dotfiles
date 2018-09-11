@@ -14,11 +14,7 @@ fi
 cat << "__LINT__"
 #!/bin/bash
 
-pkgs=$(go list ./... | grep -vF /vendor/)
-
-output=$(golint $pkgs)
-if [ "$output" != "" ]; then
-	echo "$output" 1>&2
+if ! golint -set_exit_status $(go list ./...); then
 	exit 1
 fi
 __LINT__
