@@ -2,9 +2,9 @@
 	name = Kare Nuorteva
 	email = kare.nuorteva@me.com
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	lp = log -p
-	st = status
+#	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+#	lp = log -p
+#	st = status
 #	changes = log --reverse --no-merges --patch --stat @{1}..
 	# Go codereview aliases
 	change = codereview change
