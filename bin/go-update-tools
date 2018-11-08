@@ -11,6 +11,7 @@ export GO111MODULE=off
 read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
+9fans.net/go/acme/editinacme
 github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
 github.com/alexkohler/prealloc
@@ -77,7 +78,7 @@ __HERE__
 
 for pkg in $packages; do
 	echo "go get -u $pkg"
-	if go get -u "$pkg"; then
+	if ! go get -u "$pkg"; then
 		echo "go-update-tools: 'go get' error for package '$pkg'" 1>&2
 	fi
 done
@@ -91,7 +92,7 @@ __HERE__
 
 for pkg in $packages; do
 	echo "go install $pkg"
-	if go install "$pkg"; then
+	if ! go install "$pkg"; then
 		echo "go-update-tools: 'go install' error for package '$pkg'" 1>&2
 	fi
 done
