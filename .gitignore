@@ -16,6 +16,7 @@
 /.vscode/
 /.serverauth.*
 /.2fa
+/.npmrc
 /go
 /c
 /go1.4
@@ -66,6 +67,7 @@
 /bin/go-outline
 /bin/go-symbols
 /bin/gocode
+/bin/gocode-gomod
 /bin/goconst
 /bin/gocyclo
 /bin/godef
@@ -94,6 +96,7 @@
 /bin/govet
 /bin/guru
 /bin/hey
+/bin/iferr
 /bin/impl
 /bin/ineffassign
 /bin/interfacer
