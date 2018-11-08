@@ -14,7 +14,7 @@ case $(uname) in
 		#font=/mnt/font/GoRegular/15a/font
 		fixedfont=/mnt/font/GoMono/14a/font
 		#fixedfont=/mnt/font/SourceCodePro-Regular/14a/font
-		#args="-m /mnt/acme"
+		args="-m /tmp/acme"
 	;;
 esac
 
