@@ -3,6 +3,10 @@
 # to set up aliases, functions, options, key bindings, etc.
 #
 
+# For debuging zsh startup time.
+# Enable 'zprof' at the end of this file.
+#zmodload zsh/zprof
+
 autoload -U compinit
 compinit
 compdef _git dotfiles=git
@@ -69,12 +73,10 @@ if [ -f '$HOME/tools/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/tools/
 # The next line enables shell command completion for gcloud.
 if [ -f '$HOME/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/completion.zsh.inc'; fi
 
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export NVM_DIR="$HOME/.nvm"
-source $(brew --prefix nvm)/nvm.sh
+#source $(brew --prefix nvm)/nvm.sh
+
+#zprof
