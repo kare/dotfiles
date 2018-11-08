@@ -2,10 +2,6 @@
 	name = Kare Nuorteva
 	email = kare.nuorteva@me.com
 [alias]
-#	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-#	lp = log -p
-#	st = status
-#	changes = log --reverse --no-merges --patch --stat @{1}..
 	# Go codereview aliases
 	change = codereview change
 	gofmt = codereview gofmt
@@ -15,8 +11,11 @@
 	sync = codereview sync
 [core]
 	whitespace=trailing-space
-	editor = /usr/bin/vim
+	editor = /usr/local/bin/vim
 	pager = less -+$LESS -FRX
+#	editor = editinacme
+#	pager = /usr/local/plan9/bin/p
+#	pager =
 [format]
 	numbered = auto
 [diff]
@@ -32,10 +31,3 @@
 	path = ~/.gitconfig.local
 [push]
 	default = current
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
-	pager = true
