@@ -19,13 +19,13 @@ cat << __TRAVIS__
 dist: trusty
 language: go
 go_import_path: $vanity
-go: "1.10.x"
+go: "1.11.x"
 jobs:
     include:
         - stage: lint
           script:
               - ./ci/validate-gofmt.sh
-              - go get -u github.com/golang/lint/golint
+              - go get -u golang.org/x/lint/golint
               - ./ci/validate-lint.sh
         - stage: test
           script: go test $vanity/...
