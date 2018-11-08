@@ -1,40 +1,50 @@
 #!/bin/bash
 
-if [ -f $1 ]; then
-	case $1 in
+# parameter: "command args file"
+function extractfile() {
+	if ! $1 2>/dev/null; then
+		echo "extract: command '$1' cannot be executed." 1>&2
+		exitCommandNotFound=127
+		exit $exitCommandNotFound
+	fi
+}
+
+file=$1
+if [ -f "$file" ]; then
+	case "$file" in
 	*.tar.bz2|*.tbz2)
-		tar xjf $1
+		extractfile "tar xjf $file"
 	;;
 	*.tar.gz|*.tgz)
-		tar xzf $1
+		extractfile "tar xzf $file"
 	;;
 	*.bz2)
-		bunzip2 $1
+		extractfile "bunzip2 $file"
 	;;
 	*.rar)
-		unrar x $1
+		extractfile "unrar x $file"
 	;;
 	*.gz)
-		gunzip $1
+		extractfile "gunzip $file"
 	;;
 	*.tar)
-		tar xf $1
+		extractfile "tar xf $file"
 	;;
 	*.zip)
-		unzip $1
+		extractfile "unzip $file"
 	;;
 	*.Z)
-		uncompress $1
+		extractfile "uncompress $file"
 	;;
 	*.7z|*.xz)
-		7z x $1
+		extractfile "7z x $file"
 	;;
 	*)
-		echo "'$1' cannot be extracted via extract." 1>&2
+		echo "extract: file '$file' cannot be extracted." 1>&2
 		exit 2
 	;;
 	esac
 else
-	echo "'$1' is not a valid file" 1>&2
+	echo "extract: '$file' is not a valid archive file" 1>&2
 	exit 1
 fi
