@@ -1,0 +1,27 @@
+#!/bin/bash
+
+function usage() {
+	echo "usage: godoc-srv [-h] [pkg]" 1>&2
+	echo "run godoc http server in background and open default browser" 1>&2
+	echo "  -h	print help message and exit" 1>&2
+	echo "  pkg	open Go package in browser" 1>&2
+}
+
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+	key="$1"
+	case $key in
+	-h)
+		usage
+		exit 0
+	;;
+	*)
+		POSITIONAL+=("$1") # save it in an array for later
+		shift # past argument
+	esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+godoc -http=:6060 -index=true -links=true -play=true 2>/dev/null &
+open "http://localhost:6060/pkg/${POSITIONAL[0]}"
+
