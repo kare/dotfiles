@@ -12,7 +12,11 @@ alias cd=_cd
 shopt -s dotglob
 export HISTSIZE=0
 export HISTFILESIZE=0
-export PS1="\\h ; "
-
-# added by travis gem
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+case "$termprog" in
+	win | 9term)
+		export PS1="\\u ; "
+		;;
+	*)
+		export PS1="\\u \\w $ "
+		;;
+esac
