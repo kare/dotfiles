@@ -1,21 +1,21 @@
 #!/bin/bash
 
 function usage() {
-	echo "usage: `basename $0` [-h] directory" 1>&2
-	exit 1
+	echo "usage: git-empty [-h] directory" 1>&2
 }
 
-if [ -z "$1" -o "$1" == "-h" ]; then
+if [ -z "$1" ] || [ "$1" == "-h" ]; then
 	usage
+	exit 1
 fi
 dir=$1
 if [ ! -d "$dir" ]; then
-	mkdir -p $dir
+	mkdir -p "$dir"
 fi
 
-cd $dir
+cd "$dir" || exit 3
 if [ -d .git ]; then
-	echo "`basename $0`: existing .git directory found. aborting." 1>&2
+	echo "git-empty: existing .git directory found. aborting." 1>&2
 	exit 2
 fi
 git init .
@@ -28,3 +28,4 @@ git commit -m "Add empty .gitignore"
 if [ -e .gitignore.org ]; then
 	mv .gitignore.org .gitignore
 fi
+git config color.ui false
