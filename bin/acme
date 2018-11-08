@@ -3,15 +3,15 @@
 tabstop=4
 SHELL=bash
 TERM=dumb
-case `uname` in
+case $(uname) in
 	Linux)
 		font="/mnt/font/Lucida Grande Regular W/12a/font"
 		fixedfont="/mnt/font/Source Code Pro/10a/font"
 	;;
 	Darwin)
-		#font=/mnt/font/LucidaGrande/14a/font
+		font=/mnt/font/LucidaGrande/14a/font
 		#fixedfont=/mnt/font/NotoMono/14a/font
-		font=/mnt/font/GoRegular/15a/font
+		#font=/mnt/font/GoRegular/15a/font
 		fixedfont=/mnt/font/GoMono/14a/font
 		#fixedfont=/mnt/font/SourceCodePro-Regular/14a/font
 		#args="-m /mnt/acme"
@@ -19,7 +19,7 @@ case `uname` in
 esac
 
 _cd() {
-	builtin cd $1 && awd
+	builtin cd "$1" && awd
 }
 alias cd=_cd
 
