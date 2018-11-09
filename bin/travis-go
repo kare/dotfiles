@@ -16,7 +16,7 @@ fi
 vanity=$1
 
 cat << __TRAVIS__
-dist: trusty
+dist: xenial
 language: go
 go_import_path: $vanity
 go: "1.11.x"
