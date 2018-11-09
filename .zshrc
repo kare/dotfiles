@@ -76,7 +76,16 @@ if [ -f '$HOME/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export NVM_DIR="$HOME/.nvm"
-#source $(brew --prefix nvm)/nvm.sh
+# lazy load nvm for quick shell startup
+function nvm() {
+	if [ -d "/usr/local/opt/nvm" ]; then
+		export NVM_DIR="$HOME/.nvm"
+		source "/usr/local/opt/nvm/nvm.sh"
+		nvm "$@"
+	else
+		echo "zsh: command not found: nvm" >&2
+		return 127
+	fi
+}
 
 #zprof
