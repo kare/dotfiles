@@ -12,24 +12,26 @@ while [[ $# -gt 0 ]]; do
 	case $key in
 	-h)
 		usage
-		exit 1
+		exit 0
 	;;
 	*)
 		POSITIONAL+=("$1") # save it in an array for later
 		shift # past argument
+	;;
 	esac
 done
 set -- "${POSITIONAL[@]}" # restore positional parameters
 
 name="TODO"
-if [[ -n $1 ]]; then
+if [ -n "$1" ]; then
 	name=$1
 fi
 cat << __MIDDLEWARE_STD__
+// $name
 func $name(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
-		http.MethodGet:
+		case http.MethodGet:
 			fmt.Fprintf(w, "Hello world!\\n")
 		default:
 			status := http.StatusNotImplemented
