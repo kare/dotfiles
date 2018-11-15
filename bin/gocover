@@ -1,13 +1,11 @@
 #!/bin/bash
 
 file=$(mktemp)
-go test -coverprofile=$file
-err=$?
-if [ $err -ne 0 ]; then
-	rm -f $file
-	exit $err
+if ! go test -coverprofile="$file"; then
+	rm -f "$file"
+	exit 1
 fi
-go tool cover -func=$file
-go tool cover -html=$file
-rm -f $file
+go tool cover -func="$file"
+go tool cover -html="$file"
+rm -f "$file"
 
