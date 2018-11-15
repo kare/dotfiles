@@ -3,25 +3,10 @@
 if [ "$1" = "-h" ]; then
 	echo "usage: dotfiles-update-modules [-h] [-u]" 1>&2
 	echo "stash workspace, update modules, commit and pop stash" 1>&2
-	echo "	-u only update modules" 1>&2
 	exit 1
 fi
 
-if [ "$1" != "-u" ]; then
-	dotfiles stash
-fi
-for module in $(ls -d ~/.vim/bundle/*); do
-	echo "Updating $module"
-	cd "$module" || exit 1
-	git checkout master
-	git pull
-	if [ "$1" != "-u" ]; then
-		cd
-		dotfiles add $module
-	fi
-done
-if [ "$1" != "-u" ]; then
-	cd
-	dotfiles commit -am "Update Vim modules"
-	dotfiles stash pop
-fi
+dotfiles stash
+dotfiles submodule update
+dotfiles commit -am "Update Vim modules"
+dotfiles stash pop
