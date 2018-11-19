@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function usage() {
-	echo "usage: git-empty [-h] directory" 1>&2
+	echo "usage: git empty [-h] directory" 1>&2
 }
 
 if [ -z "$1" ] || [ "$1" == "-h" ]; then
@@ -22,10 +22,20 @@ git init .
 if [ -e .gitignore ]; then
 	mv .gitignore .gitignore.org
 fi
+
+email="kare.nuorteva@me.com"
+case $(hostname) in
+	"Kare-MacBook-Pro.local")
+		email="kare.nuorteva@streamr.com"
+	;;
+esac
+git config user.email "$email"
+git config user.name "Kare Nuorteva"
+git config color.ui false
+
 touch .gitignore
 git add .gitignore
 git commit -m "Add empty .gitignore"
 if [ -e .gitignore.org ]; then
 	mv .gitignore.org .gitignore
 fi
-git config color.ui false
