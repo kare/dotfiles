@@ -23,7 +23,6 @@ github.com/fatih/gomodifytags
 github.com/fzipp/gocyclo
 github.com/godoctor/godoctor
 github.com/golang/dep/cmd/dep
-github.com/golang/lint/golint
 github.com/golang/protobuf/protoc-gen-go
 github.com/gordonklaus/ineffassign
 github.com/goreleaser/goreleaser
@@ -49,6 +48,7 @@ github.com/tsenart/deadcode
 github.com/tsenart/vegeta
 github.com/uudashr/gopkgs/cmd/gopkgs
 github.com/zmb3/gogetdoc
+golang.org/x/lint/golint
 golang.org/x/perf/cmd/benchstat
 golang.org/x/tools/cmd/callgraph
 golang.org/x/tools/cmd/cover
