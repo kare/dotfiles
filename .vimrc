@@ -1,3 +1,5 @@
+set langmenu=en_US.UTF-8
+let $LANG='en_US.UTF-8'
 filetype off
 execute pathogen#infect()
 filetype plugin indent on
