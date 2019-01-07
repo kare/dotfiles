@@ -7,6 +7,16 @@ if [ "$1" = "-h" ]; then
 fi
 
 dotfiles stash
-dotfiles submodule update
+
+for module in $(ls -d ~/.vim/bundle/*); do
+	echo "Updating $module"
+	#dotfiles submodule update
+	cd "$module" || exit 1
+	git checkout master
+	git pull
+	cd
+	dotfiles add "$module"
+done
+cd
 dotfiles commit -am "Update Vim modules"
 dotfiles stash pop

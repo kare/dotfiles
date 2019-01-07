@@ -6,6 +6,7 @@ if [ "$GOPATH" != "$HOME" ]; then
 fi
 
 export GO111MODULE=off
+export GOPATH="$HOME/go/tools"
 
 #github.com/rsc/github/issue
 read -r -d '' packages << __HERE__
@@ -74,6 +75,10 @@ mvdan.cc/unparam
 rsc.io/2fa
 rsc.io/goversion
 sourcegraph.com/sqs/goreturns
+kkn.fi/cmd/gends
+kkn.fi/cmd/gist
+kkn.fi/cmd/itob
+kkn.fi/cmd/tcpproxy
 __HERE__
 
 for pkg in $packages; do
@@ -84,10 +89,6 @@ for pkg in $packages; do
 done
 
 read -r -d '' packages << __HERE__
-kkn.fi/cmd/gends
-kkn.fi/cmd/gist
-kkn.fi/cmd/itob
-kkn.fi/cmd/tcpproxy
 __HERE__
 
 for pkg in $packages; do

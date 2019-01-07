@@ -33,4 +33,4 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export PATH=".:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
+export PATH=".:$HOME/go/tools/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
