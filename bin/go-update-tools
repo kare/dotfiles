@@ -13,6 +13,7 @@ read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
 9fans.net/go/acme/editinacme
+github.com/FiloSottile/mkcert
 github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
 github.com/alexkohler/prealloc
@@ -70,15 +71,15 @@ honnef.co/go/tools/cmd/gosimple
 honnef.co/go/tools/cmd/megacheck
 honnef.co/go/tools/cmd/staticcheck
 honnef.co/go/tools/cmd/unused
+kkn.fi/cmd/gends
+kkn.fi/cmd/gist
+kkn.fi/cmd/itob
+kkn.fi/cmd/tcpproxy
 mvdan.cc/interfacer
 mvdan.cc/unparam
 rsc.io/2fa
 rsc.io/goversion
 sourcegraph.com/sqs/goreturns
-kkn.fi/cmd/gends
-kkn.fi/cmd/gist
-kkn.fi/cmd/itob
-kkn.fi/cmd/tcpproxy
 __HERE__
 
 for pkg in $packages; do
