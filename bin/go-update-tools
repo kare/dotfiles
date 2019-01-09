@@ -23,6 +23,7 @@ github.com/davidrjenni/A
 github.com/davidrjenni/reftools/cmd/fillstruct
 github.com/fatih/gomodifytags
 github.com/fzipp/gocyclo
+github.com/go-delve/delve/cmd/dlv
 github.com/godoctor/godoctor
 github.com/golang/dep/cmd/dep
 github.com/golang/protobuf/protoc-gen-go
