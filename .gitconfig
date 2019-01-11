@@ -11,7 +11,7 @@
 	sync = codereview sync
 [core]
 	whitespace=trailing-space
-	editor = /usr/local/bin/vim
+	editor = vim
 	pager = less -+$LESS -FRX
 #	editor = editinacme
 #	pager = /usr/local/plan9/bin/p
