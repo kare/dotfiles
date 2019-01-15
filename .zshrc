@@ -24,6 +24,7 @@ setopt hist_append
 setopt hist_expand
 setopt inc_append_history
 setopt share_history
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' actionformats "%s %b (%a)"
