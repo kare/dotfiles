@@ -12,7 +12,7 @@
 [core]
 	whitespace=trailing-space
 	editor = vim
-	pager = less -+$LESS -FRX
+	pager = less -+$LESS -R
 #	editor = editinacme
 #	pager = /usr/local/plan9/bin/p
 #	pager =
