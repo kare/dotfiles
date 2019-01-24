@@ -31,7 +31,8 @@ zstyle ':vcs_info:*' actionformats "%s %b (%a)"
 zstyle ':vcs_info:*' formats "%b %u"
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' enable git hg
-export PS1="%~ %1v %% "
+PS1="%n@%m %~ %1v %% "
+#export PS1="%n %~ %1v %% "
 
 bindkey -e
 
@@ -51,30 +52,31 @@ function preexec {
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
-HISTFILE=$HOME/.zhistory
-HISTSIZE=10000
-SAVEHIST=10000
+HISTFILE="$HOME/.zhistory"
+HISTSIZE="10000"
+SAVEHIST="10000"
 
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
+LESS="-iMFRj4a"
 JAVA_OPTS="-Dfile.encoding=UTF-8"
 # Python
 # pip should only run if there is a virtualenv currently activated
 PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
-PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 # Apple iCloud Drive
 ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
-export GOPATH="$HOME"
-export GO111MODULE=on
+GOPATH="$HOME"
+GO111MODULE="on"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/tools/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/path.zsh.inc'; fi
 # The next line enables shell command completion for gcloud.
 if [ -f '$HOME/tools/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/completion.zsh.inc'; fi
 
-export SDKMAN_DIR="$HOME/.sdkman"
+SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # lazy load nvm for quick shell startup
