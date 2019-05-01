@@ -6,6 +6,11 @@
 .DS_Store
 /lib/acme-bookmarks.txt
 /pprof
+/.jssc/
+/.pgAdmin4.startup.log
+/.pgadmin/
+/.pylint.d/
+/.python_history
 /.nvm/
 /.aws/
 /.standard-cache/
