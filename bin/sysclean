@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#https://github.com/mengfeng/clean-my-mac/blob/master/clean_my_mac.sh
+#https://github.com/fwartner/mac-cleanup/blob/master/cleanup.sh
+#https://github.com/jgamblin/MacOS-Maid/blob/master/maid.sh
+
+diskUsage() {
+	df / | tail -1 | awk '{print $4}'
+}
+
+startSpace=$(diskUsage)
+case $(uname) in
+	Darwin)
+		if command -v brew > /dev/null; then
+			brew cleanup
+		fi
+		if command -v port > /dev/null; then
+			sudo port clean --all
+		fi
+		;;
+	Linux)
+		if [ -f /etc/debian_version ]; then
+			sudo apt-get autoremove
+			sudo apt-get autoclean
+			sudo apt-get clean
+		fi
+		;;
+esac
+
+if command -v nvm > /dev/null; then
+	nvm cache clear
+fi
+if command -v docker > /dev/null; then
+	docker system prune --all --force --volumes
+fi
+if command -v npm > /dev/null; then
+	npm cache clean --force --loglevel=error
+fi
+if command -v yarn /dev/null; then
+	yarn cache clean --force
+fi
+
+endSpace=$(diskUsage)
+echo "$((endSpace - startSpace)) bytes cleaned"
+
