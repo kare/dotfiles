@@ -10,21 +10,21 @@ case $(uname) in
 		if command -v brew > /dev/null; then
 			brew update
 			brew upgrade
-			brew cleanup
 		fi
 		if command -v port > /dev/null; then
 			sudo port selfupdate
 			port outdated
 			port upgrade outdated
 		fi
+		if command -v sdk > /dev/null; then
+			sdk selfupdate
+			sdk update
+		fi
 		;;
 	Linux)
 		if [ -f /etc/debian_version ]; then
 			sudo apt-get update
 			sudo apt-get upgrade --show-upgraded --assume-yes
-			sudo apt-get autoremove
-			sudo apt-get autoclean
-			sudo apt-get clean
 		fi
 		if [ -f /etc/arch-release ]; then
 			sudo pacman --sync --refresh --noconfirm archlinux-keyring
