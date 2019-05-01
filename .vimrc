@@ -50,8 +50,8 @@ set undoreload=10000
 set hidden
 "http://www.oualline.com/vim-cook.html
 set autowrite
-set listchars=tab:→\ ,trail:·
-set list
+"set listchars=tab:→\ ,trail:·
+"set list
 set mouse=
 
 nnoremap <C-e> 3<C-e>
