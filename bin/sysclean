@@ -41,5 +41,5 @@ if command -v yarn /dev/null; then
 fi
 
 endSpace=$(diskUsage)
-echo "$((endSpace - startSpace)) bytes cleaned"
+echo "$((startSpace - endSpace)) bytes cleaned"
 
