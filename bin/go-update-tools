@@ -18,7 +18,7 @@ github.com/acroca/go-symbols
 github.com/alecthomas/gometalinter
 github.com/alexkohler/prealloc
 github.com/campoy/jsonenums
-github.com/cweill/gotests
+github.com/cweill/gotests/...
 github.com/davidrjenni/A
 github.com/davidrjenni/reftools/cmd/fillstruct
 github.com/fatih/gomodifytags
@@ -40,14 +40,17 @@ github.com/mdempsky/maligned
 github.com/mdempsky/unconvert
 github.com/monochromegane/the_platinum_searcher/...
 github.com/nsf/gocode
-github.com/opennota/check/cmd/aligncheck
-github.com/opennota/check/cmd/structcheck
-github.com/opennota/check/cmd/varcheck
+gitlab.com/opennota/check/cmd/aligncheck
+gitlab.com/opennota/check/cmd/structcheck
+gitlab.com/opennota/check/cmd/varcheck
 github.com/quasilyte/go-parsefix/cmd/parsefix
 github.com/rakyll/hey
 github.com/ramya-rao-a/go-outline
+github.com/rjeczalik/bin/cmd/gobin
 github.com/rogpeppe/godef
 github.com/securego/gosec/cmd/gosec/...
+github.com/shurcooL/binstale
+github.com/shurcooL/gostatus
 github.com/shurcooL/markdownfmt
 github.com/tommy-muehle/go-mnd/cmd/mnd
 github.com/tsenart/deadcode
@@ -71,7 +74,6 @@ golang.org/x/tools/cmd/gotype
 golang.org/x/tools/cmd/guru
 golang.org/x/tools/cmd/present
 golang.org/x/tools/cmd/stringer
-honnef.co/go/tools/cmd/errcheck-ng
 honnef.co/go/tools/cmd/gosimple
 honnef.co/go/tools/cmd/megacheck
 honnef.co/go/tools/cmd/staticcheck
@@ -83,7 +85,6 @@ kkn.fi/cmd/tcpproxy
 mvdan.cc/interfacer
 mvdan.cc/unparam
 rsc.io/2fa
-rsc.io/goversion
 sourcegraph.com/sqs/goreturns
 __HERE__
 
