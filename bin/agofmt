@@ -1,3 +1,4 @@
 #!/bin/bash
 
-$HOME/bin/Fmt gofmt
+"$HOME/go/tools/bin/Fmt" gofmt
+
