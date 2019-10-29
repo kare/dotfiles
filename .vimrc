@@ -109,3 +109,6 @@ endfunction
 
 " markdownfmt
 let g:markdownfmt_autosave=1
+" Go Language Protocol Server
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
