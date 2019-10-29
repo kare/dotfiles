@@ -16,7 +16,6 @@ export INFOPATH="$INFOPATH:/opt/local/share/info"
 export NPM_PACKAGES="/usr/local/npm_packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export PATH="$PATH:$NPM_PACKAGES/bin"
-export CHROMEDRIVER=$HOME/bin/chromedriver
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/tools/google-cloud-sdk/bin"
 
@@ -33,4 +32,4 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-export PATH=".:$HOME/go/tools/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
+export PATH=".:$HOME/bin:$HOME/go/tools/bin:$HOME/go/bin:/usr/local/bin:$PATH"

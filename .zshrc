@@ -22,8 +22,11 @@ setopt extended_glob
 # Zsh history
 setopt hist_append
 setopt hist_expand
+setopt hist_find_no_dups
+setopt hist_save_no_dups
 setopt inc_append_history
 setopt share_history
+setopt all_export
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz vcs_info
@@ -53,12 +56,12 @@ function preexec {
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
 HISTFILE="$HOME/.zhistory"
-HISTSIZE="10000"
-SAVEHIST="10000"
+HISTSIZE="100000"
+SAVEHIST="100000"
 
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
-LESS="-iMFRj4a"
+LESS="-iMRj4a"
 JAVA_OPTS="-Dfile.encoding=UTF-8"
 # Python
 # pip should only run if there is a virtualenv currently activated
@@ -70,6 +73,7 @@ ICLOUD=$HOME/Library/Mobile\ Documents/com~apple~CloudDocs
 # Go
 GOPATH="$HOME"
 GO111MODULE="on"
+GOPROXY="https://proxy.golang.org"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '$HOME/tools/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/tools/google-cloud-sdk/path.zsh.inc'; fi
@@ -80,15 +84,19 @@ SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # lazy load nvm for quick shell startup
-function nvm() {
-	if [ -d "/usr/local/opt/nvm" ]; then
-		export NVM_DIR="$HOME/.nvm"
-		source "/usr/local/opt/nvm/nvm.sh"
-		nvm "$@"
-	else
-		echo "zsh: command not found: nvm" >&2
-		return 127
-	fi
-}
+#function nvm() {
+#	if [ -d "/usr/local/opt/nvm" ]; then
+#		export NVM_DIR="$HOME/.nvm"
+#		source "/usr/local/opt/nvm/nvm.sh"
+#		nvm "$@"
+#	else
+#		echo "zsh: command not found: nvm" >&2
+#		return 127
+#	fi
+#}
+export NVM_DIR="$HOME/.nvm"
+source "/usr/local/opt/nvm/nvm.sh"
+
+eval "$(rbenv init -)"
 
 #zprof
