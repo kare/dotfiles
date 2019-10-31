@@ -95,7 +95,7 @@ SDKMAN_DIR="$HOME/.sdkman"
 #	fi
 #}
 export NVM_DIR="$HOME/.nvm"
-source "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
 eval "$(rbenv init -)"
 
