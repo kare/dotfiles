@@ -20,11 +20,8 @@ setopt interactive_comments
 # Zsh Expansion and globbing
 setopt extended_glob
 # Zsh history
-setopt hist_append
-setopt hist_expand
 setopt hist_find_no_dups
 setopt hist_save_no_dups
-setopt inc_append_history
 setopt share_history
 setopt all_export
 fpath=(/usr/local/share/zsh-completions $fpath)
