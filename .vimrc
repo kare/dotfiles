@@ -2,7 +2,7 @@ set langmenu=en_US.UTF-8
 let $LANG='en_US.UTF-8'
 filetype off
 execute pathogen#infect()
-filetype plugin indent on
+filetype plugin on
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -28,13 +28,12 @@ set wildmode=list:longest
 set visualbell
 set cursorline
 set ttyfast
-set swapfile
-set dir=/tmp
 set relativenumber
 set textwidth=80
 set formatoptions=qrn1
-set cindent
+set autoindent
 set smartindent
+filetype indent on
 set title
 set backspace=indent,eol,start
 set noerrorbells
@@ -52,7 +51,17 @@ set hidden
 set autowrite
 "set listchars=tab:→\ ,trail:·
 "set list
-set mouse=
+set mouse=a
+set updatetime=500
+set balloondelay=250
+set noswapfile
+set nobackup
+set nowritebackup
+" show info for completion candidates in a popup menu
+if has("patch-8.1.1904")
+  set completeopt+=popup
+  set completepopup=align:menu,border:off,highlight:Pmenu
+endif
 
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>

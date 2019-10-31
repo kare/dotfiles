@@ -15,18 +15,18 @@
 [submodule ".vim/bundle/govim"]
 	path = .vim/bundle/govim
 	url = https://github.com/govim/govim.git
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = https://github.com/w0rp/ale
 [submodule ".vim/bundle/vim-gitgutter"]
 	path = .vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
 [submodule ".vim/bundle/lightline"]
 	path = .vim/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
-[submodule ".vim/bundle/gotests"]
-	path = .vim/bundle/gotests
+[submodule ".vim/bundle/gotests-vim"]
+	path = .vim/bundle/gotests-vim
 	url = https://github.com/buoto/gotests-vim.git
-[submodule "auto-pairs"]
+[submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = git://github.com/jiangmiao/auto-pairs.git
+[submodule ".vim/bundle/ale"]
+	path = .vim/bundle/ale
+	url = git@github.com:dense-analysis/ale.git
