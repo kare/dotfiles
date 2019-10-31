@@ -27,3 +27,6 @@
 [submodule ".vim/bundle/gotests"]
 	path = .vim/bundle/gotests
 	url = https://github.com/buoto/gotests-vim.git
+[submodule "auto-pairs"]
+	path = .vim/bundle/auto-pairs
+	url = git://github.com/jiangmiao/auto-pairs.git
