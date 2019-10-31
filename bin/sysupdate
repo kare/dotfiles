@@ -6,7 +6,6 @@ case $(uname) in
 		sudo freebsd-update install
 		;;
 	Darwin)
-		softwareupdate --install --all
 		if command -v brew > /dev/null; then
 			brew update
 			brew upgrade
@@ -20,6 +19,7 @@ case $(uname) in
 			sdk selfupdate
 			sdk update
 		fi
+		softwareupdate --install --all --restart
 		;;
 	Linux)
 		if [ -f /etc/debian_version ]; then
