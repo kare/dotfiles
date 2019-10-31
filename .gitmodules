@@ -12,9 +12,9 @@
 [submodule ".vim/bundle/vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
-	url = git@github.com:fatih/vim-go.git
+[submodule ".vim/bundle/govim"]
+	path = .vim/bundle/govim
+	url = https://github.com/govim/govim.git
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
 	url = https://github.com/w0rp/ale
@@ -24,3 +24,6 @@
 [submodule ".vim/bundle/lightline"]
 	path = .vim/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule ".vim/bundle/gotests"]
+	path = .vim/bundle/gotests
+	url = https://github.com/buoto/gotests-vim.git
