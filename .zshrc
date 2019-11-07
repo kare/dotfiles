@@ -11,7 +11,6 @@ autoload -U compinit
 compinit
 compdef _git dotfiles=git
 fignore=(.o .class)
-zmodload zsh/net/tcp
 # Zsh I/O
 unsetopt correct_all
 setopt correct
@@ -20,9 +19,9 @@ setopt interactive_comments
 # Zsh Expansion and globbing
 setopt extended_glob
 # Zsh history
-setopt hist_find_no_dups
-setopt hist_save_no_dups
-setopt share_history
+setopt inc_append_history_time
+setopt extended_history
+setopt hist_ignore_all_dups
 setopt all_export
 fpath=(/usr/local/share/zsh-completions $fpath)
 
