@@ -7,6 +7,8 @@
 # Enable 'zprof' at the end of this file.
 #zmodload zsh/zprof
 
+ulimit -S -n 65000
+
 autoload -U compinit
 compinit
 compdef _git dotfiles=git

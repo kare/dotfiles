@@ -30,3 +30,6 @@
 [submodule ".vim/bundle/ale"]
 	path = .vim/bundle/ale
 	url = git@github.com:dense-analysis/ale.git
+[submodule "vim-go"]
+	path = .vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
