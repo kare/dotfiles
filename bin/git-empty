@@ -4,11 +4,15 @@ function usage() {
 	echo "usage: git empty [-h] directory" 1>&2
 }
 
-if [ -z "$1" ] || [ "$1" == "-h" ]; then
+if [ "$1" == "-h" ]; then
 	usage
 	exit 1
 fi
-dir=$1
+if [ -z "$1" ]; then
+	dir=.
+else
+	dir=$1
+fi
 if [ ! -d "$dir" ]; then
 	mkdir -p "$dir"
 fi
@@ -20,7 +24,8 @@ if [ -d .git ]; then
 fi
 git init .
 if [ -e .gitignore ]; then
-	mv .gitignore .gitignore.org
+	tmpignore=$(mktemp)
+	mv .gitignore "$tmpignore"
 fi
 
 email="kare.nuorteva@me.com"
@@ -36,6 +41,6 @@ git config color.ui false
 touch .gitignore
 git add .gitignore
 git commit -m "Add empty .gitignore"
-if [ -e .gitignore.org ]; then
-	mv .gitignore.org .gitignore
+if [ -e "$tmpignore" ]; then
+	mv "$tmpignore" .gitignore
 fi
