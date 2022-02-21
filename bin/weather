@@ -1,0 +1,5 @@
+#!/bin/bash
+set -e -u -o pipefail
+
+curl -H "Accept-Language: fi" wttr.in
+
