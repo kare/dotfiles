@@ -1,17 +1,30 @@
 #!/bin/bash
+set -eu -o pipefail
 
 function usage() {
-	echo "usage: git empty [-h] directory" 1>&2
+	echo "Usage: git empty [-h] [-d] [directory]" 1>&2
+	echo "	-h Show help" 1>&2
+	echo "	-d Decorate .gitignore with common OS files" 1>&2
+	echo "If no directory is given then current directory is used as working directory." 1>&2
 }
 
-if [ "$1" == "-h" ]; then
-	usage
-	exit 1
-fi
-if [ -z "$1" ]; then
-	dir=.
+while getopts "hd" arg; do
+	case $arg in
+	d) # Decorate .gitignore with common OS files
+		deco_arg=1
+		shift
+	;;
+	h|*) # Show help
+		usage
+		exit 1
+	;;
+	esac
+done
+
+if [ -n "${1-}" ]; then
+	dir=${1}
 else
-	dir=$1
+	dir=.
 fi
 if [ ! -d "$dir" ]; then
 	mkdir -p "$dir"
@@ -19,7 +32,7 @@ fi
 
 cd "$dir" || exit 3
 if [ -d .git ]; then
-	echo "git-empty: existing .git directory found. aborting." 1>&2
+	echo "git empty: existing .git directory found. aborting." 1>&2
 	exit 2
 fi
 git init .
@@ -28,19 +41,36 @@ if [ -e .gitignore ]; then
 	mv .gitignore "$tmpignore"
 fi
 
-email="kare.nuorteva@me.com"
-case $(hostname) in
-	"Kare-MacBook-Pro.local")
-		email="kare.nuorteva@streamr.com"
-	;;
-esac
-git config user.email "$email"
+git config user.email kare.nuorteva@me.com
 git config user.name "Kare Nuorteva"
-git config color.ui false
+git config color.ui true
 
 touch .gitignore
 git add .gitignore
-git commit -m "Add empty .gitignore"
-if [ -e "$tmpignore" ]; then
+git commit -m "chore: Add empty .gitignore"
+if [ -n "${tmpignore-}" ] && [ -e "$tmpignore" ]; then
 	mv "$tmpignore" .gitignore
 fi
+
+if [[ -n ${deco_arg-} ]]; then
+	if [[ $(git diff-index --quiet HEAD .gitignore) ]]; then
+		git stash
+		deco_stash=1
+	fi
+	cat << __DECORATION__ >> .gitignore
+.DS_Store
+/.idea
+/.vscode
+*.diff
+*.patch
+*.tar.gz
+*.tgz
+*.zip
+__DECORATION__
+fi
+git add .gitignore
+git commit -m "chore: Add common files to .gitignore"
+if [ -n "${deco_stash-}" ] && [ -e "$deco_stash" ]; then
+	git stash pop
+fi
+

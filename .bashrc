@@ -20,3 +20,10 @@ case "$termprog" in
 		export PS1="\\u \\w $ "
 		;;
 esac
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -s "$HOME/.web3j/source.sh" ] && source "$HOME/.web3j/source.sh"
+. "$HOME/.cargo/env"

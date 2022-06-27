@@ -8,16 +8,15 @@
 
 setopt no_global_rcs
 
-export PATH="/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin"
-
 export MANPATH="$MANPATH:/opt/local/share/man"
 export INFOPATH="$INFOPATH:/opt/local/share/info"
 
-export NPM_PACKAGES="/usr/local/npm_packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH="$PATH:$NPM_PACKAGES/bin"
+export PATH="/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/tools/google-cloud-sdk/bin"
+export PATH=node_modules/.bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH=$PATH:~/.platformio/penv/bin
 
 # Plan 9
 if [ -d "/usr/local/plan9" ]; then
@@ -33,3 +32,5 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 export PATH=".:$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH"
+. "$HOME/.cargo/env"
+export PATH="/Users/kkn/.ebcli-virtual-env/executables:$PATH"

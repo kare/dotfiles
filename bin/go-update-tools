@@ -5,12 +5,11 @@ if [ "$GOPATH" != "$HOME" ]; then
 	exit 1
 fi
 
-#rsc.io/github/...
+#github.com/uudashr/gopkgs/cmd/gopkgs
 read -r -d '' packages << __HERE__
 9fans.net/go/acme/Watch
 9fans.net/go/acme/acmego
 9fans.net/go/acme/editinacme
-github.com/FiloSottile/mkcert
 github.com/acroca/go-symbols
 github.com/alexkohler/prealloc
 github.com/campoy/jsonenums
@@ -20,9 +19,11 @@ github.com/davidrjenni/reftools/cmd/fillstruct
 github.com/farhaven/acme-complete-bind
 github.com/fatih/gomodifytags
 github.com/fhs/acme-lsp/cmd/L
-github.com/fzipp/gocyclo
+github.com/fhs/acme-lsp/cmd/acme-lsp
+github.com/fzipp/gocyclo/cmd/gocyclo
 github.com/go-delve/delve/cmd/dlv
 github.com/godoctor/godoctor
+github.com/golang/mock/mockgen
 github.com/golang/protobuf/protoc-gen-go
 github.com/gordonklaus/ineffassign
 github.com/goreleaser/goreleaser
@@ -35,9 +36,11 @@ github.com/klauspost/asmfmt/cmd/asmfmt
 github.com/mdempsky/maligned
 github.com/mdempsky/unconvert
 github.com/monochromegane/the_platinum_searcher/...
+github.com/nishanths/exhaustive/cmd/exhaustive
 github.com/nsf/gocode
 github.com/quasilyte/go-parsefix/cmd/parsefix
 github.com/rakyll/hey
+github.com/ramya-rao-a/go-outline
 github.com/ramya-rao-a/go-outline
 github.com/rjeczalik/bin/cmd/gobin
 github.com/rjkroege/edwood
@@ -49,7 +52,8 @@ github.com/shurcooL/markdownfmt
 github.com/tommy-muehle/go-mnd/cmd/mnd
 github.com/tsenart/deadcode
 github.com/tsenart/vegeta
-github.com/uudashr/gopkgs/cmd/gopkgs
+github.com/vektra/mockery/v2
+github.com/yagipy/maintidx/cmd/maintidx
 github.com/zmb3/gogetdoc
 gitlab.com/opennota/check/cmd/aligncheck
 gitlab.com/opennota/check/cmd/structcheck
@@ -66,6 +70,7 @@ golang.org/x/tools/cmd/godoc
 golang.org/x/tools/cmd/goimports
 golang.org/x/tools/cmd/gomvpkg
 golang.org/x/tools/cmd/gotype
+golang.org/x/tools/cmd/goyacc
 golang.org/x/tools/cmd/guru
 golang.org/x/tools/cmd/present
 golang.org/x/tools/cmd/stringer
@@ -83,9 +88,9 @@ sourcegraph.com/sqs/goreturns
 __HERE__
 
 for pkg in $packages; do
-	echo "gp-update-tools: installing $pkg@latest"
-	if ! go get -u "$pkg@latest"; then
-		echo "go-update-tools: 'go get' error for package '$pkg'" 1>&2
+	echo "go-update-tools: installing $pkg@latest"
+	if ! go install "$pkg@latest"; then
+		echo "go-update-tools: 'go install' error for package '$pkg'" 1>&2
 	fi
 done
 

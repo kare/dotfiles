@@ -1,35 +1,9 @@
-[submodule ".vim/bundle/detectindent"]
-	path = .vim/bundle/detectindent
-	url = https://github.com/ciaranm/detectindent.git
-	ignore = untracked
-[submodule ".vim/bundle/vim-sensible"]
-	path = .vim/bundle/vim-sensible
-	url = git://github.com/tpope/vim-sensible.git
-[submodule ".vim/bundle/vitality.vim"]
-	path = .vim/bundle/vitality.vim
-	url = git@github.com:sjl/vitality.vim.git
-	ignore = untracked
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/govim"]
 	path = .vim/bundle/govim
 	url = https://github.com/govim/govim.git
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
-[submodule ".vim/bundle/lightline"]
-	path = .vim/bundle/lightline
-	url = https://github.com/itchyny/lightline.vim
-[submodule ".vim/bundle/gotests-vim"]
-	path = .vim/bundle/gotests-vim
-	url = https://github.com/buoto/gotests-vim.git
-[submodule ".vim/bundle/auto-pairs"]
-	path = .vim/bundle/auto-pairs
-	url = git://github.com/jiangmiao/auto-pairs.git
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = git@github.com:dense-analysis/ale.git
-[submodule "vim-go"]
-	path = .vim/bundle/vim-go
-	url = https://github.com/fatih/vim-go.git
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".vim/bundle/vim-solarized"]
+	path = .vim/bundle/vim-solarized
+	url = https://github.com/ericbn/vim-solarized.git

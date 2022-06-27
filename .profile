@@ -7,3 +7,6 @@ export MANPATH="$MANPATH:/opt/local/share/man"
 export INFOPATH="$INFOPATH:/opt/local/share/info"
 export GOPATH=$HOME
 export EDITOR=editinacme
+
+[ -s "/Users/kkn/.web3j/source.sh" ] && source "/Users/kkn/.web3j/source.sh"
+. "$HOME/.cargo/env"

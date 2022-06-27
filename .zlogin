@@ -6,11 +6,3 @@
 # Rather, it should be used to set the terminal type and run a series of
 # external commands (fortune, msgs, etc).
 #
-
-if [ -z "`pgrep fontsrv`" ]; then
-	9 fontsrv &
-	disown
-fi
-if [ -z "`pgrep plumber`" ]; then
-	9 plumber
-fi

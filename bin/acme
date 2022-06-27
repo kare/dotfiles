@@ -1,20 +1,21 @@
 #!/bin/bash
+set -e -u -o pipefail
 
-tabstop=4
-SHELL=bash
-TERM=dumb
+export tabstop=4
+export SHELL=/bin/bash
+export TERM=dumb
 case $(uname) in
 	Linux)
 		font="/mnt/font/Lucida Grande Regular W/12a/font"
 		fixedfont="/mnt/font/Source Code Pro/10a/font"
 	;;
 	Darwin)
-		font=/mnt/font/LucidaGrande/14a/font
+		font=/mnt/font/LucidaGrande/15a/font
 		#fixedfont=/mnt/font/NotoMono/14a/font
 		#font=/mnt/font/GoRegular/15a/font
 		fixedfont=/mnt/font/GoMono/14a/font
 		#fixedfont=/mnt/font/SourceCodePro-Regular/14a/font
-		args="-m /tmp/acme"
+		args="-m /private/tmp/acme"
 	;;
 esac
 
@@ -23,4 +24,12 @@ _cd() {
 }
 alias cd=_cd
 
-$PLAN9/bin/acme $args -a -f "$font" -F "$fixedfont" $* 2>/dev/null
+if test -z "$(pgrep fontsrv)"; then
+	9 fontsrv &
+	disown
+fi
+$PLAN9/bin/acme $args -a -f "$font" -F "$fixedfont" "$@" &
+if test -z "$(pgrep plumber)"; then
+	9 plumber
+fi
+

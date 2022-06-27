@@ -10,16 +10,17 @@ case $# in
 	;;
 esac
 
-if [ "`pgrep X11.bin`" == "" ]; then
-        open -a XQuartz.app
-        sleep 5
-fi
+open -a XQuartz.app
+while [ "$(pgrep X11.bin)" == "" ]; do 
+	sleep 1
+done
 
-IFS="@" read -r -a creds <<< "$1"
+IFS="@"
+read -r -a creds <<< "$1"
 user="${creds[0]}"
 hostname="${creds[1]}"
-if [ `uname` == "Darwin" ]; then
+if [ "$(uname)" == "Darwin" ]; then
 	export DISPLAY=":0"
 fi
-drawterm -h $hostname -a $hostname -u $user &
+drawterm -h "$hostname" -a "$hostname" -u "$user" &
 

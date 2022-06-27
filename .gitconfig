@@ -1,20 +1,12 @@
 [user]
 	name = Kare Nuorteva
 	email = kare.nuorteva@me.com
-[alias]
-	# Go codereview aliases
-	change = codereview change
-	gofmt = codereview gofmt
-	mail = codereview mail
-	pending = codereview pending
-	submit = codereview submit
-	sync = codereview sync
 [core]
-	whitespace=trailing-space
+	whitespace = trailing-space
 	editor = vim
-	pager = less -+$LESS -R
 #	editor = editinacme
-#	pager = /usr/local/plan9/bin/p
+#	pager = less -+$LESS -R
+	pager = /usr/local/plan9/bin/p
 #	pager =
 [format]
 	numbered = auto
@@ -31,3 +23,7 @@
 	path = ~/.gitconfig.local
 [push]
 	default = current
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main

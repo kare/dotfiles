@@ -4,5 +4,5 @@ if [ $# -eq 1 -a "$1" = "love" ];then
     echo "not war"
     exit
 fi
-/usr/bin/make $@
-
+/usr/local/opt/make/libexec/gnubin/make $@
+#/usr/bin/make $@

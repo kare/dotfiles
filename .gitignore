@@ -2,6 +2,7 @@
 /bin/goose
 /bin/mysql-core-dev
 /bin/mysql-core-test
+/bin/ssh-*
 .DS_Store
 /lib/acme-bookmarks.txt
 /pprof
@@ -106,12 +107,25 @@
 /.tooling/
 /.vue-templates/
 /.yarnrc
+/.bundle/
+/.cassandra/
+/.cups/
+/.ideaLibSources/
+/.jmxterm_history
+/.kube/
+/.rbenv/
+/.rediscli_history
+/.sonarlint/
+/eclipse-workspace/
+/eclipse/
 
 /bin/2fa
 /bin/A
 /bin/Fmt
 /bin/L
 /bin/Watch
+/bin/acme-complete-bind
+/bin/acme-lsp
 /bin/acmego
 /bin/aligncheck
 /bin/asmfmt
@@ -126,6 +140,7 @@
 /bin/edwood
 /bin/eg
 /bin/errcheck
+/bin/ewallet
 /bin/fillstruct
 /bin/fiximports
 /bin/gends
@@ -133,6 +148,7 @@
 /bin/go-module-query
 /bin/go-outline
 /bin/go-symbols
+/bin/goacme
 /bin/gobin
 /bin/gocode
 /bin/goconst
@@ -162,8 +178,11 @@
 /bin/itob
 /bin/jsonenums
 /bin/keyify
+/bin/kkn.fi-srv
+/bin/maintidx
 /bin/maligned
 /bin/markdownfmt
+/bin/matrix
 /bin/mkcert
 /bin/mnd
 /bin/parsefix

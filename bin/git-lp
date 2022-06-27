@@ -1,4 +1,5 @@
 #!/bin/bash
 
-git log -p "$@"
+#git --no-pager log --full-diff -p --max-count=1 "$@"
+git log --full-diff -p --first-parent "$@"
 

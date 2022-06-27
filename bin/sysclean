@@ -4,11 +4,6 @@
 #https://github.com/fwartner/mac-cleanup/blob/master/cleanup.sh
 #https://github.com/jgamblin/MacOS-Maid/blob/master/maid.sh
 
-diskUsage() {
-	df / | tail -1 | awk '{print $4}'
-}
-
-startSpace=$(diskUsage)
 case $(uname) in
 	Darwin)
 		if command -v brew > /dev/null; then
@@ -39,7 +34,4 @@ fi
 if command -v yarn /dev/null; then
 	yarn cache clean --force
 fi
-
-endSpace=$(diskUsage)
-echo "$((startSpace - endSpace)) bytes cleaned"
 

@@ -5,4 +5,4 @@ if [ "$1" = "-h" ];then
 	echo "example: in Acme tag: \"Edit , | jsonfmt\"" 1>&2
 	exit 1
 fi
-python -m json.tool
+python3 -m json.tool

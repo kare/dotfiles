@@ -11,7 +11,7 @@ ulimit -S -n 65000
 
 autoload -U compinit
 compinit
-compdef _git dotfiles=git
+#compdef _git dotfiles=git
 fignore=(.o .class)
 # Zsh I/O
 unsetopt correct_all
@@ -23,7 +23,13 @@ setopt extended_glob
 # Zsh history
 setopt inc_append_history_time
 setopt extended_history
+setopt hist_find_no_dups
 setopt hist_ignore_all_dups
+setopt hist_expire_dups_first
+setopt hist_reduce_blanks
+setopt inc_append_history
+setopt share_history
+setopt hist_ignore_space
 setopt all_export
 fpath=(/usr/local/share/zsh-completions $fpath)
 
@@ -54,8 +60,8 @@ function preexec {
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # Zsh History
 HISTFILE="$HOME/.zhistory"
-HISTSIZE="100000"
-SAVEHIST="100000"
+HISTSIZE="1000000000"
+SAVEHIST="1000000000"
 
 WORDCHARS="${WORDCHARS//\[\&=\/\]-;}"
 LESSCHARSET="UTF-8"
@@ -63,7 +69,7 @@ LESS="-iMRj4a"
 JAVA_OPTS="-Dfile.encoding=UTF-8"
 # Python
 # pip should only run if there is a virtualenv currently activated
-PIP_REQUIRE_VIRTUALENV=true
+#PIP_REQUIRE_VIRTUALENV=true
 # cache pip-installed packages to avoid re-downloading
 PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 # Apple iCloud Drive
@@ -93,8 +99,10 @@ SDKMAN_DIR="$HOME/.sdkman"
 #	fi
 #}
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 eval "$(rbenv init -)"
 
 #zprof
+
+[ -s "$HOME/.web3j/source.sh" ] && source "$HOME/.web3j/source.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
