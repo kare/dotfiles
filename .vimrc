@@ -58,6 +58,17 @@ let g:lightline = {
 	\ 'colorscheme': 'solarized',
 \ }
 
+"""""""""""""""
+
+let g:ale_linters = {
+	\ 'go': [],
+\}
+
+"""""""""""""""
+
+" bottom command window height in lines
+set cmdheight=2
+"let $GOFLAGS = "-tags=integration"
 " This file represents the minimal .vimrc needed to work with govim.
 "
 " We also include a number of suggested settings that we think the majority of

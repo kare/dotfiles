@@ -1,8 +1,7 @@
 /bin/drawterm
 /bin/goose
-/bin/mysql-core-dev
-/bin/mysql-core-test
 /bin/ssh-*
+/.oh-my-zsh
 .DS_Store
 /lib/acme-bookmarks.txt
 /pprof
@@ -44,6 +43,8 @@
 /acme.dump
 /.github-gist-token
 # OS X specific stuff
+/Audio Music Apps/
+/.ansible*
 /.gsutil/
 /.tsd-cache
 /.netrc
@@ -59,7 +60,6 @@
 /.gnupg/
 /.local/
 /.gem/
-/.node-gyp/
 /.npm/
 /.rnd
 /.rvm/
@@ -70,12 +70,10 @@
 /.vim/undo/
 /.viminfo
 /.zcompdump*
-/.zhistory
-/.irb-history
+/.zsh_history
 /.lesshst
 /.mysql_history
 /.bash_history
-/.bash_sessions/
 /Applications/
 /Desktop/
 /Documents/
@@ -86,6 +84,7 @@
 /Music/
 /Pictures/
 /projects/
+/Sites/
 /tools/
 /training/
 /Public/
@@ -95,10 +94,9 @@
 /.bzr.log
 /.dvdcss/
 /.idlerc/
-/.mongorc.js
+/.mongo*
 /.docker/
 /.babel.json
-/.node_repl_history
 /.v8flags.*.json
 /.oracle_jre_usage
 /.eclipse/
